@@ -1,0 +1,18 @@
+
+version: '3'
+services:
+
+  postgres:
+    image: postgres:13.3-alpine
+    container_name: postgres
+    restart: always
+    environment:
+      - ./.env
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+    volumes:
+      - ./pg-data-13:/var/lib/postgresql/data
+    ports:
+    - 5432:5432
+    expose:
+      - "5432"
