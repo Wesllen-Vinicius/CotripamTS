@@ -1,129 +1,212 @@
 import React, { useState, useContext } from "react";
-import styled, { keyframes, createGlobalStyle } from "styled-components";
+import styled, { css } from "styled-components";
 
 import AuthContext from "../../AuthProvider/userAuth";
 
-
-const jump = keyframes`
-  from{
-    transform: translateY(0)
-  }
-  to{
-    transform: translateY(-3px)
-  }
+export const CardWrapper = styled.div`
+  overflow: hidden;
+  padding: 0 0 32px;
+  margin: 100px auto 0;
+  width: 470px;
+  font-family: Quicksand, arial, sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
 `;
 
-const GlobalStyle = createGlobalStyle`
-  
-  body, html, #root {
-    height: 100%;
-    font-family: -apple-system, Ubuntu , BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;;
-  }
+export const CardHeader = styled.header`
+  padding-top: 32px;
+  padding-bottom: 32px;
 `;
 
-const Wrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
+export const CardHeading = styled.h1`
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
 `;
 
-const FormDiv = styled.div`
-  margin: 0 auto;
-  width: 100%;
-  max-width: 414px;
-  padding: 1.3rem;
-  display: flex;
-  flex-direction: column;
+export const CardBody = styled.div`
+  padding-right: 32px;
+  padding-left: 32px;
+`;
+
+export const CardFieldset = styled.fieldset`
   position: relative;
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  & + & {
+    margin-top: 24px;
+  }
+
+  &:nth-last-of-type(2) {
+    margin-top: 32px;
+  }
+
+  &:last-of-type {
+    text-align: center;
+  }
 `;
 
-const Input = styled.input`
-  max-width: 100%;
-  padding: 11px 13px;
-  background: #f9f9fa;
-  color: #f03d4e;
-  margin-bottom: 0.9rem;
-  border-radius: 4px;
-  outline: 0;
-  border: 1px solid rgba(245, 245, 245, 0.7);
+export const CardInput = styled.input`
+  padding: 7px 0;
+  width: 100%;
+  font-family: inherit;
   font-size: 14px;
-  transition: all 0.3s ease-out;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
-  :focus,
-  :hover {
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15), 0 1px 5px rgba(0, 0, 0, 0.1);
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  transition: border-bottom-color 0.25s ease-in;
+
+  &:focus {
+    border-bottom-color: #e5195f;
+    outline: 0;
   }
 `;
 
-const Button = styled.button`
-  max-width: 100%;
-  padding: 11px 13px;
-  color: rgb(253, 249, 243);
-  font-weight: 600;
-  text-transform: uppercase;
-  background: #f03d4e;
-  border: none;
-  border-radius: 3px;
-  outline: 0;
+export const CardIcon = styled.span`
+  color: #666;
   cursor: pointer;
-  margin-top: 0.6rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-out;
-  :hover {
-    background: rgb(200, 50, 70);
-    animation: ${jump} 0.2s ease-out forwards;
+  opacity: 0.25;
+  transition: opacity 0.25s ease-in;
+
+  &:hover {
+    opacity: 0.95;
   }
 `;
 
-const Title = styled.h2`
-  font-weight: normal;
-  color: #2a2a29;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+export const CardOptionsNote = styled.small`
+  padding-top: 8px;
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
 `;
 
+export const CardOptions = styled.ul`
+  padding: 0;
+  margin: 16px 0 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  list-style-type: none;
+`;
 
+export const CardOptionsItem = styled.li`
+  &:nth-of-type(n + 2) {
+    margin-left: 16px;
+  }
+`;
 
+export const CardButton = styled.button`
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #e5195f;
+  border: 0;
+  border-radius: 35px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
 
+  &:hover {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    transform: translate(0, -5px);
+  }
+`;
+
+export const CardLink = styled.a`
+  display: inline-block;
+  font-size: 12px;
+  text-decoration: none;
+  color: #aaa;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: color 0.25s ease-in;
+
+  &:hover {
+    color: #777;
+  }
+`;
 
 export default function Login() {
-  const {signIn} = useContext(AuthContext)
-  const[email, setEmail] = useState("")
-  const[password, setPassword] = useState("")
+  const { signIn } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
- async function SignIn() {
-    await signIn({email, password})
-  } 
-  
+  async function SignIn() {
+    await signIn({ email, password });
+  }
+
   return (
     <>
-      <GlobalStyle />
-      <Wrapper>
-      <FormDiv>
-          <Title>
-            Email:
-          </Title>
-          <Input
-            onChange={e => setEmail(e.target.value)}
-            type="email"
-            name="email"
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading>Sign in</CardHeading>
+        </CardHeader>
+
+        <CardBody>
+          <CardFieldset>
+            <CardInput placeholder="Username" type="text" required />
+          </CardFieldset>
+
+          <CardFieldset>
+            <CardInput
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              name="email"
+              required
             />
-          <Title>
-            Senha:
-          </Title>
-          <Input
-            onChange={e => setPassword(e.target.value)}
-            type="password"
-            name="password"
+          </CardFieldset>
+
+          <CardFieldset>
+            <CardInput
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              name="password"
+              required
             />
-          <Button onClick={SignIn} >Entrar</Button>
-      </FormDiv>
-      </Wrapper>
+            <CardIcon className="fa fa-eye" />
+          </CardFieldset>
+
+          <CardFieldset>
+            <CardOptionsNote>
+              Entre com suas Credenciais de acesso
+            </CardOptionsNote>
+
+            <CardOptions>
+              <CardOptionsItem>
+                <CardIcon className="fab fa-google" />
+              </CardOptionsItem>
+
+              <CardOptionsItem>
+                <CardIcon className="fab fa-twitter" />
+              </CardOptionsItem>
+
+              <CardOptionsItem>
+                <CardIcon className="fab fa-facebook" />
+              </CardOptionsItem>
+            </CardOptions>
+          </CardFieldset>
+
+          <CardFieldset>
+            <CardButton onClick={SignIn} type="button">
+              Logar
+            </CardButton>
+          </CardFieldset>
+
+          <CardFieldset></CardFieldset>
+        </CardBody>
+      </CardWrapper>
     </>
   );
 }
-
-
-
-
