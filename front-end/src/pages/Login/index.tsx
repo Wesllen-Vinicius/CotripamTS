@@ -151,7 +151,7 @@ export default function Login() {
     <>
       <CardWrapper>
         <CardHeader>
-          <CardHeading>Sign in</CardHeading>
+          <CardHeading>Acesso Restrito</CardHeading>
         </CardHeader>
 
         <CardBody>
