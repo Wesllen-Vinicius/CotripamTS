@@ -33,7 +33,7 @@ const EnDiv = styled.div`
   margin: 0 auto;
   display: grid;
   grid-template-columns: 25%% 25% 25% 25%;
-  grid-template-rows: 50px 500px 500px 180px;
+  grid-template-rows: 50px 50% 50% 180px;
   grid-template-areas: "cabecalho cabecalho" 
                         "secao secao" 
                         "secao secao" 
