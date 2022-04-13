@@ -11,6 +11,6 @@ app.use(express.json())
 
 app.use('/users', userRoutes)
 
-app.listen(4300, () =>
-  console.log('REST API Server Iniciado: http://localhost:4300'),
+app.listen(4500, () =>
+  console.log('REST API Server Iniciado: http://localhost:4500'),
 )

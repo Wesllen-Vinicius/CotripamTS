@@ -43,7 +43,6 @@ function Home() {
       <Header/>
       </HomeHeader>
       <HomeContent>
-      
       </HomeContent>
        <HomeFooter/>
       </HomeDiv>

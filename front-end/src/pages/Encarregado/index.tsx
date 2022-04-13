@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import AuthContext from "../../AuthProvider/userAuth";
-import FormAbate from "../../components/form/form-abate-diario";
+import CardPerfilUsuario from "../../components/card/card-perfil-usuario";
 import FormSerosa from "../../components/form/form-serosa";
 
 const Button = styled.button`
@@ -24,35 +24,35 @@ const Button = styled.button`
 `;
 
 const EnDiv = styled.div`
-  padding: 0;
-  margin: 0;
-  font-size: 1.5rem;
-  font-style: italic;
-  width: 100%;
-  heigth: 100vh;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns:  1fr;
-  grid-template-rows: 40px 100% 200px;
-  grid-template-areas: "cabecalho" 
-                        "secao" 
-                        "rodape";
+display: grid;
+font-family: Arial, sans-serif;
+grid-gap: 1rem;
+grid-template-areas:
+  "header header header"
+  "aside main main"
+  "footer footer footer";
+grid-template-columns: auto auto auto;
+grid-template-rows: 40px 100vh 100px;
 `;
 
 const EncHeader = styled.header`
-grid-area: cabecalho;
+grid-area: header;
 background-color: black;
-heigth: 40px;
+padding: 1.5rem;
 `
 
 const EncFooter = styled.footer`
 background-color: black;
-grid-area: rodape;
-`
+grid-area: footer;
+padding: 1rem;
 
+`
+const EncAside = styled.div`
+grid-area: aside;
+`
 const EncContent = styled.section`
-grid-area: secao;
-heigth: 100vh;
+grid-area: main;
+display: flex;
 `
 
 export default function Encarregados() {
@@ -64,15 +64,21 @@ export default function Encarregados() {
 
   return (
     <EnDiv>
-      <EncHeader/>
+      <EncHeader></EncHeader>
+      <EncAside>
+
+      <CardPerfilUsuario/>
+
+      </EncAside>
+
       <EncContent>
       <FormSerosa />
-      <FormAbate />
       <Button onClick={handleLogout} type="button">
         Deslogar
       </Button>
       </EncContent>
-      <EncFooter/>
+
+      <EncFooter></EncFooter>
     </EnDiv>
   );
 }
