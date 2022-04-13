@@ -155,9 +155,7 @@ export default function Login() {
         </CardHeader>
 
         <CardBody>
-          <CardFieldset>
-            <CardInput placeholder="Usuario" type="text" required />
-          </CardFieldset>
+          
 
           <CardFieldset>
             <CardInput

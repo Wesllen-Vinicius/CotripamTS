@@ -12,7 +12,7 @@ const sharedStyles = css`
 `;
 
 const StyledFormWrapper = styled.div`
-  display: grid;
+  display: flex;
   padding: 0 20px;
   padding-top: 10px;
 `;
@@ -61,16 +61,11 @@ const StyledError = styled.div`
   margin: 0 0 40px 0;
 `;
 
-const initalState = {
-  name: "",
-  email: "",
-  message: "",
-  gender: ""
-};
+
 
 
 export default function CardPerfilUsuario() {
-  const [state, setState] = useState(initalState);
+  const [state, setState] = useState();
   const [error, setError] = useState('');
 
  
@@ -93,11 +88,8 @@ export default function CardPerfilUsuario() {
           <label htmlFor="email">Comarca</label>
           <StyledLabel
           />
-          <label htmlFor="message">Message</label>
-          <StyledTextArea
-            name="message"
-            value={state.message}
-            onChange={handleInput}
+          <label htmlFor="message">Função</label>
+          <StyledLabel
           />
           {error && (
             <StyledError>

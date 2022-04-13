@@ -12,14 +12,15 @@ const sharedStyles = css`
 `;
 
 const StyledFormWrapper = styled.div`
-  display: grid;
+  display: flex;
   padding: 0 20px;
   padding-top: 10px;
+
 `;
 
 const StyledForm = styled.form`
   width: 100%;
-  max-width: 700px;
+  width: 700px;
   padding: 40px;
   background-color: #fff;
   border-radius: 10px;

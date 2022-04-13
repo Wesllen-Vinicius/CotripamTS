@@ -49,10 +49,11 @@ padding: 1rem;
 `
 const EncAside = styled.div`
 grid-area: aside;
+padding: 1rem;
 `
 const EncContent = styled.section`
 grid-area: main;
-display: flex;
+
 `
 
 export default function Encarregados() {
@@ -73,12 +74,12 @@ export default function Encarregados() {
 
       <EncContent>
       <FormSerosa />
-      <Button onClick={handleLogout} type="button">
-        Deslogar
-      </Button>
+      
       </EncContent>
 
-      <EncFooter></EncFooter>
+      <EncFooter>
+
+      </EncFooter>
     </EnDiv>
   );
 }
