@@ -32,12 +32,11 @@ const EnDiv = styled.div`
   heigth: 100vh;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 25%% 25% 25% 25%;
-  grid-template-rows: 50px 50% 50% 180px;
-  grid-template-areas: "cabecalho cabecalho" 
-                        "secao secao" 
-                        "secao secao" 
-                        "rodape rodape";
+  grid-template-columns:  1fr;
+  grid-template-rows: 40px 100% 200px;
+  grid-template-areas: "cabecalho" 
+                        "secao" 
+                        "rodape";
 `;
 
 const EncHeader = styled.header`
@@ -51,8 +50,13 @@ background-color: black;
 grid-area: rodape;
 `
 
+const EncContent = styled.section`
+grid-area: secao;
+heigth: 100vh;
+`
+
 export default function Encarregados() {
-  const { Logout, user } = useContext(AuthContext);
+  const { Logout} = useContext(AuthContext);
 
   function handleLogout() {
     Logout();
@@ -61,10 +65,13 @@ export default function Encarregados() {
   return (
     <EnDiv>
       <EncHeader/>
+      <EncContent>
       <FormSerosa />
       <FormAbate />
-      <FormAbate />
-      <FormAbate />
+      <Button onClick={handleLogout} type="button">
+        Deslogar
+      </Button>
+      </EncContent>
       <EncFooter/>
     </EnDiv>
   );

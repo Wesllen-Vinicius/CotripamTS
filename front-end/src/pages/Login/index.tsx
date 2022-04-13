@@ -156,11 +156,12 @@ export default function Login() {
 
         <CardBody>
           <CardFieldset>
-            <CardInput placeholder="Username" type="text" required />
+            <CardInput placeholder="Usuario" type="text" required />
           </CardFieldset>
 
           <CardFieldset>
             <CardInput
+             placeholder="E-mail"
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               name="email"
@@ -170,6 +171,7 @@ export default function Login() {
 
           <CardFieldset>
             <CardInput
+             placeholder="Senha"
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               name="password"
