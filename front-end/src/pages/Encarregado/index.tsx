@@ -24,40 +24,43 @@ const Button = styled.button`
 `;
 
 const EnDiv = styled.div`
-display: grid;
-font-family: Arial, sans-serif;
-grid-gap: 1rem;
-grid-template-areas:
-  "header header header"
-  "aside main main"
-  "footer footer footer";
-grid-template-columns: auto auto auto;
-grid-template-rows: 40px 100vh 100px;
+  display: grid;
+  font-family: Arial, sans-serif;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "header header header"
+    "aside main main"
+    "footer footer footer";
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 60px 100vh 350px;
 `;
 
 const EncHeader = styled.header`
-grid-area: header;
-background-color: black;
-padding: 1.5rem;
-`
+  grid-area: header;
+  padding: 1.5rem;
+  background-color: #4682b4;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+  align-items: center;
+  padding: 26px 20px;
+  position: fixed;
+  width: 98%;
+`;
 
 const EncFooter = styled.footer`
-background-color: black;
-grid-area: footer;
-padding: 1rem;
-
-`
+  grid-area: footer;
+  padding: 1rem;
+  background-color: #4682b4;
+`;
 const EncAside = styled.div`
-grid-area: aside;
-padding: 1rem;
-`
+  grid-area: aside;
+  padding: 1rem;
+`;
 const EncContent = styled.section`
-grid-area: main;
-
-`
+  grid-area: main;
+`;
 
 export default function Encarregados() {
-  const { Logout} = useContext(AuthContext);
+  const { Logout } = useContext(AuthContext);
 
   function handleLogout() {
     Logout();
@@ -67,19 +70,14 @@ export default function Encarregados() {
     <EnDiv>
       <EncHeader></EncHeader>
       <EncAside>
-
-      <CardPerfilUsuario/>
-
+        <CardPerfilUsuario />
       </EncAside>
 
       <EncContent>
-      <FormSerosa />
-      
+        <FormSerosa />
       </EncContent>
 
-      <EncFooter>
-
-      </EncFooter>
+      <EncFooter></EncFooter>
     </EnDiv>
   );
 }

@@ -10,8 +10,8 @@ class userControlers{
     }
     //CADASTRO E CRIAÇÃO DE TOKEN
     static async postUsers(req: Request, res: Response){
-        const{id, email, password} = req.body
-        const nivelAcesso =  true
+        const{id, email, password, nivelAcesso} = req.body
+        
         if(!email){
             res.status(422).json({message: "Email é obrigatorio para cadastro de usuario!"})
             return

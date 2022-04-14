@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import styled, { css } from "styled-components";
+import { useState, useContext } from "react";
+import styled from "styled-components";
 
 import AuthContext from "../../AuthProvider/userAuth";
 
