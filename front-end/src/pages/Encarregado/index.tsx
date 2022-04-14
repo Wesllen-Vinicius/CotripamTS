@@ -6,7 +6,7 @@ import FormSerosa from "../../components/form/form-serosa";
 
 const Button = styled.button`
   max-width: 100%;
-  padding: 11px 13px;
+  padding: 5px 5px;
   color: rgb(253, 249, 243);
   font-weight: 600;
   text-transform: uppercase;
@@ -32,7 +32,7 @@ const EnDiv = styled.div`
     "aside main main"
     "footer footer footer";
   grid-template-columns: auto auto auto;
-  grid-template-rows: 60px 100vh 350px;
+  grid-template-rows: 60px 100% 350px;
 `;
 
 const EncHeader = styled.header`
@@ -68,7 +68,9 @@ export default function Encarregados() {
 
   return (
     <EnDiv>
-      <EncHeader></EncHeader>
+      <EncHeader>
+        
+      </EncHeader>
       <EncAside>
         <CardPerfilUsuario />
       </EncAside>

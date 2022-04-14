@@ -19,8 +19,8 @@ const StyledFormWrapper = styled.div`
 `;
 
 const StyledForm = styled.form`
-  width: 100%;
-  width: 700px;
+  width: 110%;
+  height: 900px;
   padding: 40px;
   background-color: #fff;
   border-radius: 10px;
@@ -41,17 +41,26 @@ const StyledTextArea = styled.textarea`
   resize: none;
   ${sharedStyles}
 `;
+
 const StyledButton = styled.button`
   display: block;
-  background-color: #f7797d;
+  width: 20%;
+  padding: 12px 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
   color: #fff;
-  font-size: 0.9rem;
+  background-color: #4682b4;
   border: 0;
-  border-radius: 5px;
-  height: 40px;
-  padding: 0 20px;
+  border-radius: 35px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
   cursor: pointer;
-  box-sizing: border-box;
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+
+  &:hover {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    transform: translate(0, -5px);
+  }
 `;
 
 const StyledFieldset = styled.fieldset`
@@ -107,24 +116,39 @@ export default function FormSerosa() {
       <StyledFormWrapper>
         <StyledForm onSubmit={handleSubmit}>
           <h2>Form Serosa</h2>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">630</label>
           <StyledInput
             type="text"
             name="name"
             value={state.name}
             onChange={handleInput}
           />
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">520</label>
           <StyledInput
             type="email"
             name="email"
             value={state.email}
             onChange={handleInput}
           />
-          <label htmlFor="message">Message</label>
-          <StyledTextArea
-            name="message"
-            value={state.message}
+          <label htmlFor="message">470</label>
+          <StyledInput
+            type="email"
+            name="email"
+            value={state.email}
+            onChange={handleInput}
+          />
+          <label htmlFor="message">320</label>
+          <StyledInput
+            type="email"
+            name="email"
+            value={state.email}
+            onChange={handleInput}
+          />
+          <label htmlFor="message">170</label>
+          <StyledInput
+            type="email"
+            name="email"
+            value={state.email}
             onChange={handleInput}
           />
           {error && (
@@ -132,7 +156,7 @@ export default function FormSerosa() {
               <p>{error}</p>
             </StyledError>
           )}
-          <StyledButton type="submit">Send Message</StyledButton>
+          <StyledButton type="submit">Enviar</StyledButton>
         </StyledForm>
       </StyledFormWrapper>
     </div>

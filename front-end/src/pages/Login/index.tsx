@@ -9,7 +9,10 @@ export const CardWrapper = styled.div`
   margin: 100px auto 0;
   width: 470px;
   font-family: Quicksand, arial, sans-serif;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 `;
 
@@ -111,7 +114,7 @@ export const CardButton = styled.button`
   font-size: 14px;
   font-weight: 700;
   color: #fff;
-  background-color: #e5195f;
+  background-color: #4682b4;
   border: 0;
   border-radius: 35px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
@@ -122,6 +125,7 @@ export const CardButton = styled.button`
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
   }
+  
 `;
 
 export const CardLink = styled.a`
