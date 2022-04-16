@@ -1,22 +1,10 @@
 import styled from "styled-components";
-function NotFoundPage() {
-  return (
-    <Content404>
-      <Title>.404 NOT FOUND</Title>
-      <Button>
-        <MenuLink href="/">Go to Home</MenuLink>
-      </Button>
-    </Content404>
-  );
-}
-export default NotFoundPage;
 
 const Title = styled.h2`
   font-weight: normal;
   color: #2a2a29;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
 `;
-
 
 const Content404 = styled.div`
   display: flex;
@@ -47,3 +35,15 @@ const Button = styled.button`
     background: rgb(200, 50, 70);
   }
 `;
+
+function NotFoundPage() {
+  return (
+    <Content404>
+      <Title>.404 NOT FOUND</Title>
+      <Button>
+        <MenuLink href="/">Go to Home</MenuLink>
+      </Button>
+    </Content404>
+  );
+}
+export default NotFoundPage;

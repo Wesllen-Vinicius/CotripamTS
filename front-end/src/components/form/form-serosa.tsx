@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled, {  css } from "styled-components";
+import { useState } from "react";
+import styled, { css } from "styled-components";
 
 const sharedStyles = css`
   background-color: #eee;
@@ -15,13 +15,13 @@ const StyledFormWrapper = styled.div`
   display: flex;
   padding: 0 20px;
   padding-top: 10px;
-
+  flex-direction: column;
 `;
 
 const StyledForm = styled.form`
-  width: 110%;
-  height: 900px;
-  padding: 40px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-sizing: border-box;
@@ -29,8 +29,8 @@ const StyledForm = styled.form`
 `;
 
 const StyledInput = styled.input`
-  display: block;
-  width: 100%;
+  display: flex;
+  width: 100px;
   ${sharedStyles}
 `;
 
@@ -63,99 +63,40 @@ const StyledButton = styled.button`
   }
 `;
 
-const StyledFieldset = styled.fieldset`
-  border: 1px solid #ddd;
-  margin: 20px 0;
-  legend {
-    padding: 0 10px;
-  }
-  label {
-    padding-right: 20px;
-  }
-  input {
-    margin-right: 10px;
-  }
-`;
-
-const StyledError = styled.div`
-  color: red;
-  font-weight: 800;
-  margin: 0 0 40px 0;
-`;
-
 const initalState = {
-  name: "",
-  email: "",
-  message: "",
-  gender: ""
+  630: "",
+  520: "",
+  470: "",
+  320: "",
+  170: "",
 };
-
 
 export default function FormSerosa() {
   const [state, setState] = useState(initalState);
-  const [error, setError] = useState('');
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log('submitted!');
+    console.log("submitted!");
     console.log(state);
 
-  
-    console.log("Succeeded!!!")
-  };
-
-  const handleInput = (e: { currentTarget: { name: any; value: any; }; }) => {
-    const inputName = e.currentTarget.name;
-    const value = e.currentTarget.value;
-
-    setState((prev: any) => ({ ...prev, [inputName]: value }));
+    console.log("Succeeded!!!");
   };
 
   return (
     <div>
       <StyledFormWrapper>
         <StyledForm onSubmit={handleSubmit}>
-          <h2>Form Serosa</h2>
-          <label htmlFor="name">630</label>
-          <StyledInput
-            type="text"
-            name="name"
-            value={state.name}
-            onChange={handleInput}
-          />
-          <label htmlFor="email">520</label>
-          <StyledInput
-            type="email"
-            name="email"
-            value={state.email}
-            onChange={handleInput}
-          />
-          <label htmlFor="message">470</label>
-          <StyledInput
-            type="email"
-            name="email"
-            value={state.email}
-            onChange={handleInput}
-          />
-          <label htmlFor="message">320</label>
-          <StyledInput
-            type="email"
-            name="email"
-            value={state.email}
-            onChange={handleInput}
-          />
-          <label htmlFor="message">170</label>
-          <StyledInput
-            type="email"
-            name="email"
-            value={state.email}
-            onChange={handleInput}
-          />
-          {error && (
-            <StyledError>
-              <p>{error}</p>
-            </StyledError>
-          )}
+          <h2>Serosa</h2>
+          <label htmlFor="630">630</label>
+          <StyledInput type="number" name="630" value={state[630]} />
+          <label htmlFor="520">520</label>
+          <StyledInput type="number" name="520" value={state[520]} />
+          <label htmlFor="470">470</label>
+          <StyledInput type="number" name="470" value={state[470]} />
+          <label htmlFor="320">320</label>
+          <StyledInput type="number" name="320" value={state[320]} />
+          <label htmlFor="170">170</label>
+          <StyledInput type="number" name="170" value={state[170]} />
           <StyledButton type="submit">Enviar</StyledButton>
         </StyledForm>
       </StyledFormWrapper>

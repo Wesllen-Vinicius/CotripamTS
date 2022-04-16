@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 import AuthContext from "../../AuthProvider/userAuth";
 
-export const CardWrapper = styled.div`
+
+const CardWrapper = styled.div`
   overflow: hidden;
   padding: 0 0 32px;
   margin: 100px auto 0;
@@ -14,25 +15,25 @@ export const CardWrapper = styled.div`
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+
 `;
 
-export const CardHeader = styled.header`
+const CardHeader = styled.header`
   padding-top: 32px;
   padding-bottom: 32px;
 `;
 
-export const CardHeading = styled.h1`
+const CardHeading = styled.h1`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 `;
-
-export const CardBody = styled.div`
+const CardBody = styled.div`
   padding-right: 32px;
   padding-left: 32px;
 `;
 
-export const CardFieldset = styled.fieldset`
+const CardFieldset = styled.fieldset`
   position: relative;
   padding: 0;
   margin: 0;
@@ -50,8 +51,7 @@ export const CardFieldset = styled.fieldset`
     text-align: center;
   }
 `;
-
-export const CardInput = styled.input`
+const CardInput = styled.input`
   padding: 7px 0;
   width: 100%;
   font-family: inherit;
@@ -68,7 +68,7 @@ export const CardInput = styled.input`
   }
 `;
 
-export const CardIcon = styled.span`
+const CardIcon = styled.span`
   color: #666;
   cursor: pointer;
   opacity: 0.25;
@@ -79,7 +79,7 @@ export const CardIcon = styled.span`
   }
 `;
 
-export const CardOptionsNote = styled.small`
+const CardOptionsNote = styled.small`
   padding-top: 8px;
   display: block;
   width: 100%;
@@ -88,7 +88,7 @@ export const CardOptionsNote = styled.small`
   text-transform: uppercase;
 `;
 
-export const CardOptions = styled.ul`
+const CardOptions = styled.ul`
   padding: 0;
   margin: 16px 0 8px;
   display: flex;
@@ -100,13 +100,13 @@ export const CardOptions = styled.ul`
   list-style-type: none;
 `;
 
-export const CardOptionsItem = styled.li`
+const CardOptionsItem = styled.li`
   &:nth-of-type(n + 2) {
     margin-left: 16px;
   }
 `;
 
-export const CardButton = styled.button`
+const CardButton = styled.button`
   display: block;
   width: 100%;
   padding: 12px 0;
@@ -125,10 +125,9 @@ export const CardButton = styled.button`
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
   }
-  
 `;
 
-export const CardLink = styled.a`
+const CardLink = styled.a`
   display: inline-block;
   font-size: 12px;
   text-decoration: none;
@@ -149,6 +148,7 @@ export default function Login() {
 
   async function SignIn() {
     await signIn({ email, password });
+    
   }
 
   return (
@@ -159,11 +159,9 @@ export default function Login() {
         </CardHeader>
 
         <CardBody>
-          
-
           <CardFieldset>
             <CardInput
-             placeholder="E-mail"
+              placeholder="E-mail"
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               name="email"
@@ -173,7 +171,7 @@ export default function Login() {
 
           <CardFieldset>
             <CardInput
-             placeholder="Senha"
+              placeholder="Senha"
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               name="password"
@@ -206,6 +204,7 @@ export default function Login() {
             <CardButton onClick={SignIn} type="button">
               Logar
             </CardButton>
+            
           </CardFieldset>
 
           <CardFieldset></CardFieldset>

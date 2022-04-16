@@ -3,28 +3,6 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import AuthContext from "../../AuthProvider/userAuth";
 
-
-
-export default function Dashboard() {
-
-  const {Logout, user} = useContext(AuthContext)
- 
-  function handleLogout(){
-      Logout()
-    }
-         
-    return (
-      <div className="Home">
-        <label>DashBoard</label>
-        <Button onClick={handleLogout}>
-          Deslogar
-        </Button>
-        <header className="App-header">
-        </header>
-      </div>
-    );
-  }
-  
 const Button = styled.button`
   max-width: 100%;
   padding: 11px 13px;
@@ -43,4 +21,21 @@ const Button = styled.button`
     background: rgb(200, 50, 70);
   }
 `;
-  
+
+export default function Dashboard() {
+  const { Logout } = useContext(AuthContext);
+
+  function handleLogout() {
+    Logout();
+  }
+
+  return (
+    <div className="Home">
+      <label>DashBoard</label>
+      <Button onClick={handleLogout}>Deslogar</Button>
+      <header className="App-header"></header>
+    </div>
+  );
+}
+
+

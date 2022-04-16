@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled, {  css } from "styled-components";
+import { useState } from "react";
+import styled, { css } from "styled-components";
 
 const sharedStyles = css`
   background-color: #eee;
@@ -12,15 +12,16 @@ const sharedStyles = css`
 `;
 
 const StyledFormWrapper = styled.div`
-  display: grid;
+  display: flex;
   padding: 0 20px;
   padding-top: 10px;
+  flex-direction: column;
 `;
 
 const StyledForm = styled.form`
   width: 100%;
-  max-width: 700px;
-  padding: 40px;
+  height: 100%;
+  padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-sizing: border-box;
@@ -28,8 +29,8 @@ const StyledForm = styled.form`
 `;
 
 const StyledInput = styled.input`
-  display: block;
-  width: 100%;
+  display: flex;
+  width: 100px;
   ${sharedStyles}
 `;
 
@@ -40,98 +41,63 @@ const StyledTextArea = styled.textarea`
   resize: none;
   ${sharedStyles}
 `;
+
 const StyledButton = styled.button`
   display: block;
-  background-color: #f7797d;
+  width: 20%;
+  padding: 12px 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
   color: #fff;
-  font-size: 0.9rem;
+  background-color: #4682b4;
   border: 0;
-  border-radius: 5px;
-  height: 40px;
-  padding: 0 20px;
+  border-radius: 35px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
   cursor: pointer;
-  box-sizing: border-box;
-`;
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
 
-const StyledFieldset = styled.fieldset`
-  border: 1px solid #ddd;
-  margin: 20px 0;
-  legend {
-    padding: 0 10px;
+  &:hover {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    transform: translate(0, -5px);
   }
-  label {
-    padding-right: 20px;
-  }
-  input {
-    margin-right: 10px;
-  }
-`;
-
-const StyledError = styled.div`
-  color: red;
-  font-weight: 800;
-  margin: 0 0 40px 0;
 `;
 
 const initalState = {
-  name: "",
-  email: "",
-  message: "",
-  gender: ""
+  630: "",
+  520: "",
+  470: "",
+  320: "",
+  170: "",
 };
-
 
 export default function FormAbate() {
   const [state, setState] = useState(initalState);
-  const [error, setError] = useState('');
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log('submitted!');
+    console.log("submitted!");
     console.log(state);
 
-  
-    console.log("Succeeded!!!")
-  };
-
-  const handleInput = (e: { currentTarget: { name: any; value: any; }; }) => {
-    const inputName = e.currentTarget.name;
-    const value = e.currentTarget.value;
-
-    setState((prev: any) => ({ ...prev, [inputName]: value }));
+    console.log("Succeeded!!!");
   };
 
   return (
     <div>
       <StyledFormWrapper>
         <StyledForm onSubmit={handleSubmit}>
-          <h2>Form Abate Diario</h2>
-          <label htmlFor="name">Name</label>
-          <StyledInput
-            type="text"
-            name="name"
-            value={state.name}
-            onChange={handleInput}
-          />
-          <label htmlFor="email">Email</label>
-          <StyledInput
-            type="email"
-            name="email"
-            value={state.email}
-            onChange={handleInput}
-          />
-          <label htmlFor="message">Message</label>
-          <StyledTextArea
-            name="message"
-            value={state.message}
-            onChange={handleInput}
-          />
-          {error && (
-            <StyledError>
-              <p>{error}</p>
-            </StyledError>
-          )}
-          <StyledButton type="submit">Send Message</StyledButton>
+          <h2>Serosa</h2>
+          <label htmlFor="630">Abate</label>
+          <StyledInput type="number" name="630" value={state[630]} />
+          <label htmlFor="520">Bois Abatidos</label>
+          <StyledInput type="number" name="520" value={state[520]} />
+          <label htmlFor="470">Vacas Abatidas</label>
+          <StyledInput type="number" name="470" value={state[470]} />
+          <label htmlFor="320">Reaproveitados</label>
+          <StyledInput type="number" name="320" value={state[320]} />
+          <label htmlFor="170">Perdidos</label>
+          <StyledInput type="number" name="170" value={state[170]} />
+          <StyledButton type="submit">Enviar</StyledButton>
         </StyledForm>
       </StyledFormWrapper>
     </div>

@@ -17,6 +17,8 @@ const Rotas: React.FC = () => {
         <Route path="/dashboard" element={<PrivateLayout><ProtectedLayout><Dashboard/></ProtectedLayout></PrivateLayout>}/>
         <Route path="/relatorio" element={<PrivateLayout><ProtectedLayout><Relatorios/></ProtectedLayout></PrivateLayout>}/>
         <Route path="/encarregado" element={<ProtectedLayout><Encarregados/></ProtectedLayout>}/>
+        <Route path="/abate" element={<ProtectedLayout><Encarregados/></ProtectedLayout>}/>
+        <Route path="/tripaCozida" element={<ProtectedLayout><Encarregados/></ProtectedLayout>}/>
         <Route path="/*" element={<NotFoundPage/>}/>
     </Routes>
   )
