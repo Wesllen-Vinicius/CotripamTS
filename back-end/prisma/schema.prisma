@@ -114,5 +114,9 @@ model Produto {
 model Estoque {
   id           Int      @id @default(autoincrement())
   createdAt    DateTime @default(now())
+  saidaData    DateTime 
+  quantSaida   Decimal
+  item         String?           @db.VarChar(255)
+  quant        Decimal
   unidadeAbate Unidade? @relation(fields: [id], references: [id])
 }
