@@ -8,8 +8,111 @@ datasource db {
 }
 
 model User {
-  id       Int    @id
-  email    String @unique
-  password String 
-  nivelAcesso Boolean
+  id              Int               @id @default(autoincrement())
+  nome            String?           @db.VarChar(120)
+  email           String?           @unique @db.VarChar(255)
+  senha           String?           @db.VarChar(255)
+  createdAt       DateTime          @default(now())
+  nivelAcesso     Boolean           @default(false)
+  unidadeUser     Unidade           @relation(fields: [id], references: [id])
+  Abate           Abate[]
+  Serosa          Serosa[]
+  TripaCozida     TripaCozida[]
+  TripaExportacao TripaExportacao[]
+  Produto         Produto[]
+}
+
+model Unidade {
+  id               Int               @id @default(autoincrement())
+  nome             String?           @db.VarChar(120)
+  createdAt        DateTime          @default(now())
+  meta_tripaCozida Decimal
+  meta_serosa      Decimal
+  estoque          Decimal
+  User             User[]
+  Abate            Abate[]
+  Serosa           Serosa[]
+  TripaCozida      TripaCozida[]
+  TripaExportacao  TripaExportacao[]
+  Produto          Produto[]
+  Estoque          Estoque[]
+}
+
+model Abate {
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  modifiAt     DateTime
+  abate        Decimal
+  bois         Decimal
+  vacas        Decimal
+  total        Decimal
+  condenados   Decimal
+  userId       Int?
+  unidadeAbate Unidade? @relation(fields: [id], references: [id])
+  User         User?    @relation(fields: [userId], references: [id])
+}
+
+model Serosa {
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  modifiAt     DateTime
+  corte_630    Decimal
+  corte_470    Decimal
+  corte_320    Decimal
+  corte_170    Decimal
+  km_total     Decimal
+  media        Decimal
+  userId       Int?
+  unidadeAbate Unidade? @relation(fields: [id], references: [id])
+  User         User?    @relation(fields: [userId], references: [id])
+}
+
+model TripaCozida {
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  modifiAt     DateTime
+  mocoto       Decimal
+  culatra      Decimal
+  abomaso      Decimal
+  fundo        Decimal
+  tripa_grossa Decimal
+  tripa_fina   Decimal
+  total        Decimal
+  userId       Int?
+  unidadeAbate Unidade? @relation(fields: [id], references: [id])
+  User         User?    @relation(fields: [userId], references: [id])
+}
+
+model TripaExportacao {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  modifiAt      DateTime
+  tripa_reta    Decimal
+  tripa_torta1c Decimal
+  tripa_torta2c Decimal
+  culatra       Decimal
+  fundo         Decimal
+  userId        Int?
+  unidadeAbate  Unidade? @relation(fields: [id], references: [id])
+  User          User?    @relation(fields: [userId], references: [id])
+}
+
+model Produto {
+  id             Int      @id @default(autoincrement())
+  createdAt      DateTime @default(now())
+  modifiAt       DateTime
+  sal_fino       Decimal
+  sal_grosso     Decimal
+  metabissulfito Decimal
+  peroxido       Decimal
+  bombonas       Decimal
+  userId         Int?
+  unidadeAbate   Unidade? @relation(fields: [id], references: [id])
+  User           User?    @relation(fields: [userId], references: [id])
+}
+
+model Estoque {
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  unidadeAbate Unidade? @relation(fields: [id], references: [id])
 }
