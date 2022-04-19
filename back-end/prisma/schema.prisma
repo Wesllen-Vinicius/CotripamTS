@@ -9,9 +9,9 @@ datasource db {
 
 model User {
   id              Int               @id @default(autoincrement())
-  nome            String?           @db.VarChar(120)
-  email           String?           @unique @db.VarChar(255)
-  senha           String?           @db.VarChar(255)
+  nome            String           @db.VarChar(120)
+  email           String           @unique @db.VarChar(255)
+  password        String            @db.VarChar(255)
   createdAt       DateTime          @default(now())
   nivelAcesso     Boolean           @default(false)
   unidadeUser     Unidade           @relation(fields: [id], references: [id])
@@ -24,11 +24,10 @@ model User {
 
 model Unidade {
   id               Int               @id @default(autoincrement())
-  nome             String?           @db.VarChar(120)
+  nome             String            @db.VarChar(120)
   createdAt        DateTime          @default(now())
   meta_tripaCozida Decimal
   meta_serosa      Decimal
-  estoque          Decimal
   User             User[]
   Abate            Abate[]
   Serosa           Serosa[]
@@ -114,9 +113,9 @@ model Produto {
 model Estoque {
   id           Int      @id @default(autoincrement())
   createdAt    DateTime @default(now())
-  saidaData    DateTime 
+  saidaData    DateTime
   quantSaida   Decimal
-  item         String?           @db.VarChar(255)
+  item         String  @db.VarChar(255)
   quant        Decimal
   unidadeAbate Unidade? @relation(fields: [id], references: [id])
 }
