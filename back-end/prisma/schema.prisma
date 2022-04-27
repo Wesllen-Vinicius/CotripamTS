@@ -110,6 +110,12 @@ model Produto {
   User           User?    @relation(fields: [userId], references: [id])
 }
 
+modal Item {
+  id Int    @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  saidaData    DateTime
+  
+}
 model Estoque {
   id           Int      @id @default(autoincrement())
   createdAt    DateTime @default(now())
