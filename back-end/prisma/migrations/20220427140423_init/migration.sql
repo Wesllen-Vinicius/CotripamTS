@@ -15,8 +15,8 @@ CREATE TABLE "Unidade" (
     "id" SERIAL NOT NULL,
     "nome" VARCHAR(120) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "meta_tripaCozida" DECIMAL(65,30) NOT NULL,
-    "meta_serosa" DECIMAL(65,30) NOT NULL,
+    "meta_tripaCozida" DOUBLE PRECISION NOT NULL,
+    "meta_serosa" DOUBLE PRECISION NOT NULL,
 
     CONSTRAINT "Unidade_pkey" PRIMARY KEY ("id")
 );
@@ -100,12 +100,23 @@ CREATE TABLE "Produto" (
 );
 
 -- CreateTable
+CREATE TABLE "Item" (
+    "id" SERIAL NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "saidaData" TIMESTAMP(3) NOT NULL,
+    "nome" VARCHAR(255) NOT NULL,
+    "descricao" VARCHAR(255) NOT NULL,
+    "estoqueId" INTEGER,
+
+    CONSTRAINT "Item_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "Estoque" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "saidaData" TIMESTAMP(3) NOT NULL,
     "quantSaida" DECIMAL(65,30) NOT NULL,
-    "item" VARCHAR(255) NOT NULL,
     "quant" DECIMAL(65,30) NOT NULL,
 
     CONSTRAINT "Estoque_pkey" PRIMARY KEY ("id")
@@ -146,6 +157,9 @@ ALTER TABLE "Produto" ADD CONSTRAINT "Produto_userId_fkey" FOREIGN KEY ("userId"
 
 -- AddForeignKey
 ALTER TABLE "Produto" ADD CONSTRAINT "Produto_id_fkey" FOREIGN KEY ("id") REFERENCES "Unidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Item" ADD CONSTRAINT "Item_estoqueId_fkey" FOREIGN KEY ("estoqueId") REFERENCES "Estoque"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Estoque" ADD CONSTRAINT "Estoque_id_fkey" FOREIGN KEY ("id") REFERENCES "Unidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

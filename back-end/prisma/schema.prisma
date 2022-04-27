@@ -9,8 +9,8 @@ datasource db {
 
 model User {
   id              Int               @id @default(autoincrement())
-  nome            String           @db.VarChar(120)
-  email           String           @unique @db.VarChar(255)
+  nome            String            @db.VarChar(120)
+  email           String            @unique @db.VarChar(255)
   password        String            @db.VarChar(255)
   createdAt       DateTime          @default(now())
   nivelAcesso     Boolean           @default(false)
@@ -26,8 +26,8 @@ model Unidade {
   id               Int               @id @default(autoincrement())
   nome             String            @db.VarChar(120)
   createdAt        DateTime          @default(now())
-  meta_tripaCozida Decimal
-  meta_serosa      Decimal
+  meta_tripaCozida Float           
+  meta_serosa      Float
   User             User[]
   Abate            Abate[]
   Serosa           Serosa[]
@@ -110,18 +110,22 @@ model Produto {
   User           User?    @relation(fields: [userId], references: [id])
 }
 
-modal Item {
-  id Int    @id @default(autoincrement())
-  createdAt    DateTime @default(now())
-  saidaData    DateTime
-  
+model Item {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  saidaData DateTime
+  nome      String   @db.VarChar(255)
+  descricao String   @db.VarChar(255)
+  Estoque   Estoque? @relation(fields: [estoqueId], references: [id])
+  estoqueId Int?
 }
+
 model Estoque {
   id           Int      @id @default(autoincrement())
   createdAt    DateTime @default(now())
   saidaData    DateTime
   quantSaida   Decimal
-  item         String  @db.VarChar(255)
   quant        Decimal
   unidadeAbate Unidade? @relation(fields: [id], references: [id])
+  item         Item[]
 }

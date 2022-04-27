@@ -10,7 +10,7 @@ class userControlers {
   //CADASTRO E CRIAÇÃO DE TOKEN
   static async postUsers(req: Request, res: Response) {
     const { id, nome, email, password, nivelAcesso } = req.body;
-    
+
     if (!email) {
       res
         .status(422)
@@ -39,7 +39,6 @@ class userControlers {
     res.status(201).json({ id, nome, email, nivelAcesso, tokenUser });
   }
 
-  
   //LOGIN E COMPARAÇÃO DE SENHA
   static async authUsers(req: Request, res: Response) {
     const { id, email, password } = req.body;
