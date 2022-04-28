@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
-import unidadeControlers from '../controllers/unidade'
+import unidadeControlersPost from '../controllers/unidade/post'
+import unidadeControlersDelete from '../controllers/unidade/delete'
+import unidadeControlersGet from '../controllers/unidade/get';
 
-router.get('/', unidadeControlers.getUnidades);
-router.get('/:id', unidadeControlers.getUnidadesById);
+router.get('/', unidadeControlersGet.getUnidades);
+router.get('/:id', unidadeControlersGet.getUnidadesById);
 router.put('/:id');
-router.delete('/:id', unidadeControlers.deleteUnidades);
-router.post('/cadastro', unidadeControlers.postUnidades);
+router.delete('/:id', unidadeControlersDelete.deleteUnidades);
+router.post('/cadastro', unidadeControlersPost.postUnidades);
 
 export = router;
