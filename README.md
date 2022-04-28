@@ -2,7 +2,17 @@
   <h1>PPROJETO DE TCC COTRIPAM</h1>
   <p>Versão 0.1.0</p>
 </div>
+<h1>- TECNOLOGIAS</h1>
+<p>SONAR</p>
+<p>VSCODE</p>
+<p>BEEKEEPER STUDIO</p>
+<p>DOCKER</p>
+<p>POSTGRES</p>
+<p>INSOMNIA</p>
 <h1>INFRAESTRUTURA DE FRONT-END COM REACT + TYPESCRIPT</h1>
+- ⚛️ REACT
+- ✨TYPESCRIPT
+- ⚡️ YARN OR NPM
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
