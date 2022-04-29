@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { prismaClient } from "../../data/prismaClient";
 
-class userControlersDelete {
-  static async allUsers(req: Request, res: Response) {
+class UserControlersDelete {
+  static async allUsers(_req: Request, res: Response) {
     res.status(200).json({ message: "!" });
   }
-  static async deleteUser(req: Request, res: Response) {
-    const id = parseInt(req.params.id);
+  static async deleteUser(_req: Request, res: Response) {
+    const id = parseInt(_req.params.id);
     const deleteUser= await prismaClient.user.findUnique( {
       where: {
         id,
@@ -25,4 +25,4 @@ class userControlersDelete {
   }
 }
 
-export default userControlersDelete;
+export default UserControlersDelete;

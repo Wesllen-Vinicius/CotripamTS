@@ -1,6 +1,6 @@
-import abateControlersDelete from "../controllers/abate/delete";
-import abateControlersGet from "../controllers/abate/get";
-import abateControlersPost from "../controllers/abate/post";
+import abateControlersDelete from "../controllers/abate/abateControlersDelete";
+import abateControlersGet from "../controllers/abate/abateControlersGet";
+import abateControlersPost from "../controllers/abate/abateControlersPost";
 
 const express = require('express');
 const router = express.Router();

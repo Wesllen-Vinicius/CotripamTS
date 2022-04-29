@@ -3,12 +3,12 @@ import { prismaClient } from "../../data/prismaClient";
 
 
 
-class abateControlersPost {
-  static allAbates(req: Request, res: Response) {
+class AbateControlersPost {
+  static allAbates(_req: Request, res: Response) {
     res.status(200).json({ message: "!" });
   }
-  static async postAbates(req: Request, res: Response) {
-    const { id, createdAt, modifiAt, abate,  bois, vacas, total, condenados } = req.body;
+  static async postAbates(_req: Request, res: Response) {
+    const { id, createdAt, modifiAt, abate,  bois, vacas, total, condenados } = _req.body;
 
     if (!abate) {
       res
@@ -70,4 +70,4 @@ class abateControlersPost {
   }
 }
 
-export default abateControlersPost;
+export default AbateControlersPost;

@@ -3,12 +3,12 @@ import { prismaClient } from "../../data/prismaClient";
 
 
 
-class unidadeControlersPost {
-  static allUnidades(req: Request, res: Response) {
+class UnidadeControlersPost {
+  static allUnidades(_req: Request, res: Response) {
     res.status(200).json({ message: "!" });
   }
-  static async postUnidades(req: Request, res: Response) {
-    const { id, nome, createdAt, meta_tripaCozida, meta_serosa } = req.body;
+  static async postUnidades(_req: Request, res: Response) {
+    const { id, nome, createdAt, meta_tripaCozida, meta_serosa } = _req.body;
 
     if (!nome) {
       res
@@ -62,4 +62,4 @@ class unidadeControlersPost {
   }
 }
 
-export default unidadeControlersPost;
+export default UnidadeControlersPost;

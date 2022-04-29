@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { prismaClient } from "../../data/prismaClient";
 
-class abateControlersDelete{
-  static allAbates(req: Request, res: Response) {
+class AbateControlersDelete{
+  static allAbates(_req: Request, res: Response) {
     res.status(200).json({ message: "!" });
   }
-  static async deleteAbates(req: Request, res: Response) {
-    const id = parseInt(req.params.id);
+  static async deleteAbates(_req: Request, res: Response) {
+    const id = parseInt(_req.params.id);
     const deleteabate = await prismaClient.abate.findUnique( {
       where: {
         id,
@@ -25,4 +25,4 @@ class abateControlersDelete{
   }
 }
 
-export default abateControlersDelete;
+export default AbateControlersDelete;

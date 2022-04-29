@@ -3,12 +3,12 @@ import { prismaClient } from "../../data/prismaClient";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-class userControlersAuth {
-  static async allUsers(req: Request, res: Response) {
+class UserControlersAuth {
+  static async allUsers(_req: Request, res: Response) {
     res.status(200).json({ message: "!" });
   }
-  static async authUsers(req: Request, res: Response) {
-    const { id, email, password } = req.body;
+  static async authUsers(_req: Request, res: Response) {
+    const { id, email, password } = _req.body;
     if (!email) {
       res
         .status(422)
@@ -37,4 +37,4 @@ class userControlersAuth {
 
 }
 
-export default userControlersAuth;
+export default UserControlersAuth;

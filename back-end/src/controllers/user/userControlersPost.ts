@@ -3,13 +3,13 @@ import { Request, Response } from "express";
 import { prismaClient } from "../../data/prismaClient";
 import bcrypt from "bcrypt";
 
-class userControlers {
-  static async allUsers(req: Request, res: Response) {
+class UserControlersPost {
+  static async allUsers(_req: Request, res: Response) {
     res.status(200).json({ message: "!" });
   }
   //CADASTRO E CRIAÇÃO DE TOKEN
-  static async postUsers(req: Request, res: Response) {
-    const { id, nome, email, password, nivelAcesso } = req.body;
+  static async postUsers(_req: Request, res: Response) {
+    const { id, nome, email, password, nivelAcesso } = _req.body;
 
     if (!email) {
       res
@@ -43,4 +43,4 @@ class userControlers {
   
 }
 
-export default userControlers;
+export default UserControlersPost;

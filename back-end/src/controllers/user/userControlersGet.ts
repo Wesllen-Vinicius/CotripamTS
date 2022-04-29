@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { prismaClient } from "../../data/prismaClient";
 
-class userControlersGet {
-  static async allUsers(req: Request, res: Response) {
+class UserControlersGet {
+  static async allUsers(_req: Request, res: Response) {
     res.status(200).json({ message: "!" });
   }
-  static async getUsersById(req: Request, res: Response) {
-    const id = parseInt(req.params.id);
+  static async getUsersById(_req: Request, res: Response) {
+    const id = parseInt(_req.params.id);
     console.log(id);
     const user = await prismaClient.user.findUnique({
       where: {
@@ -19,10 +19,10 @@ class userControlersGet {
     return res.status(200).json(user);
   }
 
-  static async getUsers(req: Request, res: Response) {
+  static async getUsers(_req: Request, res: Response) {
     const user = await prismaClient.user.findMany();
     return res.status(200).json(user);
   }
 }
 
-export default userControlersGet;
+export default UserControlersGet;

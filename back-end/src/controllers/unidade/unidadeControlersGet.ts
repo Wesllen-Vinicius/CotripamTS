@@ -3,10 +3,10 @@ import { PrismaClient } from '@prisma/client';
 import { Request, Response } from "express";
 import { prismaClient } from "../../data/prismaClient";
 
-class unidadeControlersGet {
+class UnidadeControlersGet {
 
-  static async getUnidadesById(req: Request, res: Response) {
-    const id = parseInt(req.params.id);
+  static async getUnidadesById(_req: Request, res: Response) {
+    const id = parseInt(_req.params.id);
     console.log(id);
     const unidade = await prismaClient.unidade.findUnique( {
       where: {
@@ -19,11 +19,11 @@ class unidadeControlersGet {
     return res.status(200).json(unidade);
   }
 
-  static async getUnidades(req: Request, res: Response) {
+  static async getUnidades(_req: Request, res: Response) {
     const unidade = await prismaClient.unidade.findMany();
     return res.status(200).json(unidade);
   }
 
 }
 
-export default unidadeControlersGet;
+export default UnidadeControlersGet;

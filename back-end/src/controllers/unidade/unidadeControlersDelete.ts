@@ -3,12 +3,12 @@ import { prismaClient } from "../../data/prismaClient";
 
 
 
-class unidadeControlersDelete{
-  static allUnidades(req: Request, res: Response) {
+class UnidadeControlersDelete{
+  static allUnidades(_req: Request, res: Response) {
     res.status(200).json({ message: "!" });
   }
-  static async deleteUnidades(req: Request, res: Response) {
-    const id = parseInt(req.params.id);
+  static async deleteUnidades(_req: Request, res: Response) {
+    const id = parseInt(_req.params.id);
     const deleteUnidade = await prismaClient.unidade.findUnique( {
       where: {
         id,
@@ -27,4 +27,4 @@ class unidadeControlersDelete{
   }
 }
 
-export default unidadeControlersDelete;
+export default UnidadeControlersDelete;

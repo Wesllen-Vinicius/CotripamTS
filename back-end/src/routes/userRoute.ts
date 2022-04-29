@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-import userControlers from '../controllers/user/post'
-import userControlersGet from '../controllers/user/get'
-import userControlersDelete from '../controllers/user/delete'
-import userControlersAuth from '../controllers/user/auth'
+import userControlers from '../controllers/user/userControlersPost'
+import userControlersGet from '../controllers/user/userControlersGet'
+import userControlersDelete from '../controllers/user/userControlersDelete'
+import userControlersAuth from '../controllers/user/userControlersAuth'
 
 router.get('/', userControlersGet.getUsers);
 router.get('/:id', userControlersGet.getUsersById);
