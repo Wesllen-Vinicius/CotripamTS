@@ -3,7 +3,7 @@ import { prismaClient } from "../../data/prismaClient";
 
 
 
-class serosaControlersPost {
+class SerosaControlersPost {
   static allSerosa(_req: Request, res: Response) {
     res.status(200).json({ message: "!" });
   }
@@ -80,4 +80,4 @@ class serosaControlersPost {
   }
 }
 
-export default serosaControlersPost;
+export default SerosaControlersPost;
