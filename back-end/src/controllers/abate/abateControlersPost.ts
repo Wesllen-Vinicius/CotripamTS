@@ -2,9 +2,6 @@ import { Request, Response } from "express"
 import { prismaClient } from "../../data/prismaClient"
 
 class AbateControlersPost {
-  static allAbates(_req: Request, res: Response) {
-    res.status(200).json({ message: "!" })
-  }
   static async postAbates(_req: Request, res: Response) {
     const { id, createdAt, modifiAt, abate, bois, vacas, total, condenados } =
       _req.body
