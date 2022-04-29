@@ -1,8 +1,7 @@
-import { useState, useContext } from "react";
-import styled from "styled-components";
+import { useState, useContext } from "react"
+import styled from "styled-components"
 
-import AuthContext from "../../AuthProvider/userAuth";
-
+import AuthContext from "../../AuthProvider/userAuth"
 
 const CardWrapper = styled.div`
   overflow: hidden;
@@ -15,23 +14,22 @@ const CardWrapper = styled.div`
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-
-`;
+`
 
 const CardHeader = styled.header`
   padding-top: 32px;
   padding-bottom: 32px;
-`;
+`
 
 const CardHeading = styled.h1`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-`;
+`
 const CardBody = styled.div`
   padding-right: 32px;
   padding-left: 32px;
-`;
+`
 
 const CardFieldset = styled.fieldset`
   position: relative;
@@ -50,7 +48,7 @@ const CardFieldset = styled.fieldset`
   &:last-of-type {
     text-align: center;
   }
-`;
+`
 const CardInput = styled.input`
   padding: 7px 0;
   width: 100%;
@@ -66,7 +64,7 @@ const CardInput = styled.input`
     border-bottom-color: #e5195f;
     outline: 0;
   }
-`;
+`
 
 const CardIcon = styled.span`
   color: #666;
@@ -77,7 +75,7 @@ const CardIcon = styled.span`
   &:hover {
     opacity: 0.95;
   }
-`;
+`
 
 const CardOptionsNote = styled.small`
   padding-top: 8px;
@@ -86,7 +84,7 @@ const CardOptionsNote = styled.small`
   font-size: 12px;
   text-align: center;
   text-transform: uppercase;
-`;
+`
 
 const CardOptions = styled.ul`
   padding: 0;
@@ -98,13 +96,13 @@ const CardOptions = styled.ul`
   justify-content: center;
   width: 100%;
   list-style-type: none;
-`;
+`
 
 const CardOptionsItem = styled.li`
   &:nth-of-type(n + 2) {
     margin-left: 16px;
   }
-`;
+`
 
 const CardButton = styled.button`
   display: block;
@@ -125,7 +123,7 @@ const CardButton = styled.button`
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
   }
-`;
+`
 
 const CardLink = styled.a`
   display: inline-block;
@@ -139,16 +137,15 @@ const CardLink = styled.a`
   &:hover {
     color: #777;
   }
-`;
+`
 
 export default function Login() {
-  const { signIn } = useContext(AuthContext);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { signIn } = useContext(AuthContext)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
   async function SignIn() {
-    await signIn({ email, password });
-    
+    await signIn({ email, password })
   }
 
   return (
@@ -204,12 +201,11 @@ export default function Login() {
             <CardButton onClick={SignIn} type="button">
               Logar
             </CardButton>
-            
           </CardFieldset>
 
           <CardFieldset></CardFieldset>
         </CardBody>
       </CardWrapper>
     </>
-  );
+  )
 }

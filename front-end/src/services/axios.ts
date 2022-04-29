@@ -1,14 +1,13 @@
-import axios from "axios";
+import axios from "axios"
 
 export function getAPIClient(ctx?: any) {
-
   const api = axios.create({
-    baseURL: 'http://localhost:4500'
+    baseURL: "http://localhost:4500",
   })
 
-  api.interceptors.request.use(config => {
-    return config;
+  api.interceptors.request.use((config) => {
+    return config
   })
 
-  return api;
+  return api
 }

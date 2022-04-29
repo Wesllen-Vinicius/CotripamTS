@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import AuthContext from "../../AuthProvider/userAuth";
+import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
+import styled from "styled-components"
+import AuthContext from "../../AuthProvider/userAuth"
 
 const Button = styled.button`
   max-width: 100%;
@@ -20,13 +20,13 @@ const Button = styled.button`
   :hover {
     background: rgb(200, 50, 70);
   }
-`;
+`
 
 export default function Dashboard() {
-  const { Logout } = useContext(AuthContext);
+  const { Logout } = useContext(AuthContext)
 
   function handleLogout() {
-    Logout();
+    Logout()
   }
 
   return (
@@ -35,7 +35,5 @@ export default function Dashboard() {
       <Button onClick={handleLogout}>Deslogar</Button>
       <header className="App-header"></header>
     </div>
-  );
+  )
 }
-
-

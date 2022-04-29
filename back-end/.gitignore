@@ -1,6 +1,0 @@
-node_modules
-pg-data-13
-./pg-data-13
-.pg-data-13
-# Keep environment variables out of version control
-

@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import styled from "styled-components";
-import AuthContext from "../../AuthProvider/userAuth";
-import CardPerfilUsuario from "../../components/card/card-perfil-usuario";
-import FormSerosa from "../../components/form/form-serosa";
-import NavbarEnc from "../../components/navBar/navbarEnc";
-import { TabNavigationEnc } from "../../components/tabNavigation/tabNavigationEnc";
+import { useContext } from "react"
+import styled from "styled-components"
+import AuthContext from "../../AuthProvider/userAuth"
+import CardPerfilUsuario from "../../components/card/card-perfil-usuario"
+import FormSerosa from "../../components/form/form-serosa"
+import NavbarEnc from "../../components/navBar/navbarEnc"
+import { TabNavigationEnc } from "../../components/tabNavigation/tabNavigationEnc"
 
 const size = {
   mobileS: "320px",
@@ -14,7 +14,7 @@ const size = {
   laptop: "1024px",
   laptopL: "1440px",
   desktop: "2560px",
-};
+}
 
 const device = {
   mobileS: `(min-width: ${size.mobileS})`,
@@ -25,7 +25,7 @@ const device = {
   laptopL: `(min-width: ${size.laptopL})`,
   desktop: `(min-width: ${size.desktop})`,
   desktopL: `(min-width: ${size.desktop})`,
-};
+}
 
 const EnDiv = styled.div`
   display: grid;
@@ -40,7 +40,7 @@ const EnDiv = styled.div`
     display: flex;
     justify-content: center;
   }
-`;
+`
 
 const EncHeader = styled.header`
   grid-area: header;
@@ -51,17 +51,17 @@ const EncHeader = styled.header`
   padding: 26px 20px;
   position: fixed;
   width: 98%;
-`;
+`
 
 const EncAside = styled.div`
   grid-area: aside;
   padding: 1rem;
   align-items: center;
-`;
+`
 
 const EncContent = styled.section`
   grid-area: main;
-`;
+`
 
 export default function Encarregados() {
   return (
@@ -73,8 +73,8 @@ export default function Encarregados() {
         <CardPerfilUsuario />
       </EncAside>
       <EncContent>
-        <TabNavigationEnc/>
+        <TabNavigationEnc />
       </EncContent>
     </EnDiv>
-  );
+  )
 }

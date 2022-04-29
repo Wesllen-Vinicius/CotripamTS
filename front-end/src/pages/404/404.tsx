@@ -1,21 +1,21 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const Title = styled.h2`
   font-weight: normal;
   color: #2a2a29;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
-`;
+`
 
 const Content404 = styled.div`
   display: flex;
   align-items: center;
-`;
+`
 
 const MenuLink = styled.a`
   text-decoration: none;
   margin-right: 1em;
   color: white;
-`;
+`
 
 const Button = styled.button`
   max-width: 100%;
@@ -34,7 +34,7 @@ const Button = styled.button`
   :hover {
     background: rgb(200, 50, 70);
   }
-`;
+`
 
 function NotFoundPage() {
   return (
@@ -44,6 +44,6 @@ function NotFoundPage() {
         <MenuLink href="/">Go to Home</MenuLink>
       </Button>
     </Content404>
-  );
+  )
 }
-export default NotFoundPage;
+export default NotFoundPage

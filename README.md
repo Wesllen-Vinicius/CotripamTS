@@ -60,7 +60,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-
 <h1>INFRAESTRUTURA DE BACK-END COM DOCKER + PRISMA + POSTGRES + NODEJS</h1>
 ## Features
 
@@ -69,7 +68,6 @@ This repository is 🔋 battery packed with:
 - ⚡️ Docker
 - ⚛️ Prisma
 - ✨ TypeScript
-
 
 ### . Install dependencies
 
@@ -87,9 +85,11 @@ ATENÇÃO: O comando deve ser executado somente na pasta do docker, para que ele
 ```bash
 docker-compose up
 ```
+
 Depois de executar o comando, com a erversão do postgres que voce escolheu baixar, abra o docker e comfirme se está tudo ok.
 
 ### 3. Executando o Prisma.
+
 ATENÇÃO: execute o comando apos ter criado suas models para que seja possivel o prisma criar suas tabelas no database.
 
 ```bash
@@ -98,7 +98,7 @@ npx prisma migrate dev --name init
 
 ### 4. Use sua IDE de conexão de sua escolha para verficiar se as tables foram criadas.
 
-DICAS: 
+DICAS:
 Beekeper IDE
 Data-Grip IDE
 Etc...

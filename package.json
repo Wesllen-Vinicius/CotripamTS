@@ -1,0 +1,8 @@
+{
+  "name": "cotripam",
+  "version": "1.0.0",
+  "description": "sistema de controle de produção de subproduto hospitalar",
+  "scripts": {
+    "start": "prettier --write ."
+  }
+}

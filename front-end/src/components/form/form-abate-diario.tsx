@@ -1,5 +1,5 @@
-import { useState } from "react";
-import styled, { css } from "styled-components";
+import { useState } from "react"
+import styled, { css } from "styled-components"
 
 const sharedStyles = css`
   background-color: #eee;
@@ -9,14 +9,14 @@ const sharedStyles = css`
   margin: 10px 0 20px 0;
   padding: 20px;
   box-sizing: border-box;
-`;
+`
 
 const StyledFormWrapper = styled.div`
   display: flex;
   padding: 0 20px;
   padding-top: 10px;
   flex-direction: column;
-`;
+`
 
 const StyledForm = styled.form`
   width: 100%;
@@ -26,13 +26,13 @@ const StyledForm = styled.form`
   border-radius: 10px;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-`;
+`
 
 const StyledInput = styled.input`
   display: flex;
   width: 100px;
   ${sharedStyles}
-`;
+`
 
 const StyledTextArea = styled.textarea`
   background-color: #eee;
@@ -40,7 +40,7 @@ const StyledTextArea = styled.textarea`
   min-height: 100px;
   resize: none;
   ${sharedStyles}
-`;
+`
 
 const StyledButton = styled.button`
   display: block;
@@ -61,7 +61,7 @@ const StyledButton = styled.button`
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
   }
-`;
+`
 
 const initalState = {
   630: "",
@@ -69,18 +69,18 @@ const initalState = {
   470: "",
   320: "",
   170: "",
-};
+}
 
 export default function FormAbate() {
-  const [state, setState] = useState(initalState);
+  const [state, setState] = useState(initalState)
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    console.log("submitted!");
-    console.log(state);
+    e.preventDefault()
+    console.log("submitted!")
+    console.log(state)
 
-    console.log("Succeeded!!!");
-  };
+    console.log("Succeeded!!!")
+  }
 
   return (
     <div>
@@ -101,5 +101,5 @@ export default function FormAbate() {
         </StyledForm>
       </StyledFormWrapper>
     </div>
-  );
+  )
 }

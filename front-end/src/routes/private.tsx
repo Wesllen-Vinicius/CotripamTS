@@ -1,15 +1,15 @@
-import { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import AuthContext from "../AuthProvider/userAuth";
+import { useContext, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import AuthContext from "../AuthProvider/userAuth"
 
 export const ProtectedLayout = ({ children }: { children: JSX.Element }) => {
-  const auth = useContext(AuthContext);
-  const navigate = useNavigate();
+  const auth = useContext(AuthContext)
+  const navigate = useNavigate()
   useEffect(() => {
     if (!auth.user) {
-      navigate("/login");
+      navigate("/login")
     }
-  }, [auth.user, navigate]);
+  }, [auth.user, navigate])
 
-  return children;
-};
+  return children
+}
