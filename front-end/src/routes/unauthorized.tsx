@@ -6,7 +6,7 @@ export const PrivateLayout = ({ children }: { children: JSX.Element }) => {
   const { user } = useContext(AuthContext)
   const navigate = useNavigate()
   useEffect(() => {
-    if (user!.nivelAcesso) {
+    if (user?.nivelAcesso) {
       navigate("/encarregado")
     }
   }, [user, navigate])
