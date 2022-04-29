@@ -4,7 +4,6 @@ import tripaExportacaoControlersDelete from "../controllers/tripaExportacao/trip
 import tripaExportacaoControlersGet from "../controllers/tripaExportacao/tripaExportacaoControlersGet"
 import tripaExportacaoControlersPost from "../controllers/tripaExportacao/tripaExportacaoControlersPost"
 
-
 router.get("/", tripaExportacaoControlersGet.getTripaExportacao)
 router.get("/:id", tripaExportacaoControlersGet.getTripaExportacaoById)
 router.put("/:id")

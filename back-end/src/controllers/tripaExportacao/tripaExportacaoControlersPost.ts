@@ -11,7 +11,7 @@ class TripaExportacaoControlersPost {
       tripa_torta1c,
       tripa_torta2c,
       culatra,
-      fundo
+      fundo,
     } = _req.body
 
     if (!tripa_reta) {
@@ -60,7 +60,7 @@ class TripaExportacaoControlersPost {
         tripa_torta1c,
         tripa_torta2c,
         culatra,
-        fundo
+        fundo,
       },
     })
     res.status(201).json({
@@ -73,7 +73,7 @@ class TripaExportacaoControlersPost {
         tripa_torta1c,
         tripa_torta2c,
         culatra,
-        fundo
+        fundo,
       },
     })
   }
