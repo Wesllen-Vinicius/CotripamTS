@@ -1,9 +1,8 @@
 import cors from 'cors'
-import { PrismaClient } from '@prisma/client'
 import express from 'express'
-const userRoutes = require('./routes/user')
-const unidadeRoutes = require('./routes/unidade')
-const abateRoutes = require('./routes/abate') 
+const userRoutes = require('./routes/userRoute')
+const unidadeRoutes = require('./routes/unidadeRoute')
+const abateRoutes = require('./routes/abateRoute') 
 const app = express()
 app.use(cors({
   credentials:true, origin:"http://localhost:3000"
