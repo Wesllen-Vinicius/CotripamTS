@@ -20,6 +20,8 @@ model User {
   TripaCozida     TripaCozida[]
   TripaExportacao TripaExportacao[]
   Produto         Produto[]
+
+  @@map("users")
 }
 
 model Unidade {
@@ -35,6 +37,8 @@ model Unidade {
   TripaExportacao  TripaExportacao[]
   Produto          Produto[]
   Estoque          Estoque[]
+
+  @@map("unidades")
 }
 
 model Abate {
@@ -49,6 +53,8 @@ model Abate {
   userId       Int?
   unidadeAbate Unidade? @relation(fields: [id], references: [id])
   User         User?    @relation(fields: [userId], references: [id])
+  
+  @@map("abates")
 }
 
 model Serosa {
@@ -64,6 +70,8 @@ model Serosa {
   userId       Int?
   unidadeAbate Unidade? @relation(fields: [id], references: [id])
   User         User?    @relation(fields: [userId], references: [id])
+  
+  @@map("serosa")
 }
 
 model TripaCozida {
@@ -80,6 +88,8 @@ model TripaCozida {
   userId       Int?
   unidadeAbate Unidade? @relation(fields: [id], references: [id])
   User         User?    @relation(fields: [userId], references: [id])
+
+  @@map("tripaCozida")
 }
 
 model TripaExportacao {
@@ -94,6 +104,8 @@ model TripaExportacao {
   userId        Int?
   unidadeAbate  Unidade? @relation(fields: [id], references: [id])
   User          User?    @relation(fields: [userId], references: [id])
+
+  @@map("tripaExportacao")
 }
 
 model Produto {
@@ -108,6 +120,8 @@ model Produto {
   userId         Int?
   unidadeAbate   Unidade? @relation(fields: [id], references: [id])
   User           User?    @relation(fields: [userId], references: [id])
+
+  @@map("prodQuimicos")
 }
 
 model Item {
@@ -118,6 +132,8 @@ model Item {
   descricao String   @db.VarChar(255)
   Estoque   Estoque? @relation(fields: [estoqueId], references: [id])
   estoqueId Int?
+
+  @@map("itens")
 }
 
 model Estoque {
@@ -128,4 +144,6 @@ model Estoque {
   quant        Decimal
   unidadeAbate Unidade? @relation(fields: [id], references: [id])
   item         Item[]
+
+  @@map("estoque")
 }
