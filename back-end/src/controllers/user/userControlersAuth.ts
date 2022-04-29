@@ -34,7 +34,6 @@ class UserControlersAuth {
     const tokenUser = jwt.sign({ id: id }, process.env.SECRET as string);
     res.status(200).json({ user, tokenUser });
   }
-
 }
 
 export default UserControlersAuth;

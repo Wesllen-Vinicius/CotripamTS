@@ -17,11 +17,9 @@ class TripaCozidaControlersPost {
     } = _req.body;
 
     if (!mocoto) {
-      res
-        .status(422)
-        .json({
-          message: "Valor do 630 é obrigatorio para cadastro de Serosa!",
-        });
+      res.status(422).json({
+        message: "Valor do 630 é obrigatorio para cadastro de Serosa!",
+      });
       return;
     }
     if (!culatra) {
