@@ -4,7 +4,6 @@ import TripaCozidaControlersDelete from "../controllers/tripaCozida/tripaCozidaC
 import tripaCozidaControlersGet from "../controllers/tripaCozida/tripaCozidaControlersGet"
 import TripaCozidaControlersPost from "../controllers/tripaCozida/tripaCozidaControlersPost"
 
-
 router.get("/", tripaCozidaControlersGet.getTripaCozida)
 router.get("/:id", tripaCozidaControlersGet.getTripaCozidaById)
 router.put("/:id")
