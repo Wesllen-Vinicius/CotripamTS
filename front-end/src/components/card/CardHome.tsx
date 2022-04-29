@@ -11,14 +11,6 @@ const CardWrapper = styled.div`
   text-align: center;
 `
 
-const CardImage = styled.div<{ background: string }>`
-  grid-area: image;
-  background-image: url(${({ background }) => background});
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-size: cover;
-`
-
 const CardTextWrapper = styled.div`
   grid-area: text;
   margin: 25px;
@@ -60,10 +52,8 @@ const CardTextBody = styled.p`
 const CardStatWrapper = styled.div`
   grid-area: stats;
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr; */
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   background: #5930e5;

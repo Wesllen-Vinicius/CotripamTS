@@ -1,11 +1,9 @@
-import React from "react"
-import { render } from "react-dom"
 import styled from "styled-components"
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs"
-import FormSerosa from "../form/form-serosa"
-import FormAbate from "../form/form-abate-diario"
-import FormTripaCozida from "../form/form-tripa-cozida"
-import FormProdutos from "../form/form-produtos"
+import FormSerosa from "../form/FormSerosa"
+import FormAbate from "../form/FormAbate"
+import FormTripaCozida from "../form/FormTripaCozida"
+import FormProdutos from "../form/FormProduto"
 
 const STabs = styled(Tabs)`
   font-size: 12px;

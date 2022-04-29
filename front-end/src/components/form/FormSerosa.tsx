@@ -71,8 +71,8 @@ const initalState = {
   170: "",
 }
 
-export default function FormAbate() {
-  const [state, setState] = useState(initalState)
+export default function FormSerosa() {
+  const [state] = useState(initalState)
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault()
@@ -87,15 +87,15 @@ export default function FormAbate() {
       <StyledFormWrapper>
         <StyledForm onSubmit={handleSubmit}>
           <h2>Serosa</h2>
-          <label htmlFor="630">Abate</label>
+          <label htmlFor="630">630</label>
           <StyledInput type="number" name="630" value={state[630]} />
-          <label htmlFor="520">Bois Abatidos</label>
+          <label htmlFor="520">520</label>
           <StyledInput type="number" name="520" value={state[520]} />
-          <label htmlFor="470">Vacas Abatidas</label>
+          <label htmlFor="470">470</label>
           <StyledInput type="number" name="470" value={state[470]} />
-          <label htmlFor="320">Reaproveitados</label>
+          <label htmlFor="320">320</label>
           <StyledInput type="number" name="320" value={state[320]} />
-          <label htmlFor="170">Perdidos</label>
+          <label htmlFor="170">170</label>
           <StyledInput type="number" name="170" value={state[170]} />
           <StyledButton type="submit">Enviar</StyledButton>
         </StyledForm>

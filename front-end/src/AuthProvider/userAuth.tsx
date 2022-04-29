@@ -92,8 +92,4 @@ export const AuthProvider: React.FC = ({ children }) => {
     </AuthContext.Provider>
   )
 }
-
 export default AuthContext
-function err(err: any) {
-  throw new Error("Function not implemented.")
-}

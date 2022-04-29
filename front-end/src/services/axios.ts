@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export function getAPIClient(ctx?: any) {
+export function getAPIClient(_ctx?: any) {
   const api = axios.create({
     baseURL: "http://localhost:4500",
   })

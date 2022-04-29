@@ -33,7 +33,7 @@ class UnidadeControlersPost {
       res.status(422).json({ message: "Unidade já cadastratado" })
       return
     }
-    const Unidade = await prismaClient.unidade.create({
+    await prismaClient.unidade.create({
       data: {
         id,
         nome,

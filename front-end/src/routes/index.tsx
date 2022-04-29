@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import NotFoundPage from "../pages/404/404"
+import NotFoundPage from "../pages/404/NotFoundPage"
 import Relatorios from "../pages/Admin/relatorios"
 import Dashboard from "../pages/Dashboard"
 import Encarregados from "../pages/Encarregado"

@@ -71,8 +71,8 @@ const initalState = {
   170: "",
 }
 
-export default function FormTripaCozida() {
-  const [state, setState] = useState(initalState)
+export default function FormProdutos() {
+  const [state] = useState(initalState)
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault()
@@ -87,14 +87,16 @@ export default function FormTripaCozida() {
       <StyledFormWrapper>
         <StyledForm onSubmit={handleSubmit}>
           <h2>Serosa</h2>
-          <label htmlFor="630">Tripa Grossa</label>
+          <label htmlFor="630">Sal Grosso</label>
           <StyledInput type="number" name="630" value={state[630]} />
-          <label htmlFor="520">Tripa Fina</label>
+          <label htmlFor="520">Sal Fino</label>
           <StyledInput type="number" name="520" value={state[520]} />
-          <label htmlFor="470">Culatra</label>
+          <label htmlFor="470">Perox</label>
           <StyledInput type="number" name="470" value={state[470]} />
-          <label htmlFor="320">Abomaso</label>
+          <label htmlFor="320">Bombonas</label>
           <StyledInput type="number" name="320" value={state[320]} />
+          <label htmlFor="170">Facas</label>
+          <StyledInput type="number" name="170" value={state[170]} />
           <StyledButton type="submit">Enviar</StyledButton>
         </StyledForm>
       </StyledFormWrapper>

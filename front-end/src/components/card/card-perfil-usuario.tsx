@@ -1,4 +1,3 @@
-import React, { useState } from "react"
 import styled, { css } from "styled-components"
 
 const sharedStyles = css`
@@ -33,45 +32,7 @@ const StyledLabel = styled.label`
   ${sharedStyles}
 `
 
-const StyledTextArea = styled.textarea`
-  background-color: #eee;
-  width: 100%;
-  min-height: 100px;
-  resize: none;
-  ${sharedStyles}
-`
-
-const StyledFieldset = styled.fieldset`
-  border: 1px solid #ddd;
-  margin: 20px 0;
-  legend {
-    padding: 0 10px;
-  }
-  label {
-    padding-right: 20px;
-  }
-  input {
-    margin-right: 10px;
-  }
-`
-
-const StyledError = styled.div`
-  color: red;
-  font-weight: 800;
-  margin: 0 0 40px 0;
-`
-
 export default function CardPerfilUsuario() {
-  const [state, setState] = useState()
-  const [error, setError] = useState("")
-
-  const handleInput = (e: { currentTarget: { name: any; value: any } }) => {
-    const inputName = e.currentTarget.name
-    const value = e.currentTarget.value
-
-    setState((prev: any) => ({ ...prev, [inputName]: value }))
-  }
-
   return (
     <div>
       <StyledFormWrapper>
@@ -82,12 +43,6 @@ export default function CardPerfilUsuario() {
           <label htmlFor="email">Comarca</label>
           <StyledLabel />
           <label htmlFor="message">Função</label>
-          <StyledLabel />
-          {error && (
-            <StyledError>
-              <p>{error}</p>
-            </StyledError>
-          )}
         </StyledForm>
       </StyledFormWrapper>
     </div>

@@ -26,7 +26,7 @@ class UserControlersPost {
     }
     const salt = await bcrypt.genSalt(12)
     const passwordHash = await bcrypt.hash(password, salt)
-    const user = await prismaClient.user.create({
+    await prismaClient.user.create({
       data: {
         id,
         nome,

@@ -1,8 +1,5 @@
-import { useContext } from "react"
 import styled from "styled-components"
-import AuthContext from "../../AuthProvider/userAuth"
 import CardPerfilUsuario from "../../components/card/card-perfil-usuario"
-import FormSerosa from "../../components/form/form-serosa"
 import NavbarEnc from "../../components/navBar/navbarEnc"
 import { TabNavigationEnc } from "../../components/tabNavigation/tabNavigationEnc"
 
