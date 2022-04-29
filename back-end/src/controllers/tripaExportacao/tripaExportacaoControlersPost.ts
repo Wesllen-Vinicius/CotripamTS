@@ -1,24 +1,22 @@
 import { Request, Response } from "express"
 import { prismaClient } from "../../data/prismaClient"
 
-class TripaCozidaControlersPost {
-  static async postTripaCozida(_req: Request, res: Response) {
+class TripaExportacaoControlersPost {
+  static async postTripaExportacao(_req: Request, res: Response) {
     const {
       id,
       createdAt,
       modifiAt,
-      mocoto,
+      tripa_reta,
+      tripa_torta1c,
+      tripa_torta2c,
       culatra,
-      abomaso,
-      fundo,
-      tripa_grossa,
-      tripa_fina,
-      total,
+      fundo
     } = _req.body
 
-    if (!mocoto) {
+    if (!tripa_reta) {
       res.status(422).json({
-        message: "Mocoto é obrigatorio para cadastro de Serosa!",
+        message: "Tripa Reta é obrigatorio para cadastro de Serosa!",
       })
       return
     }
@@ -28,9 +26,9 @@ class TripaCozidaControlersPost {
       })
       return
     }
-    if (!abomaso) {
+    if (!tripa_torta1c) {
       res.status(422).json({
-        message: "Abomaso é obrigatorio para cadastro de Serosa!",
+        message: "Tripa torta 1c é obrigatorio para cadastro de Serosa!",
       })
       return
     }
@@ -40,55 +38,45 @@ class TripaCozidaControlersPost {
       })
       return
     }
-    if (!tripa_fina) {
+    if (!tripa_torta2c) {
       res.status(422).json({
-        message: "Tripa Fina é obrigatorio para cadastro de Serosa!",
+        message: "Tripa torta 2c é obrigatorio para cadastro de Serosa!",
       })
       return
     }
-    if (!tripa_grossa) {
-      res.status(422).json({
-        message: "Tripa Grossa é obrigatorio para cadastro de Serosa!",
-      })
-      return
-    }
-    const ExistTripaCozida = await prismaClient.tripaCozida.findUnique({
+    const ExistTripaExportacao = await prismaClient.tripaExportacao.findUnique({
       where: { id },
     })
-    if (ExistTripaCozida) {
+    if (ExistTripaExportacao) {
       res.status(422).json({ message: "Tripa Cozida já cadastratado" })
       return
     }
-    await prismaClient.tripaCozida.create({
+    await prismaClient.tripaExportacao.create({
       data: {
         id,
         createdAt,
         modifiAt,
-        mocoto,
+        tripa_reta,
+        tripa_torta1c,
+        tripa_torta2c,
         culatra,
-        abomaso,
-        fundo,
-        tripa_grossa,
-        tripa_fina,
-        total,
+        fundo
       },
     })
     res.status(201).json({
-      message: "Tripa Cozida cadastrada com sucesso",
+      message: "Tripa Exportacao cadastrada com sucesso",
       data: {
         id,
         createdAt,
         modifiAt,
-        mocoto,
+        tripa_reta,
+        tripa_torta1c,
+        tripa_torta2c,
         culatra,
-        abomaso,
-        fundo,
-        tripa_grossa,
-        tripa_fina,
-        total,
+        fundo
       },
     })
   }
 }
 
-export default TripaCozidaControlersPost
+export default TripaExportacaoControlersPost
