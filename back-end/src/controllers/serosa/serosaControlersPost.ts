@@ -4,11 +4,11 @@ import { prismaClient } from "../../data/prismaClient";
 
 
 class serosaControlersPost {
-  static allSerosa(req: Request, res: Response) {
+  static allSerosa(_req: Request, res: Response) {
     res.status(200).json({ message: "!" });
   }
-  static async postSerosa(req: Request, res: Response) {
-    const { id, createdAt, modifiAt, corte_630,  corte_470, corte_320, corte_170, km_total, media} = req.body;
+  static async postSerosa(_req: Request, res: Response) {
+    const { id, createdAt, modifiAt, corte_630,  corte_470, corte_320, corte_170, km_total, media} = _req.body;
 
     if (!corte_630) {
       res
@@ -48,7 +48,7 @@ class serosaControlersPost {
       res.status(422).json({ message: "Serosa já cadastratado" });
       return;
     }
-    const Serosa = await prismaClient.serosa.create({
+    await prismaClient.serosa.create({
       data: {
         id,
         createdAt,

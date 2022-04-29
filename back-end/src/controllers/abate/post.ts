@@ -40,7 +40,7 @@ class abateControlersPost {
       res.status(422).json({ message: "Abate já cadastratado" });
       return;
     }
-    const Abate = await prismaClient.abate.create({
+    await prismaClient.abate.create({
       data: {
         id,
         createdAt,
