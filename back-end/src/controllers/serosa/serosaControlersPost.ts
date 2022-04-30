@@ -2,10 +2,8 @@ import { Request, Response } from "express"
 import { prismaClient } from "../../data/prismaClient"
 
 class SerosaControlersPost {
-  static allSerosa(_req: Request, res: Response) {
-    res.status(200).json({ message: "!" })
-  }
   static async postSerosa(_req: Request, res: Response) {
+    try {
     const {
       id,
       createdAt,
@@ -76,7 +74,13 @@ class SerosaControlersPost {
         media,
       },
     })
+  }catch  (e) {
+    console.error(e)
+    res.status(500).json({
+      error: 'Server error!',
+    })
   }
+}
 }
 
 export default SerosaControlersPost

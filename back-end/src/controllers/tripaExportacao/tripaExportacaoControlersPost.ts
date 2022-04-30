@@ -3,6 +3,7 @@ import { prismaClient } from "../../data/prismaClient"
 
 class TripaExportacaoControlersPost {
   static async postTripaExportacao(_req: Request, res: Response) {
+    try{
     const {
       id,
       createdAt,
@@ -76,7 +77,13 @@ class TripaExportacaoControlersPost {
         fundo,
       },
     })
+  }catch  (e) {
+    console.error(e)
+    res.status(500).json({
+      error: 'Server error!',
+    })
   }
+}
 }
 
 export default TripaExportacaoControlersPost

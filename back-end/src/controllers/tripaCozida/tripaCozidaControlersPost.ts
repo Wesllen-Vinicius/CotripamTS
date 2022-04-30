@@ -3,6 +3,7 @@ import { prismaClient } from "../../data/prismaClient"
 
 class TripaCozidaControlersPost {
   static async postTripaCozida(_req: Request, res: Response) {
+    try{
     const {
       id,
       createdAt,
@@ -88,7 +89,13 @@ class TripaCozidaControlersPost {
         total,
       },
     })
+  }catch  (e) {
+    console.error(e)
+    res.status(500).json({
+      error: 'Server error!',
+    })
   }
+}
 }
 
 export default TripaCozidaControlersPost

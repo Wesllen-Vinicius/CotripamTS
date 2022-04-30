@@ -3,6 +3,7 @@ import { prismaClient } from "../../data/prismaClient"
 
 class AbateControlersPost {
   static async postAbates(_req: Request, res: Response) {
+    try{
     const { id, createdAt, modifiAt, abate, bois, vacas, total, condenados } =
       _req.body
 
@@ -56,7 +57,13 @@ class AbateControlersPost {
         condenados,
       },
     })
+  } catch  (e) {
+    console.error(e)
+    res.status(500).json({
+      error: 'Server error!',
+    })
   }
+}
 }
 
 export default AbateControlersPost

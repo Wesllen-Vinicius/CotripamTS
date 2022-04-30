@@ -4,10 +4,8 @@ import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 
 class UserControlersAuth {
-  static async allUsers(_req: Request, res: Response) {
-    res.status(200).json({ message: "!" })
-  }
   static async authUsers(_req: Request, res: Response) {
+    try{
     const { id, email, password } = _req.body
     if (!email) {
       res.status(422).json({ message: "Preenchimento do email é obrigatorio!" })
@@ -29,7 +27,13 @@ class UserControlersAuth {
     }
     const tokenUser = jwt.sign({ id: id }, process.env.SECRET as string)
     res.status(200).json({ user, tokenUser })
+  }catch  (e) {
+    console.error(e)
+    res.status(500).json({
+      error: 'Server error!',
+    })
   }
+}
 }
 
 export default UserControlersAuth

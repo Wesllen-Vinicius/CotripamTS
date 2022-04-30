@@ -2,10 +2,8 @@ import { Request, Response } from "express"
 import { prismaClient } from "../../data/prismaClient"
 
 class UserControlersDelete {
-  static async allUsers(_req: Request, res: Response) {
-    res.status(200).json({ message: "!" })
-  }
   static async deleteUser(_req: Request, res: Response) {
+    try{
     const id = parseInt(_req.params.id)
     const deleteUser = await prismaClient.user.findUnique({
       where: {
@@ -22,7 +20,13 @@ class UserControlersDelete {
       },
     })
     return res.status(200).json({ message: "Deletado" })
+  }catch (e) {
+    console.error(e)
+    res.status(500).json({
+      error: 'Server error!',
+    })
   }
+}
 }
 
 export default UserControlersDelete
