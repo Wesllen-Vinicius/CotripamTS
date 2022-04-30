@@ -3,8 +3,8 @@
   <p>Versão 0.1.0</p>
 </div>
 <h1>-Tecnologias Usadas Nesse Projeto</h1><br>
+<img align="center" alt="Wes-sonarStatus" height=auto width=auto src="https://sonarcloud.io/api/project_badges/quality_gate?project=Wesllen-Vinicius_CotripamTS">
 <div style="display:inline_block">
-<img align="center" alt="Wes-sonarStatus" height=auto width=auto src="https://sonarcloud.io/api/project_badges/quality_gate?project=Wesllen-Vinicius_CotripamTS"> -
 <img align="center" alt="Wes-archLinux" height=auto width=auto src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white"> -
 <img align="center" alt="Wes-html" height=auto width=auto src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"> -
 <img align="center" alt="Wes-node" height=auto width=auto src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"> -
@@ -18,14 +18,15 @@
 <img align="center" alt="Wes-prettier" height=auto width=auto src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E"> -
 <img align="center" alt="Wes-prismaOrm" height=auto width=auto src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white"> -
 <img align="center" alt="Wes-Snyk" height=auto width=auto src="https://img.shields.io/badge/Snyk-4C4A73?style=for-the-badge&logo=snyk&logoColor=white"> -
-<img align="center" alt="Wes-git" height=auto width=auto src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white">-
-<img align="center" alt="Wes-Docker" height="60" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg">
+<img align="center" alt="Wes-git" height=auto width=auto src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"> -
+<img align="center" alt="Wes-Docker" height="60" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"> -
+<img align="center" alt="Wes-insominia" height=auto width=auto src="https://img.shields.io/badge/Insomnia-black?style=for-the-badge&logo=insomnia&logoColor=5849BE"> -
+<img align="center" alt="Wes-yarn" height=auto width=auto src="https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white"> -
+<img align="center" alt="Wes-vercel" height=auto width=auto src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"> -
+<img align="center" alt="Wes-typescript" height=auto width=auto src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"> -
+<img align="center" alt="Wes-cypress" height=auto width=auto src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e"> -
 </div>
-<p>BEEKEEPER STUDIO</p>
-<p>INSOMNIA</p>
-
 <h1>INFRAESTRUTURA DE FRONT-END COM REACT + TYPESCRIPT</h1>
-
 
 
 
@@ -77,10 +78,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 <h1>INFRAESTRUTURA DE BACK-END COM DOCKER + PRISMA + POSTGRES + NODEJS</h1>
-## Features
-
-This repository is 🔋 battery packed with:
-
 ### . Install dependencies
 
 Use o npm para instakar todas as dependencies.
@@ -107,10 +104,3 @@ ATENÇÃO: execute o comando apos ter criado suas models para que seja possivel 
 ```bash
 npx prisma migrate dev --name init
 ```
-
-### 4. Use sua IDE de conexão de sua escolha para verficiar se as tables foram criadas.
-
-DICAS:
-Beekeper IDE
-Data-Grip IDE
-Etc...
