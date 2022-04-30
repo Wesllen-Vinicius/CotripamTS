@@ -14,7 +14,7 @@
 <img align="center" alt="Wes-postgres" height=auto width=auto src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"> 
 -
 <img align="center" alt="Wes-heroku" height=auto width=auto src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"> -
-<img align="center" alt="Wes-vscode" height="40" width=auto src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"> -
+<img align="center" alt="Wes-vscode" height=auto width=auto src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"> -
 <img align="center" alt="Wes-prettier" height=auto width=auto src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E"> -
 <img align="center" alt="Wes-prismaOrm" height=auto width=auto src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white"> -
 <img align="center" alt="Wes-Snyk" height=auto width=auto src="https://img.shields.io/badge/Snyk-4C4A73?style=for-the-badge&logo=snyk&logoColor=white"> -
