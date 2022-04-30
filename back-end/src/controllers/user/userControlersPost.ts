@@ -4,13 +4,9 @@ import { prismaClient } from "../../data/prismaClient"
 import bcrypt from "bcrypt"
 
 class UserControlersPost {
-  static async allUsers(_req: Request, res: Response) {
-    res.status(200).json({ message: "!" })
-  }
-  //CADASTRO E CRIAÇÃO DE TOKEN
   static async postUsers(_req: Request, res: Response) {
+    try{
     const { id, nome, email, password, nivelAcesso } = _req.body
-
     if (!email) {
       res
         .status(422)
@@ -37,7 +33,13 @@ class UserControlersPost {
     })
     const tokenUser = jwt.sign({ id: id }, process.env.SECRET as string)
     res.status(201).json({ id, nome, email, nivelAcesso, tokenUser })
+  }catch  (e) {
+    console.error(e)
+    res.status(500).json({
+      error: 'Server error!',
+    })
   }
+}
 }
 
 export default UserControlersPost

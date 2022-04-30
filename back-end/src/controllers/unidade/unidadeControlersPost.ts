@@ -2,10 +2,8 @@ import { Request, Response } from "express"
 import { prismaClient } from "../../data/prismaClient"
 
 class UnidadeControlersPost {
-  static allUnidades(_req: Request, res: Response) {
-    res.status(200).json({ message: "!" })
-  }
   static async postUnidades(_req: Request, res: Response) {
+    try{
     const { id, nome, createdAt, meta_tripaCozida, meta_serosa } = _req.body
 
     if (!nome) {
@@ -50,6 +48,12 @@ class UnidadeControlersPost {
       meta_tripaCozida,
       meta_serosa,
     })
+  } catch (e) {
+    console.error(e)
+    res.status(500).json({
+      error: 'Server error!',
+    })
+  }
   }
 }
 
