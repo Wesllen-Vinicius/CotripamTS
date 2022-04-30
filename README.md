@@ -10,9 +10,8 @@
 <p>POSTGRES</p>
 <p>INSOMNIA</p>
 <h1>INFRAESTRUTURA DE FRONT-END COM REACT + TYPESCRIPT</h1>
-- ⚛️ REACT
-- ✨TYPESCRIPT
-- ⚡️ YARN OR NPM
+- [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Wesllen-Vinicius_CotripamTS&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Wesllen-Vinicius_CotripamTS)
+- [![visual_studio_code](./src/visual_studio_code.svg)](https://badges.aleen42.com/src/visual_studio_code.svg)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
