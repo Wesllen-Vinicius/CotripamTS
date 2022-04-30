@@ -81,10 +81,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 This repository is 🔋 battery packed with:
 
-- ⚡️ Docker
-- ⚛️ Prisma
-- ✨ TypeScript
-
 ### . Install dependencies
 
 Use o npm para instakar todas as dependencies.
