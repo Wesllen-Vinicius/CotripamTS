@@ -27,9 +27,6 @@
 <img align="center" alt="Wes-cypress" height=auto width=auto src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e">
 </div>
 <h1>INFRAESTRUTURA DE FRONT-END COM REACT + TYPESCRIPT</h1>
-
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
