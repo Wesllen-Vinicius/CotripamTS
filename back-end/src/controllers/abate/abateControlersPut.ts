@@ -1,18 +1,17 @@
 import { Request, Response } from "express"
 import { prismaClient } from "../../data/prismaClient"
 
-class AbateControlersPut {
+class abateControlersPut {
   static async updateAbates(_req: Request, res: Response) {
     try {
-      const { id, abate, bois, vacas, condenados} =
-        _req.params
+      const { id, abate, bois, vacas, condenados } = _req.params
       const postData = await prismaClient.abate.findUnique({
         where: { id: Number(id) },
         select: {
           abate,
           bois,
           vacas,
-          condenados
+          condenados,
         },
       })
       const updatedAbates = await prismaClient.abate.update({
@@ -21,7 +20,7 @@ class AbateControlersPut {
           abate,
           bois,
           vacas,
-          condenados
+          condenados,
         },
       })
       res.json(updatedAbates)
@@ -33,4 +32,4 @@ class AbateControlersPut {
     }
   }
 }
-export default AbateControlersPut
+export default abateControlersPut

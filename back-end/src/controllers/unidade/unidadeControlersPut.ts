@@ -4,14 +4,13 @@ import { prismaClient } from "../../data/prismaClient"
 class UnidadeControlersPut {
   static async updateUnidades(_req: Request, res: Response) {
     try {
-      const { id, nome, meta_tripaCozida, meta_serosa} =
-        _req.params
+      const { id, nome, meta_tripaCozida, meta_serosa } = _req.params
       const postData = await prismaClient.unidade.findUnique({
         where: { id: Number(id) },
         select: {
           nome,
           meta_tripaCozida,
-          meta_serosa
+          meta_serosa,
         },
       })
       const updatedUnidades = await prismaClient.unidade.update({
@@ -19,7 +18,7 @@ class UnidadeControlersPut {
         select: {
           nome,
           meta_tripaCozida,
-          meta_serosa
+          meta_serosa,
         },
       })
       res.json(updatedUnidades)

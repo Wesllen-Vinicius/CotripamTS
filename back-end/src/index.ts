@@ -6,6 +6,7 @@ const abateRoutes = require("./routes/abateRoute")
 const serosaRoutes = require("./routes/serosaRoute")
 const tripaCozidaRoutes = require("./routes/tripaCozidaRoute")
 const tripaExportacaoRoutes = require("./routes/tripaExportacaoRoute")
+const itemRoutes = require("./routes/itemRoute")
 export const app = express()
 let helmet = require("helmet")
 app.use(helmet.hidePoweredBy())
@@ -16,7 +17,9 @@ app.use(
     origin: "http://localhost:3000",
   })
 )
+
 app.use(express.json())
+app.use("/item", itemRoutes)
 app.use("/users", userRoutes)
 app.use("/abates", abateRoutes)
 app.use("/serosa", serosaRoutes)

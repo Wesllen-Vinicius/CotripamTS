@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@prisma/client": "^3.13.0",
+    "@types/graceful-fs": "^4.1.5",
     "async": "^3.2.3",
     "body-parser": "^1.19.2",
     "dotenv": "^16.0.0",

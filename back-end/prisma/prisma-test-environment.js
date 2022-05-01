@@ -1,17 +1,17 @@
 // @ts-check
-const path = require('path')
-const fs = require('fs')
-const util = require('util')
-const NodeEnvironment = require('jest-environment-node')
-const { nanoid } = require('nanoid')
-const exec = util.promisify(require('child_process').exec)
+const path = require("path")
+const fs = require("fs")
+const util = require("util")
+const NodeEnvironment = require("jest-environment-node")
+const { nanoid } = require("nanoid")
+const exec = util.promisify(require("child_process").exec)
 
 const prismaBinary = path.join(
   __dirname,
-  '..',
-  'node_modules',
-  '.bin',
-  'prisma',
+  "..",
+  "node_modules",
+  ".bin",
+  "prisma"
 )
 
 class PrismaTestEnvironment extends NodeEnvironment {
