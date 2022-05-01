@@ -4,15 +4,14 @@ import { prismaClient } from "../../data/prismaClient"
 class SerosaControlersPut {
   static async updateSerosa(_req: Request, res: Response) {
     try {
-      const { id, corte_630, corte_470, corte_320, corte_170 } =
-        _req.params
+      const { id, corte_630, corte_470, corte_320, corte_170 } = _req.params
       const postData = await prismaClient.serosa.findUnique({
         where: { id: Number(id) },
         select: {
           corte_630,
           corte_470,
           corte_320,
-          corte_170
+          corte_170,
         },
       })
       const updatedSerosa = await prismaClient.serosa.update({
@@ -21,7 +20,7 @@ class SerosaControlersPut {
           corte_630,
           corte_470,
           corte_320,
-          corte_170
+          corte_170,
         },
       })
       res.json(updatedSerosa)

@@ -12,9 +12,9 @@ class TripaCozidaControlersPut {
           mocoto,
           culatra,
           abomaso,
-          fundo, 
+          fundo,
           tripa_fina,
-          tripa_grossa
+          tripa_grossa,
         },
       })
       const updatedTripaCozida = await prismaClient.tripaCozida.update({
@@ -23,9 +23,9 @@ class TripaCozidaControlersPut {
           mocoto,
           culatra,
           abomaso,
-          fundo, 
+          fundo,
           tripa_fina,
-          tripa_grossa
+          tripa_grossa,
         },
       })
       res.json(updatedTripaCozida)

@@ -128,12 +128,13 @@ model Item {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   saidaData DateTime
+  quant     Decimal
   nome      String   @db.VarChar(255)
   descricao String   @db.VarChar(255)
   Estoque   Estoque? @relation(fields: [estoqueId], references: [id])
   estoqueId Int?
 
-  @@map("itens")
+  @@map("item")
 }
 
 model Estoque {

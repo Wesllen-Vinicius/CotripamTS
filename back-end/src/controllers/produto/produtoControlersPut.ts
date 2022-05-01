@@ -23,7 +23,7 @@ class ProdutoControlersPut {
           sal_grosso,
           metabissulfito,
           peroxido,
-          bombonas
+          bombonas,
         },
       })
       res.json(updatedProduto)
