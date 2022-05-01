@@ -4,5 +4,8 @@
   "description": "sistema de controle de produção de subproduto hospitalar",
   "scripts": {
     "start": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
   }
 }

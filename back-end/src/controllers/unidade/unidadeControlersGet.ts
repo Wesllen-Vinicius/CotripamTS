@@ -3,24 +3,24 @@ import { prismaClient } from "../../data/prismaClient"
 
 class UnidadeControlersGet {
   static async getUnidadesById(_req: Request, res: Response) {
-    try{
-    const id = parseInt(_req.params.id)
-    console.log(id)
-    const unidade = await prismaClient.unidade.findUnique({
-      where: {
-        id,
-      },
-    })
-    if (!unidade) {
-      return res.status(404).json({ error: "Unidade não encontrada" })
+    try {
+      const id = parseInt(_req.params.id)
+      console.log(id)
+      const unidade = await prismaClient.unidade.findUnique({
+        where: {
+          id,
+        },
+      })
+      if (!unidade) {
+        return res.status(404).json({ error: "Unidade não encontrada" })
+      }
+      return res.status(200).json(unidade)
+    } catch (e) {
+      console.error(e)
+      res.status(500).json({
+        error: "Server error!",
+      })
     }
-    return res.status(200).json(unidade)
-  } catch  (e) {
-    console.error(e)
-    res.status(500).json({
-      error: 'Server error!',
-    })
-  }
   }
 
   static async getUnidades(_req: Request, res: Response) {
@@ -30,7 +30,7 @@ class UnidadeControlersGet {
     } catch (e) {
       console.error(e)
       res.status(500).json({
-        error: 'Server error!',
+        error: "Server error!",
       })
     }
   }
