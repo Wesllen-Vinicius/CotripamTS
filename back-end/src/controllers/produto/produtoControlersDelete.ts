@@ -1,20 +1,20 @@
 import { Request, Response } from "express"
 import { prismaClient } from "../../data/prismaClient"
 
-class UserControlersDelete {
-  static async deleteUser(_req: Request, res: Response) {
+class ProdutoControlersDelete {
+  static async deleteProdutos(_req: Request, res: Response) {
     try {
       const id = parseInt(_req.params.id)
-      const deleteUser = await prismaClient.user.findUnique({
+      const deleteProduto = await prismaClient.produto.findUnique({
         where: {
           id,
         },
       })
-      if (!deleteUser) {
-        res.status(404).json({ messae: "Usuario não encontrada." })
+      if (!deleteProduto) {
+        res.status(404).json({ messae: "Produto não encontrada." })
         return
       }
-      await prismaClient.user.delete({
+      await prismaClient.produto.delete({
         where: {
           id,
         },
@@ -29,4 +29,4 @@ class UserControlersDelete {
   }
 }
 
-export default UserControlersDelete
+export default ProdutoControlersDelete
