@@ -24,7 +24,7 @@
 <img align="center" alt="Wes-yarn" height=auto width=auto src="https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white"> -
 <img align="center" alt="Wes-vercel" height=auto width=auto src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"> -
 <img align="center" alt="Wes-typescript" height=auto width=auto src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"> -
-<img align="center" alt="Wes-cypress" height=auto" width=auto src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e">
+<img align="center" alt="Wes-cypress" height=auto" width=auto src="https://img.shields.io/badge/-jest-%23E5E5E5?style=for-the-badge&logo=jest&logoColor=058a5e">
 </div>
 <h1>INFRAESTRUTURA DE FRONT-END COM REACT + TYPESCRIPT</h1>
 # Getting Started with Create React App
