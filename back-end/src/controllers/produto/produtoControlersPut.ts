@@ -18,6 +18,13 @@ class ProdutoControlersPut {
       })
       const updatedProduto = await prismaClient.produto.update({
         where: { id: Number(id) || undefined },
+        select: {
+          sal_fino,
+          sal_grosso,
+          metabissulfito,
+          peroxido,
+          bombonas
+        },
       })
       res.json(updatedProduto)
     } catch (e) {
