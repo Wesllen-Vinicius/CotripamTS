@@ -2,14 +2,15 @@ import tripaExportacaoControlersDelete from "../controllers/tripaExportacao/trip
 import tripaExportacaoControlersGet from "../controllers/tripaExportacao/tripaExportacaoControlersGet"
 import tripaExportacaoControlersPost from "../controllers/tripaExportacao/tripaExportacaoControlersPost"
 import tripaExportacaoControlersPut from "../controllers/tripaExportacao/tripaExportacaoControlersPut"
+import { isAuthenticated } from "../middleware/isAuthenticated"
 
 const express = require("express")
 const router = express.Router()
 
-router.get("/", tripaExportacaoControlersGet.getTripaExportacao)
-router.get("/:id", tripaExportacaoControlersGet.getTripaExportacaoById)
-router.put("/:id", tripaExportacaoControlersPut.updateExportacao)
-router.delete("/:id", tripaExportacaoControlersDelete.deleteExportcacao)
-router.post("/cadastro", tripaExportacaoControlersPost.postTripaExportacao)
+router.get("/", isAuthenticated, tripaExportacaoControlersGet.getTripaExportacao)
+router.get("/:id", isAuthenticated, tripaExportacaoControlersGet.getTripaExportacaoById)
+router.put("/:id", isAuthenticated, tripaExportacaoControlersPut.updateExportacao)
+router.delete("/:id", isAuthenticated,  tripaExportacaoControlersDelete.deleteExportcacao)
+router.post("/cadastro", isAuthenticated, tripaExportacaoControlersPost.postTripaExportacao)
 
 export = router
