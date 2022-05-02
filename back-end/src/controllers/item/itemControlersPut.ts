@@ -4,26 +4,23 @@ import { prismaClient } from "../../data/prismaClient"
 class ItemControlersPut {
   static async updateItem(_req: Request, res: Response) {
     try {
-      const { id, nome, descricao } = _req.params
-      const postData = await prismaClient.item.findUnique({
-        where: { id: Number(id) },
-        select: {
-          nome,
-          descricao,
+      const id = parseInt(_req.params.id)
+      const data = _req.body
+      const item = await prismaClient.item.findUnique({ where: { id } })
+      if (!item) {
+        return res.status(404).json({ error: "Registro não Existe!" })
+      }
+      const updateItem = await prismaClient.item.update({
+        where: {
+          id,
         },
+        data,
       })
-      const updatedItem = await prismaClient.item.update({
-        where: { id: Number(id) || undefined },
-        select: {
-          nome,
-          descricao,
-        },
-      })
-      res.json(updatedItem)
+      return res.status(200).json(data)
     } catch (e) {
       console.error(e)
       res.status(500).json({
-        error: "O Item de Id informado, não existe na tabela!",
+        error: "O ID do Registro informado, não existe na tabela!",
       })
     }
   }

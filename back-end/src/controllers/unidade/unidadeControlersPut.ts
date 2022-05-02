@@ -4,28 +4,23 @@ import { prismaClient } from "../../data/prismaClient"
 class UnidadeControlersPut {
   static async updateUnidades(_req: Request, res: Response) {
     try {
-      const { id, nome, meta_tripaCozida, meta_serosa } = _req.params
-      const postData = await prismaClient.unidade.findUnique({
-        where: { id: Number(id) },
-        select: {
-          nome,
-          meta_tripaCozida,
-          meta_serosa,
+      const id = parseInt(_req.params.id)
+      const data = _req.body
+      const unidade = await prismaClient.unidade.findUnique({ where: { id } })
+      if (!unidade) {
+        return res.status(404).json({ error: "Registro não Existe!" })
+      }
+      const updateUnidade = await prismaClient.unidade.update({
+        where: {
+          id,
         },
+        data,
       })
-      const updatedUnidades = await prismaClient.unidade.update({
-        where: { id: Number(id) || undefined },
-        select: {
-          nome,
-          meta_tripaCozida,
-          meta_serosa,
-        },
-      })
-      res.json(updatedUnidades)
+      return res.status(200).json(data)
     } catch (e) {
       console.error(e)
       res.status(500).json({
-        error: "A Unidade de Id informado, não existe na tabela!",
+        error: "O ID do Registro informado, não existe na tabela!",
       })
     }
   }

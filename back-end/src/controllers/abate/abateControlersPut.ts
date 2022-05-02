@@ -4,30 +4,23 @@ import { prismaClient } from "../../data/prismaClient"
 class abateControlersPut {
   static async updateAbates(_req: Request, res: Response) {
     try {
-      const { id, abate, bois, vacas, condenados } = _req.params
-      const postData = await prismaClient.abate.findUnique({
-        where: { id: Number(id) },
-        select: {
-          abate,
-          bois,
-          vacas,
-          condenados,
+      const id = parseInt(_req.params.id)
+      const data = _req.body
+      const abate = await prismaClient.abate.findUnique({ where: { id } })
+      if (!abate) {
+        return res.status(404).json({ error: "Registro não Existe!" })
+      }
+      const updateAbate = await prismaClient.abate.update({
+        where: {
+          id,
         },
+        data,
       })
-      const updatedAbates = await prismaClient.abate.update({
-        where: { id: Number(id) || undefined },
-        select: {
-          abate,
-          bois,
-          vacas,
-          condenados,
-        },
-      })
-      res.json(updatedAbates)
+      return res.status(200).json(data)
     } catch (e) {
       console.error(e)
       res.status(500).json({
-        error: "O Abate de Id informado, não existe na tabela Abates!",
+        error: "O ID do Registro informado, não existe na tabela!",
       })
     }
   }

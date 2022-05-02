@@ -3,7 +3,6 @@ import userControlersGet from "../controllers/user/userControlersGet"
 import userControlersDelete from "../controllers/user/userControlersDelete"
 import userControlersAuth from "../controllers/user/userControlersAuth"
 import UserControlersPut from "../controllers/user/userControlersPut"
-
 const express = require("express")
 const router = express.Router()
 

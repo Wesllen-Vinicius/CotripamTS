@@ -4,35 +4,25 @@ import { prismaClient } from "../../data/prismaClient"
 class TripaCozidaControlersPut {
   static async updateTripaCozida(_req: Request, res: Response) {
     try {
-      const { id, mocoto, culatra, abomaso, fundo, tripa_fina, tripa_grossa } =
-        _req.params
-      const postData = await prismaClient.tripaCozida.findUnique({
-        where: { id: Number(id) },
-        select: {
-          mocoto,
-          culatra,
-          abomaso,
-          fundo,
-          tripa_fina,
-          tripa_grossa,
-        },
+      const id = parseInt(_req.params.id)
+      const data = _req.body
+      const tripaCozida = await prismaClient.tripaCozida.findUnique({
+        where: { id },
       })
-      const updatedTripaCozida = await prismaClient.tripaCozida.update({
-        where: { id: Number(id) || undefined },
-        select: {
-          mocoto,
-          culatra,
-          abomaso,
-          fundo,
-          tripa_fina,
-          tripa_grossa,
+      if (!tripaCozida) {
+        return res.status(404).json({ error: "Registro não Existe!" })
+      }
+      const update = await prismaClient.tripaCozida.update({
+        where: {
+          id,
         },
+        data,
       })
-      res.json(updatedTripaCozida)
+      return res.status(200).json(data)
     } catch (e) {
       console.error(e)
       res.status(500).json({
-        error: "O ID de Tripa Cozida informado, não existe na tabela!",
+        error: "O ID do Registro informado, não existe na tabela!",
       })
     }
   }

@@ -4,7 +4,7 @@ import { prismaClient } from "../../data/prismaClient"
 class ItemControlersPost {
   static async postItem(_req: Request, res: Response) {
     try {
-      const { id, nome, descricao, quant } = _req.body
+      const { id, nome, descricao, quant, saidaData } = _req.body
       if (!nome) {
         res.status(422).json({
           message: "Nome do item é obrigatorio para cadastro!",
@@ -36,6 +36,7 @@ class ItemControlersPost {
           nome,
           descricao,
           quant,
+          saidaData,
         },
       })
       res.status(201).json({
@@ -45,6 +46,7 @@ class ItemControlersPost {
           nome,
           descricao,
           quant,
+          saidaData,
         },
       })
     } catch (e) {
