@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>PPROJETO DE TCC COTRIPAM</h1>
+  <h1>COTRIPAM</h1>
   <p>Versão 0.1.0</p>
 </div>
 <h1>-Tecnologias Usadas Nesse Projeto</h1><br>
