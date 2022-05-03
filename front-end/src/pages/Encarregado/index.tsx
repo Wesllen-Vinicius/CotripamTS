@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import CardPerfilUsuario from "../../components/card/card-perfil-usuario"
+import FormAbate from "../../components/form/FormAbate"
 import NavbarEnc from "../../components/navBar/navbarEnc"
 import { TabNavigationEnc } from "../../components/tabNavigation/tabNavigationEnc"
 
@@ -70,7 +71,7 @@ export default function Encarregados() {
         <CardPerfilUsuario />
       </EncAside>
       <EncContent>
-        <TabNavigationEnc />
+        <FormAbate/>
       </EncContent>
     </EnDiv>
   )
