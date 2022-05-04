@@ -7,10 +7,30 @@ import { isAuthenticated } from "../middleware/isAuthenticated"
 const express = require("express")
 const router = express.Router()
 
-router.get("/", isAuthenticated, tripaExportacaoControlersGet.getTripaExportacao)
-router.get("/:id", isAuthenticated, tripaExportacaoControlersGet.getTripaExportacaoById)
-router.put("/:id", isAuthenticated, tripaExportacaoControlersPut.updateExportacao)
-router.delete("/:id", isAuthenticated,  tripaExportacaoControlersDelete.deleteExportcacao)
-router.post("/cadastro", isAuthenticated, tripaExportacaoControlersPost.postTripaExportacao)
+router.get(
+  "/",
+  isAuthenticated,
+  tripaExportacaoControlersGet.getTripaExportacao
+)
+router.get(
+  "/:id",
+  isAuthenticated,
+  tripaExportacaoControlersGet.getTripaExportacaoById
+)
+router.put(
+  "/:id",
+  isAuthenticated,
+  tripaExportacaoControlersPut.updateExportacao
+)
+router.delete(
+  "/:id",
+  isAuthenticated,
+  tripaExportacaoControlersDelete.deleteExportcacao
+)
+router.post(
+  "/cadastro",
+  isAuthenticated,
+  tripaExportacaoControlersPost.postTripaExportacao
+)
 
 export = router
