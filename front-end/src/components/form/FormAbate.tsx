@@ -1,4 +1,6 @@
-import { useState } from "react"
+
+import axios from "axios"
+import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form";
 import styled, { css } from "styled-components"
 
 const sharedStyles = css`
@@ -11,14 +13,14 @@ const sharedStyles = css`
   box-sizing: border-box;
 `
 
-const StyledFormWrapper = styled.div`
+const StyledFormWrapper = styled.form`
   display: flex;
   padding: 0 20px;
   padding-top: 10px;
   flex-direction: column;
 `
 
-const StyledForm = styled.form`
+const StyledForm = styled.div`
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -34,13 +36,6 @@ const StyledInput = styled.input`
   ${sharedStyles}
 `
 
-const StyledTextArea = styled.textarea`
-  background-color: #eee;
-  width: 100%;
-  min-height: 100px;
-  resize: none;
-  ${sharedStyles}
-`
 
 const StyledButton = styled.button`
   display: block;
@@ -63,43 +58,41 @@ const StyledButton = styled.button`
   }
 `
 
-const initalState = {
-  630: "",
-  520: "",
-  470: "",
-  320: "",
-  170: "",
+interface IFormValues {
+  Abate: Number;
+  Bois: Number;
+  Condenados: Number;
 }
 
-export default function FormAbate() {
-  const [state] = useState(initalState)
+type InputProps = {
+  label: Path<IFormValues>;
+  register: UseFormRegister<IFormValues>;
+  required: boolean;
+};
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault()
-    console.log("submitted!")
-    console.log(state)
 
-    console.log("Succeeded!!!")
-  }
+const Input = ({ label, register, required }: InputProps) => (
+  <>
+    <label>{label}</label>
+    <input {...register(label, { required })} />
+  </>
+);
+
+
+export default function  FormAbate() {
+  const { register, handleSubmit } = useForm<IFormValues>();
+
+  const onSubmit: SubmitHandler<IFormValues> = data => axios.post("http://localhost:4500/abates/cadastro", data)
 
   return (
-    <div>
-      <StyledFormWrapper>
-        <StyledForm onSubmit={handleSubmit}>
-          <h2>Serosa</h2>
-          <label htmlFor="630">Abate</label>
-          <StyledInput type="number" name="630" value={state[630]} />
-          <label htmlFor="520">Bois Abatidos</label>
-          <StyledInput type="number" name="520" value={state[520]} />
-          <label htmlFor="470">Vacas Abatidas</label>
-          <StyledInput type="number" name="470" value={state[470]} />
-          <label htmlFor="320">Reaproveitados</label>
-          <StyledInput type="number" name="320" value={state[320]} />
-          <label htmlFor="170">Perdidos</label>
-          <StyledInput type="number" name="170" value={state[170]} />
-          <StyledButton type="submit">Enviar</StyledButton>
-        </StyledForm>
-      </StyledFormWrapper>
-    </div>
-  )
-}
+    <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
+      <Input label="Abate" register={register} required />
+      <Input label="Bois" register={register} required />
+      <Input label="Condenados" register={register} required />
+      <input type="submit" />
+    </StyledFormWrapper>
+  );
+};
+
+
+

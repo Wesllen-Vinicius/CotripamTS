@@ -15,7 +15,7 @@ export function isAuthenticated(
     return res.status(401).json({ error: "UNAUTHORIZED (401)" })
   }
 
-  const [, token] = authToken.split(" ")
+  const [token] = authToken.split(" ")
 
   try {
     const { sub } = verify(token, process.env.SECRET!) as Payload
