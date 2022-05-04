@@ -4,9 +4,9 @@ import { prismaClient } from "../../data/prismaClient"
 class AbateControlersPost {
   static async postAbates(_req: Request, res: Response) {
     try {
-      const { id, createdAt, modifiAt, abate, bois, vacas, total, condenados } =
+      const { id, createdAt, abate, bois, vacas, total, condenados } =
         _req.body
-
+        console.log(_req.body)
       if (!abate) {
         res.status(422).json({
           message: "Valor do Abate é obrigatorio para cadastro de Abate!",
@@ -25,23 +25,15 @@ class AbateControlersPost {
         })
         return
       }
-      const ExistAbate = await prismaClient.abate.findUnique({
-        where: { id },
-      })
-      if (ExistAbate) {
-        res.status(422).json({ message: "Abate já cadastratado" })
-        return
-      }
       await prismaClient.abate.create({
         data: {
           id,
           createdAt,
-          modifiAt,
           abate,
           bois,
           vacas,
           total,
-          condenados,
+          condenados
         },
       })
       res.status(201).json({
@@ -49,12 +41,11 @@ class AbateControlersPost {
         data: {
           id,
           createdAt,
-          modifiAt,
           abate,
           bois,
           vacas,
           total,
-          condenados,
+          condenados
         },
       })
     } catch (e) {

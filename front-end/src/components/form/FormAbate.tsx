@@ -59,9 +59,9 @@ const StyledButton = styled.button`
 `
 
 interface IFormValues {
-  Abate: Number;
-  Bois: Number;
-  Condenados: Number;
+  "abate": number;
+  "bois": number;
+  "condenados": number;
 }
 
 type InputProps = {
@@ -78,17 +78,16 @@ const Input = ({ label, register, required }: InputProps) => (
   </>
 );
 
-
 export default function  FormAbate() {
   const { register, handleSubmit } = useForm<IFormValues>();
-
-  const onSubmit: SubmitHandler<IFormValues> = data => axios.post("http://localhost:4500/abates/cadastro", data)
+  const onSubmit: SubmitHandler<IFormValues> = data => axios.post("http://localhost:4500/abates/cadastro", data);
+  
 
   return (
     <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
-      <Input label="Abate" register={register} required />
-      <Input label="Bois" register={register} required />
-      <Input label="Condenados" register={register} required />
+      <Input label="abate" register={register} required />
+      <Input label="bois" register={register} required />
+      <Input label="condenados" register={register} required />
       <input type="submit" />
     </StyledFormWrapper>
   );

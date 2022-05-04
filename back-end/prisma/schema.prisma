@@ -28,7 +28,7 @@ model Unidade {
   id               Int               @id @default(autoincrement())
   nome             String            @db.VarChar(120)
   createdAt        DateTime          @default(now())
-  meta_tripaCozida Float           
+  meta_tripaCozida Float
   meta_serosa      Float
   User             User[]
   Abate            Abate[]
@@ -42,108 +42,113 @@ model Unidade {
 }
 
 model Abate {
-  id           Int      @id @default(autoincrement())
-  createdAt    DateTime @default(now())
-  modifiAt     DateTime
-  abate        Decimal
-  bois         Decimal
-  vacas        Decimal
-  total        Decimal
-  condenados   Decimal
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  modifiAt     DateTime?
+  abate        Float
+  bois         Float
+  vacas        Float
+  total        Float
+  condenados   Float
+  unidadeId    Int?
   userId       Int?
-  unidadeAbate Unidade? @relation(fields: [id], references: [id])
-  User         User?    @relation(fields: [userId], references: [id])
-  
+  unidadeAbate Unidade?  @relation(fields: [unidadeId], references: [id])
+  user         User?     @relation(fields: [userId], references: [id])
+
   @@map("abates")
 }
 
 model Serosa {
-  id           Int      @id @default(autoincrement())
-  createdAt    DateTime @default(now())
-  modifiAt     DateTime
-  corte_630    Decimal
-  corte_470    Decimal
-  corte_320    Decimal
-  corte_170    Decimal
-  km_total     Decimal
-  media        Decimal
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  modifiAt     DateTime?
+  corte_630    Float
+  corte_470    Float
+  corte_320    Float
+  corte_170    Float
+  km_total     Float
+  media        Float
   userId       Int?
-  unidadeAbate Unidade? @relation(fields: [id], references: [id])
-  User         User?    @relation(fields: [userId], references: [id])
-  
+  unidadeId    Int?
+  unidadeAbate Unidade?  @relation(fields: [unidadeId], references: [id])
+  user         User?     @relation(fields: [userId], references: [id])
+
   @@map("serosa")
 }
 
 model TripaCozida {
-  id           Int      @id @default(autoincrement())
-  createdAt    DateTime @default(now())
-  modifiAt     DateTime
-  mocoto       Decimal
-  culatra      Decimal
-  abomaso      Decimal
-  fundo        Decimal
-  tripa_grossa Decimal
-  tripa_fina   Decimal
-  total        Decimal
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  modifiAt     DateTime?
+  mocoto       Float
+  culatra      Float
+  abomaso      Float
+  fundo        Float
+  tripa_grossa Float
+  tripa_fina   Float
+  total        Float
   userId       Int?
-  unidadeAbate Unidade? @relation(fields: [id], references: [id])
-  User         User?    @relation(fields: [userId], references: [id])
+  unidadeId    Int?
+  unidadeAbate Unidade?  @relation(fields: [unidadeId], references: [id])
+  user         User?     @relation(fields: [userId], references: [id])
 
   @@map("tripaCozida")
 }
 
 model TripaExportacao {
-  id            Int      @id @default(autoincrement())
-  createdAt     DateTime @default(now())
-  modifiAt      DateTime
-  tripa_reta    Decimal
-  tripa_torta1c Decimal
-  tripa_torta2c Decimal
-  culatra       Decimal
-  fundo         Decimal
+  id            Int       @id @default(autoincrement())
+  createdAt     DateTime  @default(now())
+  modifiAt      DateTime?
+  tripa_reta    Float
+  tripa_torta1c Float
+  tripa_torta2c Float
+  culatra       Float
+  fundo         Float
   userId        Int?
-  unidadeAbate  Unidade? @relation(fields: [id], references: [id])
-  User          User?    @relation(fields: [userId], references: [id])
+  unidadeId     Int?
+  unidadeAbate  Unidade?  @relation(fields: [unidadeId], references: [id])
+  user          User?     @relation(fields: [userId], references: [id])
 
   @@map("tripaExportacao")
 }
 
 model Produto {
-  id             Int      @id @default(autoincrement())
-  createdAt      DateTime @default(now())
-  modifiAt       DateTime
-  sal_fino       Decimal
-  sal_grosso     Decimal
-  metabissulfito Decimal
-  peroxido       Decimal
-  bombonas       Decimal
+  id             Int       @id @default(autoincrement())
+  createdAt      DateTime  @default(now())
+  modifiAt       DateTime?
+  sal_fino       Float
+  sal_grosso     Float
+  metabissulfito Float
+  peroxido       Float
+  bombonas       Float
   userId         Int?
-  unidadeAbate   Unidade? @relation(fields: [id], references: [id])
-  User           User?    @relation(fields: [userId], references: [id])
+  unidadeId      Int?
+  unidadeAbate   Unidade?  @relation(fields: [unidadeId], references: [id])
+  user           User?     @relation(fields: [userId], references: [id])
 
   @@map("prodQuimicos")
 }
 
 model Item {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  saidaData DateTime
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  saidaData DateTime?
   quant     Decimal
-  nome      String   @db.VarChar(255)
-  descricao String   @db.VarChar(255)
-  Estoque   Estoque? @relation(fields: [estoqueId], references: [id])
+  nome      String    @db.VarChar(255)
+  descricao String    @db.VarChar(255)
+  Estoque   Estoque?  @relation(fields: [estoqueId], references: [id])
   estoqueId Int?
 
   @@map("item")
 }
 
 model Estoque {
-  id           Int      @id @default(autoincrement())
-  createdAt    DateTime @default(now())
-  saidaData    DateTime
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  saidaData    DateTime?
   quantSaida   Decimal
   quant        Decimal
-  unidadeAbate Unidade? @relation(fields: [id], references: [id])
+  unidadeAbate Unidade?  @relation(fields: [id], references: [id])
   item         Item[]
 
   @@map("estoque")
