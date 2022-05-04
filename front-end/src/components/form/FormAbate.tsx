@@ -1,6 +1,5 @@
-
 import axios from "axios"
-import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form";
+import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
 import styled, { css } from "styled-components"
 
 const sharedStyles = css`
@@ -36,7 +35,6 @@ const StyledInput = styled.input`
   ${sharedStyles}
 `
 
-
 const StyledButton = styled.button`
   display: block;
   width: 20%;
@@ -59,39 +57,43 @@ const StyledButton = styled.button`
 `
 
 interface IFormValues {
-  "abate": number;
-  "bois": number;
-  "condenados": number;
+  abate: Number;
+  bois: Number;
+  vacas: Number;
+  total: Number;
+  condenados: Number;
 }
 
 type InputProps = {
-  label: Path<IFormValues>;
-  register: UseFormRegister<IFormValues>;
-  required: boolean;
-};
-
+  label: Path<IFormValues>
+  register: UseFormRegister<IFormValues>
+  required: boolean
+}
 
 const Input = ({ label, register, required }: InputProps) => (
   <>
     <label>{label}</label>
     <input {...register(label, { required })} />
   </>
-);
+)
 
-export default function  FormAbate() {
-  const { register, handleSubmit } = useForm<IFormValues>();
-  const onSubmit: SubmitHandler<IFormValues> = data => axios.post("http://localhost:4500/abates/cadastro", data);
+export default function FormAbate() {
+  const { register, handleSubmit } = useForm<IFormValues>()
+
+  const onSubmit: SubmitHandler<IFormValues> = (data) => 
+    axios.post("http://localhost:4500/abates/cadastro", (data))
+    
   
-
   return (
+      <StyledForm>
     <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
       <Input label="abate" register={register} required />
       <Input label="bois" register={register} required />
+      <Input label="vacas" register={register} required />
+      <Input label="total" register={register} required />
       <Input label="condenados" register={register} required />
       <input type="submit" />
     </StyledFormWrapper>
-  );
-};
-
-
-
+      </StyledForm>
+  )
+}

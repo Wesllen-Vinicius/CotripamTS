@@ -14,7 +14,8 @@ model User {
   password        String            @db.VarChar(255)
   createdAt       DateTime          @default(now())
   nivelAcesso     Boolean           @default(false)
-  unidadeUser     Unidade           @relation(fields: [id], references: [id])
+  unidadeId       Int?
+  unidadeUser     Unidade?          @relation(fields: [unidadeId], references: [id])
   Abate           Abate[]
   Serosa          Serosa[]
   TripaCozida     TripaCozida[]
@@ -45,7 +46,7 @@ model Abate {
   id           Int       @id @default(autoincrement())
   createdAt    DateTime  @default(now())
   modifiAt     DateTime?
-  abate        Float
+  abate        Float      
   bois         Float
   vacas        Float
   total        Float
@@ -54,7 +55,6 @@ model Abate {
   userId       Int?
   unidadeAbate Unidade?  @relation(fields: [unidadeId], references: [id])
   user         User?     @relation(fields: [userId], references: [id])
-
   @@map("abates")
 }
 

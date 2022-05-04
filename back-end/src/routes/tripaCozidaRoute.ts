@@ -11,6 +11,10 @@ router.get("/", isAuthenticated, tripaCozidaControlersGet.getTripaCozida)
 router.get("/:id", isAuthenticated, tripaCozidaControlersGet.getTripaCozidaById)
 router.put("/:id", isAuthenticated, TripaCozidaControlersPut.updateTripaCozida)
 router.delete("/:id", isAuthenticated, TripaCozidaControlersDelete.deleteSerosa)
-router.post("/cadastro", isAuthenticated, TripaCozidaControlersPost.postTripaCozida)
+router.post(
+  "/cadastro",
+  isAuthenticated,
+  TripaCozidaControlersPost.postTripaCozida
+)
 
 export = router

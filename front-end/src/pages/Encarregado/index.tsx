@@ -71,7 +71,7 @@ export default function Encarregados() {
         <CardPerfilUsuario />
       </EncAside>
       <EncContent>
-        <FormAbate/>
+        <FormAbate />
       </EncContent>
     </EnDiv>
   )

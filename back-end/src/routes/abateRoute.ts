@@ -11,6 +11,6 @@ router.get("/", isAuthenticated, abateControlersGet.getAbate)
 router.get("/:id", isAuthenticated, abateControlersGet.getAbateById)
 router.put("/:id", isAuthenticated, abateControlersPut.updateAbates)
 router.delete("/:id", isAuthenticated, abateControlersDelete.deleteAbates)
-router.post("/cadastro",  abateControlersPost.postAbates)
+router.post("/cadastro", abateControlersPost.postAbates)
 
 export = router

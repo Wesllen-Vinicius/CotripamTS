@@ -12,6 +12,6 @@ router.get("/:id", isAuthenticated, userControlersGet.getUsersById)
 router.put("/:id", isAuthenticated, UserControlersPut.updateUsers)
 router.delete("/:id", isAuthenticated, userControlersDelete.deleteUser)
 router.post("/login", userControlersAuth.authUsers)
-router.post("/cadastro",  userControlers.postUsers)
+router.post("/cadastro", userControlers.postUsers)
 
 export = router
