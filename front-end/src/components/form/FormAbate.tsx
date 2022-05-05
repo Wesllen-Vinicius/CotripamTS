@@ -85,13 +85,13 @@ export default function FormAbate() {
   localStorage.getItem('@App:user');
   const userJson = JSON.parse(window.localStorage.getItem("@App:user") || '{}');
   window.localStorage.getItem("@App:user")
-  
+  const userId = userJson.id
   async function getIdUser() {
-    console.log(userJson.id)
+
   }
 
   const onSubmit: SubmitHandler<IFormValues> = (data) => 
-    axios.post("http://localhost:4500/abates/cadastro", (data), userJson.id)
+    axios.post("http://localhost:4500/abates/cadastro", (data), userId)
 
     
   

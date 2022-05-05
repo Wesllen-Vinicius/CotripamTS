@@ -32,8 +32,7 @@ class AbateControlersPost {
           bois: parseFloat(bois),
           vacas: parseFloat(vacas),
           total: parseFloat(total),
-          condenados: parseFloat(condenados),
-          userId: parseFloat(userId)
+          condenados: parseFloat(condenados)
         },
       })
       res.status(201).json({
