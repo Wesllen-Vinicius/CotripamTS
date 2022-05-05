@@ -32,20 +32,12 @@ class AbateControlersPost {
           bois: parseFloat(bois),
           vacas: parseFloat(vacas),
           total: parseFloat(total),
-          condenados: parseFloat(condenados)
+          condenados: parseFloat(condenados),
+          userId: parseInt(userId)
         },
       })
       res.status(201).json({
         message: "abate criado com sucesso",
-        data: {
-          id,
-          createdAt,
-          abate,
-          bois,
-          vacas,
-          total,
-          condenados
-        },
       })
     } catch (e) {
       console.error(e)
