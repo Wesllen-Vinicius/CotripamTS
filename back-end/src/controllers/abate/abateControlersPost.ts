@@ -4,10 +4,8 @@ import { prismaClient } from "../../data/prismaClient"
 class AbateControlersPost {
   static async postAbates(_req: Request, res: Response) {
     try {
-      const { id, createdAt, abate, bois, vacas, total, condenados} =
+      const { id, createdAt, abate, bois, vacas, total, condenados, userId} =
         _req.body
-        console.log(_req.body)
-        
       if (!abate) {
         res.status(422).json({
           message: "Valor do Abate é obrigatorio para cadastro de Abate!",
@@ -34,7 +32,8 @@ class AbateControlersPost {
           bois: parseFloat(bois),
           vacas: parseFloat(vacas),
           total: parseFloat(total),
-          condenados: parseFloat(condenados)
+          condenados: parseFloat(condenados),
+          userId: parseFloat(userId)
         },
       })
       res.status(201).json({

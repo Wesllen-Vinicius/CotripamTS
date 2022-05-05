@@ -77,11 +77,22 @@ const Input = ({ label, register, required }: InputProps) => (
   </>
 )
 
+
+
 export default function FormAbate() {
   const { register, handleSubmit } = useForm<IFormValues>()
 
+  localStorage.getItem('@App:user');
+  const userJson = JSON.parse(window.localStorage.getItem("@App:user") || '{}');
+  window.localStorage.getItem("@App:user")
+  
+  async function getIdUser() {
+    console.log(userJson.id)
+  }
+
   const onSubmit: SubmitHandler<IFormValues> = (data) => 
-    axios.post("http://localhost:4500/abates/cadastro", (data))
+    axios.post("http://localhost:4500/abates/cadastro", (data), userJson.id)
+
     
   
   return (
@@ -93,6 +104,7 @@ export default function FormAbate() {
       <Input label="total" register={register} required />
       <Input label="condenados" register={register} required />
       <input type="submit" />
+      <StyledButton onClick={getIdUser}/>
     </StyledFormWrapper>
       </StyledForm>
   )
