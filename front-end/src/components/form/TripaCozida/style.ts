@@ -27,7 +27,7 @@ export const StyledForm = styled.form`
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `
 
-export const StyledInput = styled.input`
+export const InputForm = styled.input`
   display: flex;
   width: 100px;
   ${sharedStyles}

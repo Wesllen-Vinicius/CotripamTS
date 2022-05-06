@@ -27,6 +27,6 @@ app.use("/unidades", unidadeRoutes)
 app.use("/tripaCozida", tripaCozidaRoutes)
 app.use("/tripaExportacao", tripaExportacaoRoutes)
 
-app.listen(4500, () =>
-  console.log("REST API Server Iniciado: http://localhost:4500")
+app.listen(4600, () =>
+  console.log("REST API Server Iniciado: http://localhost:4600")
 )

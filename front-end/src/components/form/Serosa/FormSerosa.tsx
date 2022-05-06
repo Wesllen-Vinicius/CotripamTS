@@ -25,24 +25,23 @@ const Input = ({ label, register, required }: InputProps) => (
 export default function FormSerosa() {
   const { register, handleSubmit } = useForm<IFormValues>()
 
-  localStorage.getItem('@App:user');
-  const userJson = JSON.parse(window.localStorage.getItem("@App:user") || '{}');
+  localStorage.getItem("@App:user")
+  const userJson = JSON.parse(window.localStorage.getItem("@App:user") || "{}")
   window.localStorage.getItem("@App:user")
   const userId = userJson.id
-  
-  const onSubmit: SubmitHandler<IFormValues> = (data) => 
-    axios.post("http://localhost:4500/abates/cadastro", (data), userId)
 
-  
+  const onSubmit: SubmitHandler<IFormValues> = (data) =>
+    axios.post("http://localhost:4500/abates/cadastro", data, userId)
+
   return (
-      <StyledForm>
-    <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
-      <Input label="corte_630" register={register} required />  
-      <Input label="corte_470" register={register} required />
-      <Input label="corte_320" register={register} required />
-      <Input label="corte_170" register={register} required />
-      <input type="submit" />
-    </StyledFormWrapper>
-      </StyledForm>
+    <StyledForm>
+      <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
+        <Input label="corte_630" register={register} required />
+        <Input label="corte_470" register={register} required />
+        <Input label="corte_320" register={register} required />
+        <Input label="corte_170" register={register} required />
+        <input type="submit" />
+      </StyledFormWrapper>
+    </StyledForm>
   )
 }
