@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import "./style"
+import { StyledForm, StyledFormWrapper } from "./style";
 
 interface IFormValues {
   abate: Number;

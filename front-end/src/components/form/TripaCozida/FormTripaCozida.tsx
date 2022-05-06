@@ -1,9 +1,14 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import "./style"
+import { StyledForm, StyledFormWrapper } from "./style"
 
 interface IFormValues {
-
+mocoto: Number
+culatra: Number
+abomaso: Number
+fundo: Number
+tripa_grossa: Number
+tripa_fina: Number
 }
 
 type InputProps = {
@@ -19,7 +24,7 @@ const Input = ({ label, register, required }: InputProps) => (
   </>
 )
 
-export default function FormSerosa() {
+export default function FormTripaCozida() {
   const { register, handleSubmit } = useForm<IFormValues>()
 
   localStorage.getItem('@App:user');
@@ -29,16 +34,17 @@ export default function FormSerosa() {
   
   const onSubmit: SubmitHandler<IFormValues> = (data) => 
     axios.post("http://localhost:4500/abates/cadastro", (data), userId)
-
+  
   
   return (
       <StyledForm>
     <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
-      <Input label="" register={register} required />  
-      <Input label="" register={register} required />
-      <Input label="" register={register} required />
-      <Input label="" register={register} required />
-      <Input label="" register={register} required />
+      <Input label="mocoto" register={register} required />  
+      <Input label="culatra" register={register} required />
+      <Input label="abomaso" register={register} required />
+      <Input label="fundo" register={register} required />
+      <Input label="tripa_grossa" register={register} required />
+      <Input label="tripa_fina" register={register} required />
       <input type="submit" />
     </StyledFormWrapper>
       </StyledForm>

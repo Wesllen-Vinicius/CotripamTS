@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
-import NavbarEnc from "../../components/navBar/navbarEnc"
-import CardPerfilUsuario from "../../components/card/card-perfil-usuario"
+import CardPerfilUsuario from '../../card/card-perfil-usuario';
+import NavbarEnc from '../../navBar/navbarEnc';
+import { EncAside, EncContent, EncHeader, EnDiv } from './style';
 
 type layoutProps = {
     children: ReactNode;

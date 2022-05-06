@@ -1,6 +1,6 @@
 
 import FormTripaCozida from "../../../components/form/TripaCozida/FormTripaCozida"
-import Layout from "../../components/layout"
+import Layout from "../../../components/layouts/EncarregadoLayout/index"
 
 export default function TripaCozida() {
     return (

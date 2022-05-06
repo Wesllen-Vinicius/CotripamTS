@@ -1,9 +1,12 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import "./style"
+import { StyledForm, StyledFormWrapper } from "./style"
 
 interface IFormValues {
-
+  corte_630: Number
+  corte_470: Number
+  corte_320: Number
+  corte_170: Number
 }
 
 type InputProps = {
@@ -34,11 +37,10 @@ export default function FormSerosa() {
   return (
       <StyledForm>
     <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
-      <Input label="" register={register} required />  
-      <Input label="" register={register} required />
-      <Input label="" register={register} required />
-      <Input label="" register={register} required />
-      <Input label="" register={register} required />
+      <Input label="corte_630" register={register} required />  
+      <Input label="corte_470" register={register} required />
+      <Input label="corte_320" register={register} required />
+      <Input label="corte_170" register={register} required />
       <input type="submit" />
     </StyledFormWrapper>
       </StyledForm>

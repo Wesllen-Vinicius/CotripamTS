@@ -1,9 +1,13 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import "./style"
+import { StyledForm, StyledFormWrapper } from "./style"
 
 interface IFormValues {
-
+  sal_fino: Number
+  sal_grosso: Number
+  metabissulfito: Number
+  peroxido: Number
+  bombonas: Number
 }
 
 type InputProps = {
@@ -36,11 +40,11 @@ export default function FormProduto() {
   return (
       <StyledForm>
     <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
-      <Input label="" register={register} required />  
-      <Input label="" register={register} required />
-      <Input label="" register={register} required />
-      <Input label="" register={register} required />
-      <Input label="" register={register} required />
+      <Input label="sal_fino" register={register} required />  
+      <Input label="sal_grosso" register={register} required />
+      <Input label="metabissulfito" register={register} required />
+      <Input label="peroxido" register={register} required />
+      <Input label="bombonas" register={register} required />
       <input type="submit" />
     </StyledFormWrapper>
       </StyledForm>
