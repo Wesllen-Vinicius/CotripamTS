@@ -6,7 +6,7 @@ export const ProtectedLayout = ({ children }: { children: JSX.Element }) => {
   const auth = useContext(AuthContext)
   const navigate = useNavigate()
   useEffect(() => {
-    if (!auth.user) {
+    if(!auth.user == null) {
       navigate("/login")
     }
   }, [auth.user, navigate])

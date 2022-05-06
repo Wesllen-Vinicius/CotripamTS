@@ -68,7 +68,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 
       Toast.fire({
         icon: "success",
-        title: `Bem-Vindo ${response.data.user.email} !!`,
+        title: `Bem-Vindo ${response.data.user.nome} !!`,
       })
       navigate("/Dashboard")
     } catch (error: any) {

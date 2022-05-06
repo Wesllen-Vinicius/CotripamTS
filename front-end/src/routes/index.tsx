@@ -60,7 +60,7 @@ const Rotas: React.FC = () => {
           </ProtectedLayout>
         }
       />
-       <Route
+      <Route
         path="/produto"
         element={
           <ProtectedLayout>
