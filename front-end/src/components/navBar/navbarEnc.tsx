@@ -14,9 +14,9 @@ export default function NavbarEnc() {
       <Nav>
         <Bars />
         <NavMenu>
-          <NavLink to="/abate">Abate</NavLink>
-          <NavLink to="/tripaCozida">TripaCozida</NavLink>
-          <NavLink to="/">---</NavLink>
+          <NavLink to="/abate">Abates</NavLink>
+          <NavLink to="/tripaCozida">Cozidos</NavLink>
+          <NavLink to="/produto">Produtos</NavLink>
         </NavMenu>
         <NavBtn onClick={handleLogout}>Sair</NavBtn>
       </Nav>
