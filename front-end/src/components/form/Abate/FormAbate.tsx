@@ -47,7 +47,7 @@ export default function FormAbate() {
   const userId = userJson.id
 
   const onSubmit: SubmitHandler<IFormValues> = (data) =>
-    axios.post("http://localhost:4500/abates/cadastro", data, userId)
+    axios.post("", data, userId)
 
   return (
     <StyledForm>
