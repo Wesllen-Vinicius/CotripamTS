@@ -23,7 +23,7 @@ export const EncHeader = styled.header`
   align-items: center;
   padding: 26px 20px;
   position: fixed;
-  width: 98%;
+  width: 100%;
 `
 
 export const EncAside = styled.div`
@@ -34,4 +34,5 @@ export const EncAside = styled.div`
 
 export const EncContent = styled.section`
   grid-area: main;
+  width: 95%;
 `
