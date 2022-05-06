@@ -2,7 +2,10 @@ import { Route, Routes } from "react-router-dom"
 import NotFoundPage from "../pages/404/NotFoundPage"
 import Relatorios from "../pages/Admin/relatorios"
 import Dashboard from "../pages/Dashboard"
-import Encarregados from "../pages/Encarregado"
+import Abates from "../pages/Encarregado/Abate"
+import Encarregados from "../pages/Encarregado/Abate"
+import Produtos from "../pages/Encarregado/Produtos"
+import TripaCozida from "../pages/Encarregado/TripaCozida"
 import Home from "../pages/Home"
 import Login from "../pages/Login"
 import { ProtectedLayout } from "./private"
@@ -45,7 +48,7 @@ const Rotas: React.FC = () => {
         path="/abate"
         element={
           <ProtectedLayout>
-            <Encarregados />
+            <Abates />
           </ProtectedLayout>
         }
       />
@@ -53,7 +56,15 @@ const Rotas: React.FC = () => {
         path="/tripaCozida"
         element={
           <ProtectedLayout>
-            <Encarregados />
+            <TripaCozida />
+          </ProtectedLayout>
+        }
+      />
+       <Route
+        path="/produto"
+        element={
+          <ProtectedLayout>
+            <Produtos />
           </ProtectedLayout>
         }
       />
