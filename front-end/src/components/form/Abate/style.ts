@@ -14,15 +14,13 @@ export const StyledFormWrapper = styled.form`
   display: flex;
   padding: 0 20px;
   padding-top: 10px;
-  flex-direction: column;
 `
 
 export const StyledForm = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
+  width: 50%;
+  height: 60%;
+  border-radius: 30px;
   background-color: #fff;
-  border-radius: 10px;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `

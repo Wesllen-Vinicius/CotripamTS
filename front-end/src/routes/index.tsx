@@ -36,14 +36,7 @@ const Rotas: React.FC = () => {
           </PrivateLayout>
         }
       />
-      <Route
-        path="/encarregado"
-        element={
-          <ProtectedLayout>
-            <Encarregados />
-          </ProtectedLayout>
-        }
-      />
+      <Route path="/encarregado" element={<Encarregados />} />
       <Route
         path="/abate"
         element={
