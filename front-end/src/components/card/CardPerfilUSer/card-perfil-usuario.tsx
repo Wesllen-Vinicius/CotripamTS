@@ -1,4 +1,5 @@
 import { StyledForm, StyledFormWrapper, StyledLabel } from "./style"
+import { GrUserManager } from 'react-icons/gr';
 
 export default function CardPerfilUsuario() {
   localStorage.getItem("@App:user")
@@ -8,6 +9,7 @@ export default function CardPerfilUsuario() {
   return (
     <StyledFormWrapper>
       <StyledForm>
+        <h1><GrUserManager /></h1>
         <h2>Perfil do Colaborador</h2>
         <label htmlFor="Nome">Nome</label>
         <StyledLabel>{userJson.nome}</StyledLabel>

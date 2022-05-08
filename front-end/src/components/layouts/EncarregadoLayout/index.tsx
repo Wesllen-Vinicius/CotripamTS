@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import CardHistorico from "../../card/CardHistorico/card-historico"
 import CardPerfilUsuario from "../../card/CardPerfilUSer/card-perfil-usuario"
 import NavbarEnc from "../../navBar/navbarEnc"
 import { EncAside, EncContent, EncHeader, EncRigthAside, EnDiv } from "./style"
@@ -17,7 +18,9 @@ export default function EncarregadoLayout({ children }: layoutProps) {
         <CardPerfilUsuario />
       </EncAside>
       <EncContent>{children}</EncContent>
-      <EncRigthAside>{children}</EncRigthAside>
+      <EncRigthAside>
+        <CardHistorico />
+      </EncRigthAside>
     </EnDiv>
   )
 }

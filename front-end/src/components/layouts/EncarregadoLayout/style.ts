@@ -8,7 +8,7 @@ export const EnDiv = styled.div`
     "header header header"
     "aside main aside2";
   grid-template-columns: 30% auto;
-  grid-template-rows: 40px 100vh;
+  grid-template-rows: 40px 90vh;
   @media screen and (max-width: 768px) {
     display: flex;
     justify-content: center;
@@ -28,7 +28,7 @@ export const EncHeader = styled.header`
 export const EncAside = styled.div`
   grid-area: aside;
   padding: 1rem;
-  width: 100%;
+  width: auto;
   align-items: center;
 `
 export const EncRigthAside = styled.section`
