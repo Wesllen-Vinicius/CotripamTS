@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import { StyledForm, StyledFormWrapper } from "./style"
+import CardGlobalComponent from "../../GlobalComponents/cardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../../GlobalComponents/formGlobalComponent/formGlobalComponent"
 
 interface IFormValues {
   mocoto: Number
@@ -36,16 +37,20 @@ export default function FormTripaCozida() {
     axios.post("http://localhost:4500/abates/cadastro", data, userId)
 
   return (
-    <StyledForm>
-      <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
+    <CardGlobalComponent>
+      <FormGlobalComponent>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Input label="mocoto" register={register} required />
         <Input label="culatra" register={register} required />
         <Input label="abomaso" register={register} required />
         <Input label="fundo" register={register} required />
         <Input label="tripa_grossa" register={register} required />
         <Input label="tripa_fina" register={register} required />
-        <input type="submit" />
-      </StyledFormWrapper>
-    </StyledForm>
+        <button type="submit" >
+          Enviar
+        </button>
+      </form>
+      </FormGlobalComponent>
+      </CardGlobalComponent>
   )
 }

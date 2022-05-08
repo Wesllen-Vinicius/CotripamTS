@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import { StyledForm, StyledFormWrapper } from "./style"
+import CardGlobalComponent from "../../GlobalComponents/cardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../../GlobalComponents/formGlobalComponent/formGlobalComponent"
 
 interface IFormValues {
   sal_fino: Number
@@ -35,15 +36,17 @@ export default function FormProduto() {
     axios.post("http://localhost:4500/abates/cadastro", data, userId)
 
   return (
-    <StyledForm>
-      <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
-        <Input label="sal_fino" register={register} required />
-        <Input label="sal_grosso" register={register} required />
-        <Input label="metabissulfito" register={register} required />
-        <Input label="peroxido" register={register} required />
-        <Input label="bombonas" register={register} required />
-        <input type="submit" />
-      </StyledFormWrapper>
-    </StyledForm>
+    <CardGlobalComponent>
+      <FormGlobalComponent>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Input label="sal_fino" register={register} required />
+          <Input label="sal_grosso" register={register} required />
+          <Input label="metabissulfito" register={register} required />
+          <Input label="peroxido" register={register} required />
+          <Input label="bombonas" register={register} required />
+        <button type="submit" > Enviar </button>
+        </form>
+      </FormGlobalComponent>
+    </CardGlobalComponent>
   )
 }

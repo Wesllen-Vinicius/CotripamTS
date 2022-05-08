@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 import CardHistorico from "../../card/CardHistorico/card-historico"
-import CardPerfilUsuario from "../../card/CardPerfilUSer/card-perfil-usuario"
+import CardPerfilUsuario from "../../card/PerfilUSer/perfilUsuario"
 import NavbarEnc from "../../navBar/navbarEnc"
 import { EncAside, EncContent, EncHeader, EncRigthAside, EnDiv } from "./style"
 

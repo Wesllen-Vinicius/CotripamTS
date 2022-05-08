@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import { StyledForm, StyledFormWrapper, StyleEnvio } from "./style"
-
+import CardGlobalComponent from "../../GlobalComponents/cardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../../GlobalComponents/formGlobalComponent/formGlobalComponent"
 
 interface IFormValues {
   abate: Number
@@ -17,7 +17,7 @@ type InputProps = {
   required: boolean
 }
 
-const InputForm = ({ label, register, required }: InputProps) => (
+const Input = ({ label, register, required }: InputProps) => (
   <>
     <label>{label}</label>
     <input {...register(label, { required })} />
@@ -36,19 +36,19 @@ export default function FormAbate() {
     axios.post("", data, userId)
 
   return (
-    <StyledForm>
-      <StyleEnvio>
-        <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
-          <InputForm label="abate" register={register} required />
-          <InputForm label="bois" register={register} required />
-          <InputForm label="vacas" register={register} required />
-          <InputForm label="total" register={register} required />
-          <InputForm label="condenados" register={register} required />
+    <CardGlobalComponent>
+      <FormGlobalComponent>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Input label="abate" register={register} required />
+          <Input label="bois" register={register} required />
+          <Input label="vacas" register={register} required />
+          <Input label="total" register={register} required />
+          <Input label="condenados" register={register} required />
           <button type="submit" >
             Enviar
           </button>
-        </StyledFormWrapper>
-      </StyleEnvio>
-    </StyledForm>
+        </form>
+      </FormGlobalComponent>
+    </CardGlobalComponent>
   )
 }
