@@ -8,10 +8,6 @@ type layoutProps = {
   children: ReactNode
 }
 
-type historicoProps = {
-  children2: ReactNode
-}
-
 export default function EncarregadoLayout({ children }: layoutProps) {
   return (
     <EnDiv>

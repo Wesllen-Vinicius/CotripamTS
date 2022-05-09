@@ -6,5 +6,5 @@ type CardProps = {
 }
 
 export default function FormGlobalComponent({ children }: CardProps) {
-  return <FormComponent>{children}</FormComponent>
+  return <FormComponent className="form-group">{children}</FormComponent>
 }
