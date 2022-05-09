@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
-const GlobalStyle = createGlobalStyle`
+ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
@@ -15,6 +15,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
-`
 
-export default GlobalStyle
+  @media(max-width: 800px) {
+    div {
+      flex-direction: row;
+      width: auto;
+      height: auto;
+    }
+  }
+`

@@ -1,4 +1,4 @@
-import CardGlobalComponent from "../GlobalComponents/CardGlobalComponent/CardGlobal"
+import CardGlobalComponent from "../GlobalComponents/cardGlobalComponent/CardGlobal"
 import TableGlobalComponent from "../GlobalComponents/TableGlobalComponent/TableGlobal"
 
 export default function HistoricoSerosa() {

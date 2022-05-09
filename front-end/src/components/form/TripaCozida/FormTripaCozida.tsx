@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import CardGlobalComponent from "../../GlobalComponents/CardGlobalComponent/CardGlobal"
-import FormGlobalComponent from "../../GlobalComponents/FormGlobalComponent/formGlobalComponent"
+import CardGlobalComponent from "../../GlobalComponents/cardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../../GlobalComponents/formGlobalComponent/formGlobalComponent"
 
 interface IFormValues {
   mocoto: Number
@@ -40,7 +40,7 @@ export default function FormTripaCozida() {
     <CardGlobalComponent>
       <FormGlobalComponent>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Formulario Produtos</h1>
+          <h1>Formulario Tripa Cozida</h1>
           <Input label="mocoto" register={register} required />
           <Input label="culatra" register={register} required />
           <Input label="abomaso" register={register} required />

@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import CardGlobalComponent from "../../GlobalComponents/CardGlobalComponent/CardGlobal"
-import FormGlobalComponent from "../../GlobalComponents/FormGlobalComponent/formGlobalComponent"
+import CardGlobalComponent from "../../GlobalComponents/cardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../../GlobalComponents/formGlobalComponent/formGlobalComponent"
 
 interface IFormValues {
   sal_fino: Number
