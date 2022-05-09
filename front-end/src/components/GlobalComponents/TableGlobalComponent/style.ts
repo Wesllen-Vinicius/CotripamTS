@@ -2,6 +2,8 @@ import styled from "styled-components"
 export const StyledTable = styled.table`
   caption-side: top;
   border: none;
+  width: 100%;
+  align-items: center;
   border-collapse: collapse;
   /* border-collapse: separate; */
   /* border-spacing: 5px 10px; */
@@ -47,6 +49,7 @@ export const StyledTable = styled.table`
     font-weight: bold;
   }
   div {
+    align-items: center;
     flex-direction: column;
     width: 100%;
     height: 100%;

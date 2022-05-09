@@ -12,7 +12,7 @@ export const CardComponent = styled.div`
   display: flex;
   padding: 0 20px;
   border-radius: 10px;
-  height: auto;
+  height: 100%;
   padding-top: 10px;
   width: auto;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);

@@ -1,6 +1,5 @@
 import { useState, useContext } from "react"
 import styled from "styled-components"
-
 import AuthContext from "../../AuthProvider/userAuth"
 
 const CardWrapper = styled.div`
@@ -149,7 +148,7 @@ export default function Login() {
   }
 
   return (
-    <>
+    <> 
       <CardWrapper>
         <CardHeader>
           <CardHeading>Acesso Restrito</CardHeading>

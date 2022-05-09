@@ -1,7 +1,8 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import CardGlobalComponent from "../../GlobalComponents/CardGlobalComponent/CardGlobal"
-import FormGlobalComponent from "../../GlobalComponents/FormGlobalComponent/formGlobalComponent"
+import CardGlobalComponent from "../../GlobalComponents/cardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../../GlobalComponents/formGlobalComponent/formGlobalComponent"
+
 
 interface IFormValues {
   abate: Number
@@ -39,7 +40,7 @@ export default function FormAbate() {
     <CardGlobalComponent>
       <FormGlobalComponent>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Formulario Produtos</h1>
+          <h1>Formulario Abate</h1>
           <Input label="abate" register={register} required />
           <Input label="bois" register={register} required />
           <Input label="vacas" register={register} required />

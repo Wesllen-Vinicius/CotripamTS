@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import { FormComponent } from "./style"
 
+
 type CardProps = {
   children: ReactNode
 }
