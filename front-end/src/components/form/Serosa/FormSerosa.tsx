@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import CardGlobalComponent from "../../GlobalComponents/cardGlobalComponent/CardGlobal"
-import FormGlobalComponent from "../../GlobalComponents/formGlobalComponent/formGlobalComponent"
+import CardGlobalComponent from "../../GlobalComponents/CardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../../GlobalComponents/FormGlobalComponent/formGlobalComponent"
 
 interface IFormValues {
   corte_630: Number
@@ -36,17 +36,16 @@ export default function FormSerosa() {
 
   return (
     <CardGlobalComponent>
-    <FormGlobalComponent>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Input label="corte_630" register={register} required />
-        <Input label="corte_470" register={register} required />
-        <Input label="corte_320" register={register} required />
-        <Input label="corte_170" register={register} required />
-        <button type="submit" >
-          Enviar
-        </button>
-      </form>
+      <FormGlobalComponent>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h1>Formulario Produtos</h1>
+          <Input label="corte_630" register={register} required />
+          <Input label="corte_470" register={register} required />
+          <Input label="corte_320" register={register} required />
+          <Input label="corte_170" register={register} required />
+          <button type="submit">Enviar</button>
+        </form>
       </FormGlobalComponent>
-      </CardGlobalComponent>
+    </CardGlobalComponent>
   )
 }

@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import CardGlobalComponent from "../../GlobalComponents/cardGlobalComponent/CardGlobal"
-import FormGlobalComponent from "../../GlobalComponents/formGlobalComponent/formGlobalComponent"
+import CardGlobalComponent from "../../GlobalComponents/CardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../../GlobalComponents/FormGlobalComponent/formGlobalComponent"
 
 interface IFormValues {
   sal_fino: Number
@@ -39,12 +39,13 @@ export default function FormProduto() {
     <CardGlobalComponent>
       <FormGlobalComponent>
         <form onSubmit={handleSubmit(onSubmit)}>
+          <h1>Formulario Produtos</h1>
           <Input label="sal_fino" register={register} required />
           <Input label="sal_grosso" register={register} required />
           <Input label="metabissulfito" register={register} required />
           <Input label="peroxido" register={register} required />
           <Input label="bombonas" register={register} required />
-        <button type="submit" > Enviar </button>
+          <button type="submit"> Enviar </button>
         </form>
       </FormGlobalComponent>
     </CardGlobalComponent>
