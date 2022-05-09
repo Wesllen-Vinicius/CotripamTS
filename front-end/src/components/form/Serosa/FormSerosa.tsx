@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
-import { StyledForm, StyledFormWrapper } from "./style"
+import CardGlobalComponent from "../../GlobalComponents/CardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../../GlobalComponents/FormGlobalComponent/formGlobalComponent"
 
 interface IFormValues {
   corte_630: Number
@@ -34,14 +35,17 @@ export default function FormSerosa() {
     axios.post("http://localhost:4500/abates/cadastro", data, userId)
 
   return (
-    <StyledForm>
-      <StyledFormWrapper onSubmit={handleSubmit(onSubmit)}>
-        <Input label="corte_630" register={register} required />
-        <Input label="corte_470" register={register} required />
-        <Input label="corte_320" register={register} required />
-        <Input label="corte_170" register={register} required />
-        <input type="submit" />
-      </StyledFormWrapper>
-    </StyledForm>
+    <CardGlobalComponent>
+      <FormGlobalComponent>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h1>Formulario Produtos</h1>
+          <Input label="corte_630" register={register} required />
+          <Input label="corte_470" register={register} required />
+          <Input label="corte_320" register={register} required />
+          <Input label="corte_170" register={register} required />
+          <button type="submit">Enviar</button>
+        </form>
+      </FormGlobalComponent>
+    </CardGlobalComponent>
   )
 }
