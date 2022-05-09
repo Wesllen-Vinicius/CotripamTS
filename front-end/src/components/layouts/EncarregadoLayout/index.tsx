@@ -1,12 +1,17 @@
 import { ReactNode } from "react"
-import CardHistorico from "../../Historico/historico"
 import CardPerfilUsuario from "../../card/PerfilUSer/perfilUsuario"
+import HistoricoAbate from "../../Historico/abate"
 import NavbarEnc from "../../navBar/navbarEnc"
 import { EncAside, EncContent, EncHeader, EncRigthAside, EnDiv } from "./style"
 
 type layoutProps = {
   children: ReactNode
 }
+
+type historicoProps = {
+  children2: ReactNode
+}
+
 
 export default function EncarregadoLayout({ children }: layoutProps) {
   return (
@@ -19,7 +24,7 @@ export default function EncarregadoLayout({ children }: layoutProps) {
       </EncAside>
       <EncContent>{children}</EncContent>
       <EncRigthAside>
-        <CardHistorico />
+        <HistoricoAbate/>
       </EncRigthAside>
     </EnDiv>
   )

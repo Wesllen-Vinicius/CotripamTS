@@ -1,7 +1,7 @@
 import CardGlobalComponent from "../GlobalComponents/CardGlobalComponent/CardGlobal"
 import TableGlobalComponent from "../GlobalComponents/TableGlobalComponent/TableGlobal"
 
-export default function Historico() {
+export default function HistoricoProduto() {
   return (
     <CardGlobalComponent>
       <TableGlobalComponent>
