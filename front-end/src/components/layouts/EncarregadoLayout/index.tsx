@@ -12,7 +12,6 @@ type historicoProps = {
   children2: ReactNode
 }
 
-
 export default function EncarregadoLayout({ children }: layoutProps) {
   return (
     <EnDiv>
@@ -24,7 +23,7 @@ export default function EncarregadoLayout({ children }: layoutProps) {
       </EncAside>
       <EncContent>{children}</EncContent>
       <EncRigthAside>
-        <HistoricoAbate/>
+        <HistoricoAbate />
       </EncRigthAside>
     </EnDiv>
   )

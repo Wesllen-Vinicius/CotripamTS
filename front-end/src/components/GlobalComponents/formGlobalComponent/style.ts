@@ -1,3 +1,4 @@
+import { up } from "styled-breakpoints"
 import styled from "styled-components"
 
 export const FormComponent = styled.div`
@@ -68,5 +69,21 @@ export const FormComponent = styled.div`
     font-family: sans-serif;
     font-size: 12px;
     height: 30px;
+  }
+
+  ${up("sm")} {
+  }
+
+  ${up("md")} {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  ${up("lg")} {
+    font-size: 1.6rem;
+  }
+
+  ${up("xl")} {
+    font-size: 1.8rem;
   }
 `

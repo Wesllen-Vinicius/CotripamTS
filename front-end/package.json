@@ -55,6 +55,7 @@
     "eslint-plugin-testing-library": "^5.4.0",
     "react-hook-form": "^7.28.1",
     "react-router-dom": "6",
+    "styled-breakpoints": "^11.1.0",
     "styled-components": "^5.3.5"
   }
 }
