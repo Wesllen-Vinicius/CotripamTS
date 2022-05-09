@@ -1,3 +1,4 @@
+import { up } from "styled-breakpoints"
 import styled, { css } from "styled-components"
 export const sharedStyles = css`
   background-color: #eee;
@@ -16,4 +17,32 @@ export const CardComponent = styled.div`
   padding-top: 10px;
   width: auto;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+
+  ${up("sm")} {
+  }
+
+  ${up("md")} {
+  }
+
+  ${up("lg")} {
+    font-size: 1rem;
+    display: grid;
+    padding: 0 20px;
+    border-radius: 10px;
+    height: 100%;
+    padding-top: 10px;
+    width: 950px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  ${up("xl")} {
+    font-size: 1rem;
+    display: flex;
+    padding: 0 20px;
+    border-radius: 10px;
+    height: 100%;
+    padding-top: 10px;
+    width: auto;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  }
 `

@@ -3,10 +3,8 @@ import Layout from "../../../components/layouts/EncarregadoLayout/index"
 
 export default function Abates() {
   return (
-
     <Layout>
       <FormAbate />
     </Layout>
   )
 }
- 

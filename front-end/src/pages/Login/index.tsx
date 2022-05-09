@@ -1,6 +1,18 @@
 import { useState, useContext } from "react"
 import AuthContext from "../../AuthProvider/userAuth"
-import { CardBody, CardButton, CardFieldset, CardHeader, CardHeading, CardIcon, CardInput, CardOptions, CardOptionsItem, CardOptionsNote, CardWrapper } from "./style"
+import {
+  CardBody,
+  CardButton,
+  CardFieldset,
+  CardHeader,
+  CardHeading,
+  CardIcon,
+  CardInput,
+  CardOptions,
+  CardOptionsItem,
+  CardOptionsNote,
+  CardWrapper,
+} from "./style"
 
 export default function Login() {
   const { signIn } = useContext(AuthContext)
@@ -12,7 +24,7 @@ export default function Login() {
   }
 
   return (
-    <> 
+    <>
       <CardWrapper>
         <CardHeader>
           <CardHeading>Acesso Restrito</CardHeading>

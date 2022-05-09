@@ -7,17 +7,19 @@ export default function CardPerfilUsuario() {
   window.localStorage.getItem("@App:user")
 
   return (
-    <StyledFormWrapper>
-      <StyledForm>
-        <h1>
-          <GrUserManager />
-        </h1>
-        <h2>Perfil do Colaborador</h2>
-        <label htmlFor="Nome">Nome</label>
-        <StyledLabel>{userJson.nome}</StyledLabel>
-        <label htmlFor="email">Email</label>
-        <StyledLabel>{userJson.email}</StyledLabel>
-      </StyledForm>
+    <StyledFormWrapper className="container">
+      <div className="row">
+        <StyledForm className="col-sm-12">
+          <h1>
+            <GrUserManager />
+          </h1>
+          <h2>Perfil do Colaborador</h2>
+          <label htmlFor="Nome">Nome</label>
+          <StyledLabel>{userJson.nome}</StyledLabel>
+          <label htmlFor="email">Email</label>
+          <StyledLabel>{userJson.email}</StyledLabel>
+        </StyledForm>
+      </div>
     </StyledFormWrapper>
   )
 }

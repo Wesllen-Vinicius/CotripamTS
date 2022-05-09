@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components"
+import px2vw from "../../../utils/px2vw"
 
- export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
@@ -15,12 +16,34 @@ import { createGlobalStyle } from "styled-components"
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
-
-  @media(max-width: 800px) {
-    div {
-      flex-direction: row;
-      width: auto;
-      height: auto;
+  div{
+    flex-wrap: wrap;
     }
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
+
+  :root {
+      font-size: ${px2vw(18)};
+
+      @media (min-width: 768px) {
+        font-size: ${px2vw(18)};
+        width: ${px2vw(320, 768)};
+        min-height: ${px2vw(200, 768)};
+        height: 80%;
+        flex-direction: row;
+        display: flexbox;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: ${px2vw(16)};
+      flex-wrap: nowrap;
+      width: ${px2vw(1400)};
+    }
+    }
+
 `

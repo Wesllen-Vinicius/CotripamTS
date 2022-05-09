@@ -3,7 +3,6 @@ import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
 import CardGlobalComponent from "../../GlobalComponents/cardGlobalComponent/CardGlobal"
 import FormGlobalComponent from "../../GlobalComponents/formGlobalComponent/formGlobalComponent"
 
-
 interface IFormValues {
   abate: Number
   bois: Number

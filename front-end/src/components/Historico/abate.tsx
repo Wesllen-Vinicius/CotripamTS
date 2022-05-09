@@ -14,7 +14,6 @@ export default function HistoricoAbate() {
               <th>Meta Dia</th>
               <th>Meta Esperada</th>
             </tr>
-            
           </thead>
           <tbody>
             <tr>
@@ -53,7 +52,6 @@ export default function HistoricoAbate() {
               <td>0,00</td>
               <td>0,00</td>
             </tr>
-            
           </tbody>
         </div>
       </TableGlobalComponent>

@@ -1,3 +1,4 @@
+import { up } from "styled-breakpoints"
 import styled from "styled-components"
 
 export const EnDiv = styled.div`
@@ -9,10 +10,6 @@ export const EnDiv = styled.div`
     "aside main aside2";
   grid-template-columns: 30% auto;
   grid-template-rows: 40px 90vh;
-  @media screen and (max-width: 768px) {
-    display: flex;
-    justify-content: center;
-  }
 `
 
 export const EncHeader = styled.header`
