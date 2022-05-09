@@ -16,17 +16,27 @@ export const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
+  div{
+    flex-wrap: wrap;
+    }
+
 
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+
   :root {
       font-size: ${px2vw(18)};
 
       @media (min-width: 768px) {
         font-size: ${px2vw(18)};
+        width: ${px2vw(320, 768)};
+        min-height: ${px2vw(200, 768)};
+        height: 80%;
+        flex-direction: row;
+        display: flexbox;
       }
 
       @media (min-width: 1024px) {
