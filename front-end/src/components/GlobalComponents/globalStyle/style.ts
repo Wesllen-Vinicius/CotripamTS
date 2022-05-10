@@ -36,7 +36,6 @@ export const GlobalStyle = createGlobalStyle`
         min-height: ${px2vw(200, 768)};
         height: 80%;
         flex-direction: row;
-        display: flexbox;
       }
 
       @media (min-width: 1024px) {

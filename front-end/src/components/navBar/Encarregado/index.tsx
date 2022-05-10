@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import AuthContext from "../../AuthProvider/userAuth"
-import { Nav, NavLink, Bars, NavMenu, NavBtn } from "./navbarStyle"
+import AuthContext from "../../../AuthProvider/userAuth"
+import { Nav, NavLink, Bars, NavMenu, NavBtn } from "./style"
 
 export default function NavbarEnc() {
   const { Logout } = useContext(AuthContext)

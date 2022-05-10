@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import CardPerfilUsuario from "../../card/PerfilUSer/perfilUsuario"
 import HistoricoAbate from "../../Historico/abate"
-import NavbarEnc from "../../navBar/navbarEnc"
+import NavbarEnc from "../../navBar/Encarregado"
 import { EncAside, EncContent, EncHeader, EncRigthAside, EnDiv } from "./style"
 
 type layoutProps = {

@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router-dom"
 import NotFoundPage from "../pages/404/NotFoundPage"
-import Relatorios from "../pages/Admin/relatorios"
-import Dashboard from "../pages/Dashboard"
+import Colaboradores from "../pages/Dashboard/Colaboradores"
+import Relatorios from "../pages/Dashboard/Relatorios"
+import Dashboard from "../pages/Dashboard/Relatorios"
+import Unidades from "../pages/Dashboard/Unidades"
 import Abates from "../pages/Encarregado/Abate"
 import Encarregados from "../pages/Encarregado/Abate"
 import Produtos from "../pages/Encarregado/Produtos"
@@ -27,7 +29,27 @@ const Rotas: React.FC = () => {
         }
       />
       <Route
-        path="/relatorio"
+        path="/unidades"
+        element={
+          <PrivateLayout>
+            <ProtectedLayout>
+              <Unidades />
+            </ProtectedLayout>
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/colaboradores"
+        element={
+          <PrivateLayout>
+            <ProtectedLayout>
+              <Colaboradores />
+            </ProtectedLayout>
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/Relatorios"
         element={
           <PrivateLayout>
             <ProtectedLayout>

@@ -21,7 +21,7 @@ export const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
   &.active {
-    color: #000000;
+    color: #ffff;
   }
 `
 
@@ -42,7 +42,7 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
+
   /* Second Nav */
   /* margin-right: 24px; */
   /* Third Nav */
@@ -58,6 +58,7 @@ export const NavBtn = styled.nav`
   align-items: center;
   margin-right: 24px;
   cursor: pointer;
+  color: white;
   /* Third Nav */
   /* justify-content: flex-end;
   width: 100vw; */
@@ -69,8 +70,7 @@ export const NavBtn = styled.nav`
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
   background: white;
-  padding: 10px 22px;
-  color: #000000;
+  color: #ffff;
   outline: none;
   border: none;
   cursor: pointer;
