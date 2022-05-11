@@ -11,7 +11,7 @@ export const HomeDiv = styled.div`
   grid-gap: 1rem;
   grid-template-areas:
     "header header header"
-    "main main main"
+    "side main main"
     "footer footer footer";
   grid-template-columns: auto auto auto;
   grid-template-rows: 60px 100vh 350px;
@@ -23,19 +23,25 @@ export const HomeHeader = styled.header`
   background-color: #4682b4;
   border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
   align-items: center;
-  padding: 26px 20px;
   position: fixed;
-  width: 98%;
+  width: 100%;
 `
 
 export const HomeFooter = styled.footer`
   background-color: #4682b4;
   grid-area: footer;
   padding: 1rem;
+  width: 100%;
 `
 
 export const HomeContent = styled.section`
   grid-area: main;
+  width: auto;
+`
+
+export const SideBar = styled.section`
+  grid-area: side;
+  width: 200px;
 `
 
 export const MenuLink = styled.a`

@@ -16,15 +16,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
-  div{
-    flex-wrap: wrap;
-    }
-
 
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
 
   :root {
@@ -39,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
       }
 
       @media (min-width: 1024px) {
-        font-size: ${px2vw(16)};
+      font-size: ${px2vw(16)};
       flex-wrap: nowrap;
       width: ${px2vw(1400)};
     }
