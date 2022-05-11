@@ -25,7 +25,7 @@ export const Header = styled.header`
 export const Aside = styled.div`
   grid-area: aside;
   padding: 1rem;
-  width: auto;
+  width: 200px;
   align-items: center;
   margin: 0;
 `
@@ -33,11 +33,12 @@ export const Aside = styled.div`
 export const Content = styled.section`
   grid-area: main;
   padding: 1.5rem;
+  width: 100%;
 `
 export const Footer = styled.footer`
   background-color: #4682b4;
   grid-area: footer;
   padding: 1rem;
   margin: 0;
-  width: 100%!important;
+  width: 100%;
 `

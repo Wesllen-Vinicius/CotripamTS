@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
       @media (min-width: 1024px) {
       font-size: ${px2vw(16)};
       flex-wrap: nowrap;
-      width: ${px2vw(1400)};
+      width: 100%;
     }
     }
 
