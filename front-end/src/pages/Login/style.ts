@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { up } from "styled-breakpoints"
+
 
 export const CardWrapper = styled.div`
   overflow: hidden;
@@ -12,6 +12,7 @@ export const CardWrapper = styled.div`
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  
 `
 
 export const CardHeader = styled.header`

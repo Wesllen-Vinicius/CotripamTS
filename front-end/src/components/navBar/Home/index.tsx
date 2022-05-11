@@ -11,8 +11,6 @@ export default function NavbarHome() {
           <NavLink to='/login'>
             Acesso Restrito
           </NavLink>
-          {/* Second Nav */}
-          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
         <NavBtn>
           <NavBtnLink to='/'>Fale Conosco</NavBtnLink>
