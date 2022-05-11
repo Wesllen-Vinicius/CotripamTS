@@ -2,15 +2,18 @@ import { NavLink as Link } from "react-router-dom"
 import styled from "styled-components"
 import { FaBars } from "react-icons/fa"
 
+  
 export const Nav = styled.nav`
+  background: none;
   height: 0px;
   display: flex;
+  justify-content: flex-end;
+  padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
-  position: relative;
   /* Third Nav */
   /* justify-content: flex-start; */
-`
-
+`;
+  
 export const NavLink = styled(Link)`
   color: white;
   display: flex;
@@ -20,15 +23,13 @@ export const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
   &.active {
-    color: #ffff;
+    color: white;
   }
-`
-
+`;
+  
 export const Bars = styled(FaBars)`
   display: none;
-  margin: 0;
-  padding: 0;
-
+  color: #808080;
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
@@ -38,34 +39,52 @@ export const Bars = styled(FaBars)`
     font-size: 1.8rem;
     cursor: pointer;
   }
-`
-
+`;
+  
 export const NavMenu = styled.div`
   display: flex;
-  padding: 0;
-  margin: 0;
-
+  align-items: center;
+  margin-right: -24px;
+  /* Second Nav */
+  /* margin-right: 24px; */
+  /* Third Nav */
+  /* width: 100vw;
+  white-space: nowrap; */
   @media screen and (max-width: 768px) {
     display: none;
   }
-`
-
-export const Button = styled.button`
-  padding: 11px 13px;
-  color: white;
+`;
   
-  height: 50px;
+export const NavBtn = styled.nav`
   display: flex;
-  font-weight: 600;
-  text-transform: uppercase;
+  align-items: center;
+  margin-right: 24px;
   background: #f03d4e;
-  border: none;
+  /* Third Nav */
+  /* justify-content: flex-end;
+  width: 100vw; */
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+  
+export const NavBtnLink = styled(Link)`
+  border-radius: 4px;
+  padding: 10px 22px;
+  color: #000000;
+  height: 50px;
+  outline: none;
+  font-weight: 600;
+  background: #f03d4e;
   border-radius: 5px;
-  outline: 0;
+  border: none;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-out;
-  :hover {
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  /* Second Nav */
+  margin-left: 24px;
+  &:hover {
+    transition: all 0.2s ease-in-out;
     background: rgb(200, 50, 70);
   }
-`
+`;

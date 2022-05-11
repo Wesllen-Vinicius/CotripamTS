@@ -1,4 +1,4 @@
-import { Nav, NavLink, Bars, NavMenu, Button } from "./style"
+import { Nav, NavLink, Bars, NavMenu, NavBtnLink, NavBtn } from "./style"
 
 export default function NavbarHome() {
   
@@ -6,12 +6,17 @@ export default function NavbarHome() {
     <>
       <Nav>
         <Bars />
+  
         <NavMenu>
-          <NavLink to="/login">Acesso Restrito</NavLink>
-          <Button>
-            <NavLink to="/login">Fale Conosco</NavLink>
-          </Button>
+          <NavLink to='/login'>
+            Acesso Restrito
+          </NavLink>
+          {/* Second Nav */}
+          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
+        <NavBtn>
+          <NavBtnLink to='/'>Fale Conosco</NavBtnLink>
+        </NavBtn>
       </Nav>
     </>
   )
