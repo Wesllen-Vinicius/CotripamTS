@@ -1,8 +1,7 @@
 import { ReactNode } from "react"
-import CardGlobalComponent from "../../GlobalComponents/cardGlobalComponent/CardGlobal"
 import NavbarHome from "../../navBar/Home"
-import { Accordion } from "../../navBar/Home/accordion"
-import { Aside, Content, Div, Footer, Header } from "./style"
+
+import { Aside, Carousel, Content, Div, Footer, Header } from "./style"
 
 type layoutProps = {
   children: ReactNode
@@ -10,15 +9,13 @@ type layoutProps = {
 
 export default function HomeLayout({ children }: layoutProps) {
   return (
-    <Div>
+    <Div>   
       <Header>
         <NavbarHome/>
       </Header>
+      <Carousel>
+      </Carousel>
       <Aside>
-        <CardGlobalComponent>
-          <Accordion title={1} content={2}/>
-          <Accordion title={3} content={4}/>
-        </CardGlobalComponent>
       </Aside>
       <Content>{children}</Content>
       <Footer>

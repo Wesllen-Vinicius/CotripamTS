@@ -6,10 +6,23 @@ export const Div = styled.div`
   grid-gap: 1rem;
   grid-template-areas:
     "header header header"
+    "carousel carousel carousel"
     "aside main main"
     "footer footer footer";
   grid-template-columns: auto auto auto;
-  grid-template-rows: 60px 100vh auto;
+  grid-template-rows: 60px 20% 100vw;
+`
+
+export const Carousel = styled.div`
+  grid-area: carousel;
+  padding: 1.5rem;
+  display: flex;
+
+  border: 1px solid rgba(0, 0, 0, 0.0975);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 `
 
 export const Header = styled.header`
@@ -36,9 +49,10 @@ export const Content = styled.section`
   width: 100%;
 `
 export const Footer = styled.footer`
-  background-color: #4682b4;
+  background-color: cornflowerblue;
   grid-area: footer;
   padding: 1rem;
   margin: 0;
   width: 100%;
+  height: 500px;
 `
