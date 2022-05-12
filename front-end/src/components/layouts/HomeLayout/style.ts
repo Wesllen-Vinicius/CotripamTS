@@ -13,7 +13,7 @@ export const Div = styled.div`
   grid-template-rows: 60px 20% 100vw;
 `
 
-export const Carousel = styled.div`
+export const CarouselDiv = styled.div`
   grid-area: carousel;
   padding: 1.5rem;
   display: flex;

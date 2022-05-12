@@ -1,7 +1,6 @@
 import { ReactNode } from "react"
 import NavbarHome from "../../navBar/Home"
-
-import { Aside, Carousel, Content, Div, Footer, Header } from "./style"
+import { Aside, CarouselDiv, Content, Div, Footer, Header } from "./style"
 
 type layoutProps = {
   children: ReactNode
@@ -13,8 +12,9 @@ export default function HomeLayout({ children }: layoutProps) {
       <Header>
         <NavbarHome/>
       </Header>
-      <Carousel>
-      </Carousel>
+      <CarouselDiv>
+        
+      </CarouselDiv>
       <Aside>
       </Aside>
       <Content>{children}</Content>

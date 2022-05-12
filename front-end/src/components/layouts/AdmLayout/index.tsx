@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import CardPerfilUsuario from "../../card/PerfilUSer/perfilUsuario"
 import NavbarAdm from "../../navBar/Adm"
+import RegistroComponent from "./Resgistros"
 import { Aside, Content, Div, Header, RigthAside } from "./style"
 
 type layoutProps = {
@@ -17,7 +18,9 @@ export default function AdmLayout({ children }: layoutProps) {
         <CardPerfilUsuario />
       </Aside>
       <Content>{children}</Content>
-      <RigthAside></RigthAside>
+      <RigthAside>
+        <RegistroComponent/>
+        </RigthAside>
     </Div>
   )
 }
