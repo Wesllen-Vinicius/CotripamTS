@@ -1,11 +1,11 @@
 import { useState, useContext } from "react"
 import AuthContext from "../../AuthProvider/userAuth"
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { TextField } from "@mui/material";
+
 
 export default function Login() {
   const { signIn } = useContext(AuthContext)
@@ -20,7 +20,8 @@ export default function Login() {
     <>
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
-        
+      <TextField id="filled-basic" label="Filled" variant="filled" />
+      <TextField id="filled-basic" label="Filled" variant="filled" />
       </CardContent>
       <CardActions>
       <Button variant="contained">Contained</Button>
