@@ -1,90 +1,206 @@
-import { useState, useContext } from "react"
-import AuthContext from "../../AuthProvider/userAuth"
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import { TextField } from "@mui/material";
+import React, { useReducer, useEffect } from 'react';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
+import TextField from '@material-ui/core/TextField';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import CardHeader from '@material-ui/core/CardHeader';
+import Button from '@material-ui/core/Button';
 
-export default function Login() {
-  const { signIn } = useContext(AuthContext)
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      width: 400,
+      margin: `${theme.spacing(0)} auto`
+    },
+    loginBtn: {
+      marginTop: theme.spacing(2),
+      flexGrow: 1
+    },
+    header: {
+      textAlign: 'center',
+      background: '#212121',
+      color: '#fff'
+    },
+    card: {
+      marginTop: theme.spacing(10)
+    }
+  })
+);
 
-  async function SignIn() {
-    await signIn({ email, password })
+//state type
+
+type State = {
+  username: string
+  password:  string
+  isButtonDisabled: boolean
+  helperText: string
+  isError: boolean
+};
+
+const initialState:State = {
+  username: '',
+  password: '',
+  isButtonDisabled: true,
+  helperText: '',
+  isError: false
+};
+
+type Action = { type: 'setUsername', payload: string }
+  | { type: 'setPassword', payload: string }
+  | { type: 'setIsButtonDisabled', payload: boolean }
+  | { type: 'loginSuccess', payload: string }
+  | { type: 'loginFailed', payload: string }
+  | { type: 'setIsError', payload: boolean };
+
+const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case 'setUsername': 
+      return {
+        ...state,
+        username: action.payload
+      };
+    case 'setPassword': 
+      return {
+        ...state,
+        password: action.payload
+      };
+    case 'setIsButtonDisabled': 
+      return {
+        ...state,
+        isButtonDisabled: action.payload
+      };
+    case 'loginSuccess': 
+      return {
+        ...state,
+        helperText: action.payload,
+        isError: false
+      };
+    case 'loginFailed': 
+      return {
+        ...state,
+        helperText: action.payload,
+        isError: true
+      };
+    case 'setIsError': 
+      return {
+        ...state,
+        isError: action.payload
+      };
   }
-
-  return (
-    <>
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
-      <TextField id="filled-basic" label="Filled" variant="filled" />
-      <TextField id="filled-basic" label="Filled" variant="filled" />
-      </CardContent>
-      <CardActions>
-      <Button variant="contained">Contained</Button>
-      </CardActions>
-    </Card>
-
-
-      {/* <CardWrapper>
-        <CardHeader>
-          <CardHeading>Acesso Restrito</CardHeading>
-        </CardHeader>
-
-        <CardBody>
-          <CardFieldset>
-            <CardInput
-              placeholder="E-mail"
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              name="email"
-              required
-            />
-          </CardFieldset>
-
-          <CardFieldset>
-            <CardInput
-              placeholder="Senha"
-              onChange={(e) => setPassword(e.target.value)}
-              type="password"
-              name="password"
-              required
-            />
-            <CardIcon className="fa fa-eye" />
-          </CardFieldset>
-
-          <CardFieldset>
-            <CardOptionsNote>
-              Entre com suas Credenciais de acesso
-            </CardOptionsNote>
-
-            <CardOptions>
-              <CardOptionsItem>
-                <CardIcon className="fab fa-google" />
-              </CardOptionsItem>
-
-              <CardOptionsItem>
-                <CardIcon className="fab fa-twitter" />
-              </CardOptionsItem>
-
-              <CardOptionsItem>
-                <CardIcon className="fab fa-facebook" />
-              </CardOptionsItem>
-            </CardOptions>
-          </CardFieldset>
-
-          <CardFieldset>
-            <CardButton onClick={SignIn} type="button">
-              Logar
-            </CardButton>
-          </CardFieldset>
-
-          <CardFieldset></CardFieldset>
-        </CardBody>
-      </CardWrapper> */}
-    </>
-  )
 }
+
+const Login = () => {
+  
+  
+  // const { signIn } = useContext(AuthContext)
+  // const [email, setEmail] = useState("")
+  // const [password, setPassword] = useState("")
+
+  // async function SignIn() {
+  //   await signIn({ email, password })
+  // }
+
+  const classes = useStyles();
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    if (state.username.trim() && state.password.trim()) {
+     dispatch({
+       type: 'setIsButtonDisabled',
+       payload: false
+     });
+    } else {
+      dispatch({
+        type: 'setIsButtonDisabled',
+        payload: true
+      });
+    }
+  }, [state.username, state.password]);
+
+  const handleLogin = () => {
+    if (state.username === 'abc@email.com' && state.password === 'password') {
+      dispatch({
+        type: 'loginSuccess',
+        payload: 'Login Successfully'
+      });
+    } else {
+      dispatch({
+        type: 'loginFailed',
+        payload: 'Incorrect username or password'
+      });
+    }
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent) => {
+    if (event.keyCode === 13 || event.which === 13) {
+      state.isButtonDisabled || handleLogin();
+    }
+  };
+
+  const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> =
+    (event) => {
+      dispatch({
+        type: 'setUsername',
+        payload: event.target.value
+      });
+    };
+
+  const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> =
+    (event) => {
+      dispatch({
+        type: 'setPassword',
+        payload: event.target.value
+      });
+    }
+  return (
+    <form className={classes.container} noValidate autoComplete="off">
+      <Card className={classes.card}>
+        <CardHeader className={classes.header} title="Login App" />
+        <CardContent>
+          <div>
+            <TextField
+              error={state.isError}
+              fullWidth
+              id="username"
+              type="email"
+              label="Username"
+              placeholder="Username"
+              margin="normal"
+              onChange={handleUsernameChange}
+              onKeyPress={handleKeyPress}
+            />
+            <TextField
+              error={state.isError}
+              fullWidth
+              id="password"
+              type="password"
+              label="Password"
+              placeholder="Password"
+              margin="normal"
+              helperText={state.helperText}
+              onChange={handlePasswordChange}
+              onKeyPress={handleKeyPress}
+            />
+          </div>
+        </CardContent>
+        <CardActions>
+          <Button
+            variant="contained"
+            size="large"
+            color="secondary"
+            className={classes.loginBtn}
+            onClick={handleLogin}
+            disabled={state.isButtonDisabled}>
+            Login
+          </Button>
+        </CardActions>
+      </Card>
+    </form>
+  );
+}
+
+export default Login;
