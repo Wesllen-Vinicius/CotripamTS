@@ -1,18 +1,11 @@
 import { useState, useContext } from "react"
 import AuthContext from "../../AuthProvider/userAuth"
-import {
-  CardBody,
-  CardButton,
-  CardFieldset,
-  CardHeader,
-  CardHeading,
-  CardIcon,
-  CardInput,
-  CardOptions,
-  CardOptionsItem,
-  CardOptionsNote,
-  CardWrapper,
-} from "./style"
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 export default function Login() {
   const { signIn } = useContext(AuthContext)
@@ -25,7 +18,17 @@ export default function Login() {
 
   return (
     <>
-      <CardWrapper>
+    <Card sx={{ minWidth: 275 }}>
+      <CardContent>
+        
+      </CardContent>
+      <CardActions>
+      <Button variant="contained">Contained</Button>
+      </CardActions>
+    </Card>
+
+
+      {/* <CardWrapper>
         <CardHeader>
           <CardHeading>Acesso Restrito</CardHeading>
         </CardHeader>
@@ -80,7 +83,7 @@ export default function Login() {
 
           <CardFieldset></CardFieldset>
         </CardBody>
-      </CardWrapper>
+      </CardWrapper> */}
     </>
   )
 }
