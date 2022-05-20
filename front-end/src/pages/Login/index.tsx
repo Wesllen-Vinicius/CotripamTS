@@ -1,5 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import AuthContext from "../"
 
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
@@ -106,11 +107,9 @@ const reducer = (state: State, action: Action): State => {
 const Login = () => {
   
   
-  const { signIn } = useContext(AuthContext)
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-
-  
+   const { signIn } = useContext(AuthContext)
+   const [email, setEmail] = useState("")
+   const [password, setPassword] = useState("")
 
   const classes = useStyles();
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -130,19 +129,19 @@ const Login = () => {
   }, [state.username, state.password]);
 
   const handleLogin = () => {
-    if (state.username === 'abc@email.com' && state.password === 'password') {
-      async function SignIn() {
-        await signIn({ email, password })
-        }
-      dispatch({
-        type: 'loginSuccess',
-        payload: 'Login Successfully'
-      });
-    } else {
-      dispatch({
-        type: 'loginFailed',
-        payload: 'Incorrect username or password'
-      });
+    try{
+      await signIn({ email, password }) {
+        dispatch({
+          type: 'loginSuccess',
+          payload: 'Login Successfully'
+        });
+       }
+      } catch {
+        dispatch({
+          type: 'loginFailed',
+          payload: 'Incorrect username or password'
+        });
+      }
     }
   };
 
