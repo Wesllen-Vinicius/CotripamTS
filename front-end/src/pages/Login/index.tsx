@@ -9,7 +9,6 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Button from '@material-ui/core/Button';
 import { styled } from '@mui/material/styles';
 import  { ButtonProps } from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import { purple } from '@mui/material/colors';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -107,13 +106,11 @@ const reducer = (state: State, action: Action): State => {
 const Login = () => {
   
   
-  // const { signIn } = useContext(AuthContext)
-  // const [email, setEmail] = useState("")
-  // const [password, setPassword] = useState("")
+  const { signIn } = useContext(AuthContext)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
-  // async function SignIn() {
-  //   await signIn({ email, password })
-  // }
+  
 
   const classes = useStyles();
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -134,6 +131,9 @@ const Login = () => {
 
   const handleLogin = () => {
     if (state.username === 'abc@email.com' && state.password === 'password') {
+      async function SignIn() {
+        await signIn({ email, password })
+        }
       dispatch({
         type: 'loginSuccess',
         payload: 'Login Successfully'
@@ -170,7 +170,7 @@ const Login = () => {
   return (
     <form className={classes.container} noValidate autoComplete="off">
       <Card className={classes.card}>
-        <CardHeader className={classes.header} title="Login App" />
+        <CardHeader className={classes.header} title="Login" />
         <CardContent>
           <div>
             <TextField
