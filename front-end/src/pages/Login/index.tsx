@@ -1,6 +1,5 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useContext, useState } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import AuthContext from "../"
 
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
@@ -8,9 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CardHeader from '@material-ui/core/CardHeader';
 import Button from '@material-ui/core/Button';
-import { styled } from '@mui/material/styles';
-import  { ButtonProps } from '@mui/material/Button';
-import { purple } from '@mui/material/colors';
+import AuthContext from '../../AuthProvider/userAuth';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -35,17 +32,10 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.getContrastText(purple[500]),
-  backgroundColor: purple[100],
-  '&:hover': {
-    backgroundColor: purple[800],
-  },
-}));
 //state type
 
 type State = {
-  username: string
+  email: string
   password:  string
   isButtonDisabled: boolean
   helperText: string
@@ -53,7 +43,7 @@ type State = {
 };
 
 const initialState:State = {
-  username: '',
+  email: '',
   password: '',
   isButtonDisabled: true,
   helperText: '',
@@ -72,7 +62,7 @@ const reducer = (state: State, action: Action): State => {
     case 'setUsername': 
       return {
         ...state,
-        username: action.payload
+        email: action.payload
       };
     case 'setPassword': 
       return {
@@ -105,17 +95,13 @@ const reducer = (state: State, action: Action): State => {
 }
 
 const Login = () => {
-  
-  
-   const { signIn } = useContext(AuthContext)
-   const [email, setEmail] = useState("")
-   const [password, setPassword] = useState("")
+
 
   const classes = useStyles();
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    if (state.username.trim() && state.password.trim()) {
+    if (state.email.trim() && state.password.trim()) {
      dispatch({
        type: 'setIsButtonDisabled',
        payload: false
@@ -126,28 +112,32 @@ const Login = () => {
         payload: true
       });
     }
-  }, [state.username, state.password]);
+  }, [state.email, state.password]);
 
-  const handleLogin = () => {
-    try{
-      await signIn({ email, password }) {
-        dispatch({
-          type: 'loginSuccess',
-          payload: 'Login Successfully'
-        });
-       }
-      } catch {
-        dispatch({
-          type: 'loginFailed',
-          payload: 'Incorrect username or password'
-        });
-      }
+
+  
+  const { signIn } = useContext(AuthContext)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const SignIn = async () => {
+    await signIn({ email, password })
+    if (email === "" && password === "") {
+      dispatch({
+        type: 'loginSuccess',
+        payload: 'Login Successfully'
+      });
+    } else {
+      dispatch({
+        type: 'loginFailed',
+        payload: 'Incorrect email or password'
+      });
     }
   };
 
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.keyCode === 13 || event.which === 13) {
-      state.isButtonDisabled || handleLogin();
+      state.isButtonDisabled || SignIn();
     }
   };
 
@@ -166,6 +156,9 @@ const Login = () => {
         payload: event.target.value
       });
     }
+
+
+    
   return (
     <form className={classes.container} noValidate autoComplete="off">
       <Card className={classes.card}>
@@ -175,12 +168,13 @@ const Login = () => {
             <TextField
               error={state.isError}
               fullWidth
-              id="username"
+              id="email"
               type="email"
-              label="Username"
-              placeholder="Username"
+              label="E-mail"
+              placeholder="E-email"
               margin="normal"
-              onChange={handleUsernameChange}
+              onChange={(e) => setEmail(e.target.value)}
+              // onChange={handleUsernameChange}
               onKeyPress={handleKeyPress}
             />
             <TextField
@@ -192,21 +186,22 @@ const Login = () => {
               placeholder="Password"
               margin="normal"
               helperText={state.helperText}
-              onChange={handlePasswordChange}
+              onChange={(e) => setPassword(e.target.value)}
+              // onChange={handlePasswordChange}
               onKeyPress={handleKeyPress}
             />
           </div>
         </CardContent>
         <CardActions>
-          <ColorButton
+          <Button
             variant="contained"
             size="large"
-            color="primary"
+            color="secondary"
             className={classes.loginBtn}
-            onClick={handleLogin}
+            onClick={SignIn}
             disabled={state.isButtonDisabled}>
             Login
-          </ColorButton>
+          </Button>
         </CardActions>
       </Card>
     </form>
