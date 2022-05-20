@@ -7,6 +7,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CardHeader from '@material-ui/core/CardHeader';
 import Button from '@material-ui/core/Button';
+import { styled } from '@mui/material/styles';
+import  { ButtonProps } from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import { purple } from '@mui/material/colors';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -31,6 +35,13 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: purple[100],
+  '&:hover': {
+    backgroundColor: purple[800],
+  },
+}));
 //state type
 
 type State = {
@@ -188,15 +199,15 @@ const Login = () => {
           </div>
         </CardContent>
         <CardActions>
-          <Button
+          <ColorButton
             variant="contained"
             size="large"
-            color="secondary"
+            color="primary"
             className={classes.loginBtn}
             onClick={handleLogin}
             disabled={state.isButtonDisabled}>
             Login
-          </Button>
+          </ColorButton>
         </CardActions>
       </Card>
     </form>
