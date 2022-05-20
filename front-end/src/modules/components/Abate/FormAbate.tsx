@@ -1,14 +1,14 @@
 import axios from "axios"
-import { Path, SubmitHandler, useForm, UseFormRegister } from "react-hook-form"
-import CardGlobalComponent from "../../../modules/components/GlobalComponents/cardGlobalComponent/CardGlobal"
-import FormGlobalComponent from "../../../modules/components/GlobalComponents/formGlobalComponent/formGlobalComponent"
-import AdmLayout from "../../../modules/layouts/AdmLayout"
-
+import { useForm, SubmitHandler, UseFormRegister, Path } from "react-hook-form"
+import CardGlobalComponent from "../GlobalComponents/cardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../GlobalComponents/formGlobalComponent/formGlobalComponent"
 
 interface IFormValues {
-  Nome: String
-  MetaTripaCozida: Number
-  MetaSerosa: number
+  abate: Number
+  bois: Number
+  vacas: Number
+  total: Number
+  condenados: Number
 }
 
 type InputProps = {
@@ -24,9 +24,7 @@ const Input = ({ label, register, required }: InputProps) => (
   </>
 )
 
-
-export default function Unidades() {
-
+export default function FormAbate() {
   const { register, handleSubmit } = useForm<IFormValues>()
 
   localStorage.getItem("@App:user")
@@ -37,20 +35,19 @@ export default function Unidades() {
   const onSubmit: SubmitHandler<IFormValues> = (data) =>
     axios.post("", data, userId)
 
-
   return (
-    <AdmLayout>
     <CardGlobalComponent>
       <FormGlobalComponent>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Cadastro de Frigorificos</h1>
-          <Input label="Nome" register={register} required />
-          <Input label="MetaTripaCozida" register={register} required />
-          <Input label="MetaSerosa" register={register} required />
-          <button type="submit">Cadastrar</button>
+          <h1>Formulario Abate</h1>
+          <Input label="abate" register={register} required />
+          <Input label="bois" register={register} required />
+          <Input label="vacas" register={register} required />
+          <Input label="total" register={register} required />
+          <Input label="condenados" register={register} required />
+          <button type="submit">Enviar</button>
         </form>
       </FormGlobalComponent>
     </CardGlobalComponent>
-    </AdmLayout>
   )
 }

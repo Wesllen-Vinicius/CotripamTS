@@ -1,6 +1,5 @@
 import React, { useReducer, useEffect, useContext, useState } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -32,8 +31,6 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-//state type
-
 type State = {
   email: string
   password:  string
@@ -50,7 +47,7 @@ const initialState:State = {
   isError: false
 };
 
-type Action = { type: 'setUsername', payload: string }
+type Action = { type: 'setEmail', payload: string }
   | { type: 'setPassword', payload: string }
   | { type: 'setIsButtonDisabled', payload: boolean }
   | { type: 'loginSuccess', payload: string }
@@ -59,7 +56,7 @@ type Action = { type: 'setUsername', payload: string }
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case 'setUsername': 
+    case 'setEmail': 
       return {
         ...state,
         email: action.payload
@@ -114,6 +111,7 @@ const Login = () => {
     }
   }, [state.email, state.password]);
 
+  
 
   
   const { signIn } = useContext(AuthContext)
@@ -135,27 +133,28 @@ const Login = () => {
     }
   };
 
+   const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> =
+     (event) => {
+       dispatch({
+         type: 'setEmail',
+         payload: event.target.value
+       });
+    };
+
+   const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> = 
+     (event) => {
+       dispatch({
+        type: 'setPassword',
+        payload: event.target.value
+      });
+     };
+
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.keyCode === 13 || event.which === 13) {
       state.isButtonDisabled || SignIn();
     }
   };
 
-  const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> =
-    (event) => {
-      dispatch({
-        type: 'setUsername',
-        payload: event.target.value
-      });
-    };
-
-  const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> =
-    (event) => {
-      dispatch({
-        type: 'setPassword',
-        payload: event.target.value
-      });
-    }
 
 
     
@@ -173,7 +172,7 @@ const Login = () => {
               label="E-mail"
               placeholder="E-email"
               margin="normal"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)} 
               // onChange={handleUsernameChange}
               onKeyPress={handleKeyPress}
             />

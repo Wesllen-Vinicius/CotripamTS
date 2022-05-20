@@ -1,5 +1,5 @@
-import FormProduto from "../../../components/form/Produto/FormProdutos"
-import Layout from "../../../components/layouts/EncarregadoLayout/index"
+import FormProduto from "../../../modules/components/Produto/FormProdutos"
+import Layout from "../../../modules/layouts/EncarregadoLayout/index"
 
 export default function Produtos() {
   return (

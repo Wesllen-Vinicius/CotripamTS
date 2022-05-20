@@ -1,6 +1,6 @@
-import CardGlobalComponent from "../../../components/GlobalComponents/cardGlobalComponent/CardGlobal"
-import TableGlobalComponent from "../../../components/GlobalComponents/TableGlobalComponent/TableGlobal"
-import AdmLayout from "../../../components/layouts/AdmLayout"
+import CardGlobalComponent from "../../../modules/components/GlobalComponents/cardGlobalComponent/CardGlobal"
+import TableGlobalComponent from "../../../modules/components/GlobalComponents/TableGlobalComponent/TableGlobal"
+import AdmLayout from "../../../modules/layouts/AdmLayout"
 
 export default function Relatorios() {
   return (

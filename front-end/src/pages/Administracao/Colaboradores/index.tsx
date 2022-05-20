@@ -2,9 +2,9 @@ import axios from "axios"
 import { useForm } from "react-hook-form"
 import { SubmitHandler, UseFormRegister } from "react-hook-form/dist/types/form"
 import { Path } from "react-hook-form/dist/types/path/eager"
-import CardGlobalComponent from "../../../components/GlobalComponents/cardGlobalComponent/CardGlobal"
-import FormGlobalComponent from "../../../components/GlobalComponents/formGlobalComponent/formGlobalComponent"
-import AdmLayout from "../../../components/layouts/AdmLayout"
+import CardGlobalComponent from "../../../modules/components/GlobalComponents/cardGlobalComponent/CardGlobal"
+import FormGlobalComponent from "../../../modules/components/GlobalComponents/formGlobalComponent/formGlobalComponent"
+import AdmLayout from "../../../modules/layouts/AdmLayout"
 
 
 

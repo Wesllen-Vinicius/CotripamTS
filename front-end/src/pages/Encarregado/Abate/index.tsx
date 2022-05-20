@@ -1,5 +1,5 @@
-import FormAbate from "../../../components/form/Abate/FormAbate"
-import Layout from "../../../components/layouts/EncarregadoLayout/index"
+import FormAbate from "../../../modules/components/Abate/FormAbate"
+import Layout from "../../../modules/layouts/EncarregadoLayout/index"
 
 export default function Abates() {
   return (
