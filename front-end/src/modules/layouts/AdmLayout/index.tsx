@@ -19,11 +19,8 @@ export default function AdmLayout({ children }: layoutProps) {
       </Aside>
       <Content>{children}</Content>
       <RigthAside>
-        <RegistroComponent/>
-        </RigthAside>
+        <RegistroComponent />
+      </RigthAside>
     </Div>
   )
 }
-
-
-

@@ -1,20 +1,20 @@
-import * as React from 'react';
-import { Theme, styled } from '@mui/material/styles';
-import MuiSnackbar, { SnackbarProps } from '@mui/material/Snackbar';
-import { snackbarContentClasses } from '@mui/material/SnackbarContent';
-import Slide from '@mui/material/Slide';
-import CloseIcon from '@mui/icons-material/Close';
-import InfoIcon from '@mui/icons-material/Info';
-import IconButton from '@mui/material/IconButton';
-import { TransitionProps } from '@mui/material/transitions/transition';
+import * as React from "react"
+import { Theme, styled } from "@mui/material/styles"
+import MuiSnackbar, { SnackbarProps } from "@mui/material/Snackbar"
+import { snackbarContentClasses } from "@mui/material/SnackbarContent"
+import Slide from "@mui/material/Slide"
+import CloseIcon from "@mui/icons-material/Close"
+import InfoIcon from "@mui/icons-material/Info"
+import IconButton from "@mui/material/IconButton"
+import { TransitionProps } from "@mui/material/transitions/transition"
 
 const styles = ({ theme }: { theme: Theme }) =>
   ({
     [`& .${snackbarContentClasses.root}`]: {
       backgroundColor: theme.palette.secondary.light,
       color: theme.palette.text.primary,
-      flexWrap: 'inherit',
-      [theme.breakpoints.up('md')]: {
+      flexWrap: "inherit",
+      [theme.breakpoints.up("md")]: {
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
         borderBottomRightRadius: 4,
@@ -23,41 +23,41 @@ const styles = ({ theme }: { theme: Theme }) =>
     },
     [`& .${snackbarContentClasses.message}`]: {
       fontSize: 16,
-      display: 'flex',
-      alignItems: 'center',
+      display: "flex",
+      alignItems: "center",
     },
     [`& .${snackbarContentClasses.action}`]: {
       paddingLeft: theme.spacing(2),
     },
-    '& .MuiSnackbarContent-info': {
+    "& .MuiSnackbarContent-info": {
       flexShrink: 0,
       marginRight: theme.spacing(2),
     },
-    '& .MuiSnackbarContent-close': {
+    "& .MuiSnackbarContent-close": {
       padding: theme.spacing(1),
     },
-  } as const);
+  } as const)
 
 function Transition(
-  props: TransitionProps & { children: React.ReactElement<any, any> },
+  props: TransitionProps & { children: React.ReactElement<any, any> }
 ) {
-  return <Slide {...props} direction="down" />;
+  return <Slide {...props} direction="down" />
 }
 
 interface ExtraSnackbarProps {
-  closeFunc?: () => void;
+  closeFunc?: () => void
 }
 
 function Snackbar(props: SnackbarProps & ExtraSnackbarProps) {
-  const { message, closeFunc, ...other } = props;
+  const { message, closeFunc, ...other } = props
   const classes = {
-    info: 'MuiSnackbarContent-info',
-    close: 'MuiSnackbarContent-close',
-  };
+    info: "MuiSnackbarContent-info",
+    close: "MuiSnackbarContent-close",
+  }
 
   return (
     <MuiSnackbar
-      anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      anchorOrigin={{ vertical: "top", horizontal: "center" }}
       autoHideDuration={6000}
       TransitionComponent={Transition}
       message={
@@ -79,7 +79,7 @@ function Snackbar(props: SnackbarProps & ExtraSnackbarProps) {
       ]}
       {...other}
     />
-  );
+  )
 }
 
-export default styled(Snackbar)(styles);
+export default styled(Snackbar)(styles)

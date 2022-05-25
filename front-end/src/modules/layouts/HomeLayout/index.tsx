@@ -8,18 +8,14 @@ type layoutProps = {
 
 export default function HomeLayout({ children }: layoutProps) {
   return (
-    <Div>   
+    <Div>
       <Header>
-        <NavbarHome/>
+        <NavbarHome />
       </Header>
-      <CarouselDiv>
-        
-      </CarouselDiv>
-      <Aside>
-      </Aside>
+      <CarouselDiv></CarouselDiv>
+      <Aside></Aside>
       <Content>{children}</Content>
-      <Footer>
-      </Footer>
+      <Footer></Footer>
     </Div>
   )
 }

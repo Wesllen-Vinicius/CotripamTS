@@ -1,14 +1,12 @@
 import CardGlobalComponent from "../../../components/GlobalComponents/cardGlobalComponent/CardGlobal"
 import TableGlobalComponent from "../../../components/GlobalComponents/TableGlobalComponent/TableGlobal"
 
-
-
 export default function RegistroComponent() {
   return (
     <CardGlobalComponent>
-    <TableGlobalComponent>
-    <div>   
-    <h1>Registros</h1>
+      <TableGlobalComponent>
+        <div>
+          <h1>Registros</h1>
           <h1></h1>
           <thead>
             <tr>
@@ -46,9 +44,7 @@ export default function RegistroComponent() {
             </tr>
           </tbody>
         </div>
-
-
-    </TableGlobalComponent>
+      </TableGlobalComponent>
     </CardGlobalComponent>
   )
 }

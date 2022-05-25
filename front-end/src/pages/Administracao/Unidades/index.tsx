@@ -4,7 +4,6 @@ import CardGlobalComponent from "../../../modules/components/GlobalComponents/ca
 import FormGlobalComponent from "../../../modules/components/GlobalComponents/formGlobalComponent/formGlobalComponent"
 import AdmLayout from "../../../modules/layouts/AdmLayout"
 
-
 interface IFormValues {
   Nome: String
   MetaTripaCozida: Number
@@ -24,9 +23,7 @@ const Input = ({ label, register, required }: InputProps) => (
   </>
 )
 
-
 export default function Unidades() {
-
   const { register, handleSubmit } = useForm<IFormValues>()
 
   localStorage.getItem("@App:user")
@@ -37,20 +34,19 @@ export default function Unidades() {
   const onSubmit: SubmitHandler<IFormValues> = (data) =>
     axios.post("", data, userId)
 
-
   return (
     <AdmLayout>
-    <CardGlobalComponent>
-      <FormGlobalComponent>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Cadastro de Frigorificos</h1>
-          <Input label="Nome" register={register} required />
-          <Input label="MetaTripaCozida" register={register} required />
-          <Input label="MetaSerosa" register={register} required />
-          <button type="submit">Cadastrar</button>
-        </form>
-      </FormGlobalComponent>
-    </CardGlobalComponent>
+      <CardGlobalComponent>
+        <FormGlobalComponent>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <h1>Cadastro de Frigorificos</h1>
+            <Input label="Nome" register={register} required />
+            <Input label="MetaTripaCozida" register={register} required />
+            <Input label="MetaSerosa" register={register} required />
+            <button type="submit">Cadastrar</button>
+          </form>
+        </FormGlobalComponent>
+      </CardGlobalComponent>
     </AdmLayout>
   )
 }

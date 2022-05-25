@@ -6,8 +6,6 @@ import CardGlobalComponent from "../../../modules/components/GlobalComponents/ca
 import FormGlobalComponent from "../../../modules/components/GlobalComponents/formGlobalComponent/formGlobalComponent"
 import AdmLayout from "../../../modules/layouts/AdmLayout"
 
-
-
 interface IFormValues {
   Nome: String
   Email: String
@@ -28,7 +26,6 @@ const Input = ({ label, register, required }: InputProps) => (
   </>
 )
 
-
 export default function Colaboradores() {
   const { register, handleSubmit } = useForm<IFormValues>()
 
@@ -40,21 +37,20 @@ export default function Colaboradores() {
   const onSubmit: SubmitHandler<IFormValues> = (data) =>
     axios.post("", data, userId)
 
-
   return (
     <AdmLayout>
-    <CardGlobalComponent>
-      <FormGlobalComponent>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Cadastro de Colaboradores</h1>
-          <Input label="Nome" register={register} required />
-          <Input label="Email" register={register} required />
-          <Input label="PassWord" register={register} required />
-          <Input label="NivelAcesso" register={register} required />
-          <button type="submit">Cadastrar</button>
-        </form>
-      </FormGlobalComponent>
-    </CardGlobalComponent>
+      <CardGlobalComponent>
+        <FormGlobalComponent>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <h1>Cadastro de Colaboradores</h1>
+            <Input label="Nome" register={register} required />
+            <Input label="Email" register={register} required />
+            <Input label="PassWord" register={register} required />
+            <Input label="NivelAcesso" register={register} required />
+            <button type="submit">Cadastrar</button>
+          </form>
+        </FormGlobalComponent>
+      </CardGlobalComponent>
     </AdmLayout>
   )
 }
