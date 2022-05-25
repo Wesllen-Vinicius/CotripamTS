@@ -22,7 +22,7 @@ export default function ProductHero() {
         alt="increase priority"
       />
       <Typography color="inherit" align="center" variant="h2" marked="center">
-        Upgrade your Sundays
+        Conheça nossos Alimentos com garantia SIF de qualidade.
       </Typography>
       <Typography
         color="inherit"
@@ -30,20 +30,7 @@ export default function ProductHero() {
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-        Enjoy secret offers up to -70% off the best luxury hotels every Sunday.
-      </Typography>
-      <Button
-        color="secondary"
-        variant="contained"
-        size="large"
-        component="a"
-        href="/premium-themes/onepirate/sign-up/"
-        sx={{ minWidth: 200 }}
-      >
-        Register
-      </Button>
-      <Typography variant="body2" color="inherit" sx={{ mt: 2 }}>
-        Discover the experience
+        
       </Typography>
     </ProductHeroLayout>
   );
