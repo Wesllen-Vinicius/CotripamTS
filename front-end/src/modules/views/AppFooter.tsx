@@ -10,28 +10,21 @@ function Copyright() {
   return (
     <React.Fragment>
       {'© '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://www.linkedin.com/in/cotripam-cotripam-b238b876/?originalSubdomain=br">
+        COTRIPAM
       </Link>{' '}
       {new Date().getFullYear()}
     </React.Fragment>
   );
 }
 
-const iconStyle = {
-  width: 48,
-  height: 48,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: 'warning.main',
-  mr: 1,
-  '&:hover': {
-    bgcolor: 'warning.dark',
-  },
-};
+      
 
 const LANGUAGES = [
+  {
+    code: 'pt-BR',
+    name: 'Portugues Brasileiro',
+  },
   {
     code: 'en-US',
     name: 'English',
@@ -58,20 +51,7 @@ export default function AppFooter() {
               spacing={2}
               sx={{ height: 120 }}
             >
-              <Grid item sx={{ display: 'flex' }}>
-                <Box component="a" href="https://mui.com/" sx={iconStyle}>
-                  <img
-                    src="/static/themes/onepirate/appFooterFacebook.png"
-                    alt="Facebook"
-                  />
-                </Box>
-                <Box component="a" href="https://twitter.com/MUI_hq" sx={iconStyle}>
-                  <img
-                    src="/static/themes/onepirate/appFooterTwitter.png"
-                    alt="Twitter"
-                  />
-                </Box>
-              </Grid>
+              
               <Grid item>
                 <Copyright />
               </Grid>
@@ -112,22 +92,21 @@ export default function AppFooter() {
           </Grid>
           <Grid item>
             <Typography variant="caption">
-              {'Icons made by '}
-              <Link href="https://www.freepik.com" rel="sponsored" title="Freepik">
-                Freepik
+              {' Desenvolvido Por '}
+              <Link rel="sponsored" title="Freepik">
+                Wesllen Vinicius
               </Link>
-              {' from '}
-              <Link href="https://www.flaticon.com" rel="sponsored" title="Flaticon">
-                www.flaticon.com
+              {' @ '}
+              <Link rel="sponsored" title="Flaticon">
+                2022
               </Link>
-              {' is licensed by '}
+              {'  '}
               <Link
                 href="https://creativecommons.org/licenses/by/3.0/"
                 title="Creative Commons BY 3.0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                CC 3.0 BY
               </Link>
             </Typography>
           </Grid>

@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "@mui/icons-material": "^5.8.0",
+    "@mui/styles": "^5.8.0",
     "@types/google-map-react": "^2.1.6",
     "@types/styled-components": "^5.1.24",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
