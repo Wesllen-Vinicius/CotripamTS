@@ -10,6 +10,7 @@ import {
 import React, { useReducer, useEffect, useContext, useState } from "react"
 import { makeStyles, createStyles } from "@mui/styles"
 import AuthContext from "../../AuthProvider/userAuth"
+import withRoot from "../../modules/withRoot"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -95,7 +96,7 @@ const reducer = (state: State, action: Action): State => {
   }
 }
 
-const Login = () => {
+function Login() {
   const classes = useStyles()
   const [state, dispatch] = useReducer(reducer, initialState)
 
@@ -206,4 +207,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default withRoot(Login)
