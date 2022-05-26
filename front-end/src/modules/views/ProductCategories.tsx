@@ -55,48 +55,48 @@ const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
 
 const images = [
   {
-    url: "https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80",
-    title: "Snorkeling",
-    width: "40%",
+    url: "https://media-exp1.licdn.com/dms/image/C4D22AQGJM_9PPzOROQ/feedshare-shrink_800/0/1593535089023?e=1654732800&v=beta&t=sQ7Hy4ONFWt8h7tJineZArsQiQrk-mJYsVtOX7cnoaY",
+    title: "Parceiros",
+    width: "30%",
   },
   {
-    url: "https://github.com/Wesllen-Vinicius/CotripamTS/blob/migrando-para-material-ui/front-end/src/images/tripaGrossa.jpeg",
-    title: "Tripa Grossa",
+    url: "https://files.fm/thumb_show.php?i=z8bt8njmp",
+    title: "Kit Panelada",
     width: "20%",
   },
   {
-    url: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80",
-    title: "Hiking",
-    width: "40%",
+    url: "https://files.fm/thumb_show.php?i=y7ep5xxtt",
+    title: "Nossa Equipe de Gerencia",
+    width: "50%",
   },
   {
-    url: "https://images.unsplash.com/photo-1453747063559-36695c8771bd?auto=format&fit=crop&w=400&q=80",
-    title: "Tour",
+    url: "https://files.fm/thumb_show.php?i=2pk626tyg",
+    title: "Tripa Grossa",
     width: "38%",
   },
   {
-    url: "https://images.unsplash.com/photo-1523309996740-d5315f9cc28b?auto=format&fit=crop&w=400&q=80",
-    title: "Gastronomy",
+    url: "https://files.fm/thumb_show.php?i=gvceckuk9",
+    title: "Nossa Produção",
     width: "38%",
   },
   {
-    url: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80",
-    title: "Shopping",
+    url: "https://files.fm/thumb_show.php?i=vwfb5y49m",
+    title: "Nossas Instalações",
     width: "24%",
   },
   {
-    url: "https://images.unsplash.com/photo-1506941433945-99a2aa4bd50a?auto=format&fit=crop&w=400&q=80",
-    title: "Walking",
+    url: "https://files.fm/thumb_show.php?i=fjr5qdyy6",
+    title: "Mocotó",
     width: "40%",
   },
   {
-    url: "https://images.unsplash.com/photo-1533727937480-da3a97967e95?auto=format&fit=crop&w=400&q=80",
-    title: "Fitness",
+    url: "https://files.fm/thumb_show.php?i=n88uff6x9",
+    title: "Nossa Historia",
     width: "20%",
   },
   {
-    url: "https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400&q=80",
-    title: "Reading",
+    url: "https://files.fm/thumb_show.php?i=yv8uqt8wb",
+    title: "Colaboradores",
     width: "40%",
   },
 ]
@@ -105,7 +105,7 @@ export default function ProductCategories() {
   return (
     <Container component="section" sx={{ mt: 8, mb: 4 }}>
       <Typography variant="h4" marked="center" align="center" component="h2">
-        For all tastes and all desires
+        Um pouco de Nós! 
       </Typography>
       <Box sx={{ mt: 8, display: "flex", flexWrap: "wrap" }}>
         {images.map((image) => (
