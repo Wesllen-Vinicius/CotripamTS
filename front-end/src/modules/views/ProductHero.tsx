@@ -2,7 +2,7 @@ import Typography from "../components/Typography"
 import ProductHeroLayout from "./ProductHeroLayout"
 
 const backgroundImage =
-  ""
+  "https://files.fm/thumb_show.php?i=3d5c8q2x7"
 
 export default function ProductHero() {
   return (
