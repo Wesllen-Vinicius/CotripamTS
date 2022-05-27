@@ -12,6 +12,7 @@ export default function AppForm(props: React.HTMLAttributes<HTMLDivElement>) {
         display: "flex",
         backgroundImage: "url(/static/onepirate/appCurvyLines.png)",
         backgroundRepeat: "no-repeat",
+        
       }}
     >
       <Container maxWidth="sm">

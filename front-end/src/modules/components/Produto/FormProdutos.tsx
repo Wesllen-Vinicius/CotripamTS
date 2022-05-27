@@ -39,7 +39,7 @@ export default function FormProduto() {
     <CardGlobalComponent>
       <FormGlobalComponent>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Formulario Produtos</h1>
+          <h1>Insumos</h1>
           <Input label="sal_fino" register={register} required />
           <Input label="sal_grosso" register={register} required />
           <Input label="metabissulfito" register={register} required />

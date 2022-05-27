@@ -36,11 +36,11 @@ function ProductValues() {
                 sx={{ height: 55 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
-                The best luxury hotels
+                José Severino de Lima Filho
               </Typography>
               <Typography variant="h5">
                 {
-                  "From the latest trendy boutique hotel to the iconic palace with XXL pool"
+                  "Sócio-proprietario"
                 }
                 {
                   ", go for a mini-vacation just a few subway stops away from your home."

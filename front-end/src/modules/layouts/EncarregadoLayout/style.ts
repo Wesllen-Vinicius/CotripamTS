@@ -24,6 +24,7 @@ export const EncHeader = styled.header`
 
 export const EncAside = styled.div`
   grid-area: aside;
+  color: black;
   padding: 1rem;
   width: auto;
   align-items: center;
@@ -37,6 +38,6 @@ export const EncRigthAside = styled.section`
 
 export const EncContent = styled.section`
   grid-area: main;
-  padding: 1.5rem;
+  padding: 1.0rem;
   width: 100%;
 `

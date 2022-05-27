@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     header: {
       textAlign: "center",
-      background: "#212121",
+      background: "rgb(34, 81, 130)",
       color: "#fff",
     },
     card: {
@@ -160,7 +160,7 @@ function Login() {
   return (
     <form className={classes.container} noValidate autoComplete="off">
       <Card className={classes.card}>
-        <CardHeader className={classes.header} title="Login" />
+        <CardHeader className={classes.header} title="COTRIPAM" />
         <CardContent>
           <div>
             <TextField
@@ -199,7 +199,7 @@ function Login() {
             onClick={SignIn}
             disabled={state.isButtonDisabled}
           >
-            Login
+            Logar
           </Button>
         </CardActions>
       </Card>

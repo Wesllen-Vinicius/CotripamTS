@@ -12,14 +12,14 @@ const rightLink = {
 function AppAppBar() {
   return (
     <div>
-      <AppBar position="fixed">
+      <AppBar  position="fixed" >
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={{ flex: 1 }} />
           <Link
             variant="h6"
             underline="none"
-            color="inherit"
-            sx={{ fontSize: 24 }}
+            color="white"
+            sx={{ fontSize: 30 }}
           >
             {"COTRIPAM"}
           </Link>
