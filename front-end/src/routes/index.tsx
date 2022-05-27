@@ -8,6 +8,7 @@ import Abates from "../pages/Encarregado/Abate"
 import Encarregados from "../pages/Encarregado/Abate"
 import Produtos from "../pages/Encarregado/Produtos"
 import TripaCozida from "../pages/Encarregado/TripaCozida"
+import TripaExportacao from "../pages/Encarregado/TripaExportacao"
 import Home from "../pages/Home"
 import Login from "../pages/Login"
 import { ProtectedLayout } from "./private"
@@ -72,6 +73,14 @@ const Rotas: React.FC = () => {
         element={
           <ProtectedLayout>
             <TripaCozida />
+          </ProtectedLayout>
+        }
+      />
+      <Route
+        path="/tripaExportacao"
+        element={
+          <ProtectedLayout>
+            <TripaExportacao />
           </ProtectedLayout>
         }
       />

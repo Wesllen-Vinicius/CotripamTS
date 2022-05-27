@@ -1,5 +1,4 @@
-import withRoot from "../../withRoot"
-import { useReducer } from "react"
+import withRoot from "../withRoot"
 import {
   CardContent,
   CardHeader,
@@ -7,7 +6,6 @@ import {
   Theme,
 } from "@mui/material"
 import { makeStyles, createStyles } from "@mui/styles"
-import CardGlobalComponent from "../GlobalComponents/cardGlobalComponent/CardGlobal"
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -30,79 +28,17 @@ createStyles({
 })
 )
 
-type State = {
-email: string
-password: string
-isButtonDisabled: boolean
-helperText: string
-isError: boolean
-}
-
-const initialState: State = {
-email: "",
-password: "",
-isButtonDisabled: true,
-helperText: "",
-isError: false,
-}
-
-type Action =
-| { type: "setEmail"; payload: string }
-| { type: "setPassword"; payload: string }
-| { type: "setIsButtonDisabled"; payload: boolean }
-| { type: "loginSuccess"; payload: string }
-| { type: "loginFailed"; payload: string }
-| { type: "setIsError"; payload: boolean }
-
-const reducer = (state: State, action: Action): State => {
-switch (action.type) {
-  case "setEmail":
-    return {
-      ...state,
-      email: action.payload,
-    }
-  case "setPassword":
-    return {
-      ...state,
-      password: action.payload,
-    }
-  case "setIsButtonDisabled":
-    return {
-      ...state,
-      isButtonDisabled: action.payload,
-    }
-  case "loginSuccess":
-    return {
-      ...state,
-      helperText: action.payload,
-      isError: false,
-    }
-  case "loginFailed":
-    return {
-      ...state,
-      helperText: action.payload,
-      isError: true,
-    }
-  case "setIsError":
-    return {
-      ...state,
-      isError: action.payload,
-    }
-}
-}
 
  function CardPerfilUsuario() {
   
   const classes = useStyles()
-  const [state, dispatch] = useReducer(reducer, initialState)
 
 
   localStorage.getItem("@App:user")
-  const userJson = JSON.parse(window.localStorage.getItem("@App:user") || "{}")
+  JSON.parse(window.localStorage.getItem("@App:user") || "{}")
   window.localStorage.getItem("@App:user")
 
   return (
-    <CardGlobalComponent >
       <form className="card-3" noValidate autoComplete="off" >
         <CardHeader className={classes.header} title="Perfil Colaborador" />
         <CardContent 
@@ -129,7 +65,6 @@ switch (action.type) {
           </div>
         </CardContent>
     </form>
-    </CardGlobalComponent>
   )
 }
 

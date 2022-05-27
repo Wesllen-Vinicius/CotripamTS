@@ -32,35 +32,48 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-
- function Abates() {
+ function TripaExportacao() {
   const classes = useStyles()
   return (
     <Layout>
       <CardGlobalComponent>
       <form  className={classes.container} noValidate autoComplete="off">
-        <CardHeader className={classes.header} title="Abates Diarios" />
+        <CardHeader className={classes.header} title="Tripa Exportação" />
         <CardContent>
           <div>
           <TextField
               fullWidth
               type="number"
-              label="Abate"
-              placeholder="Abate"
+              label="Tripa Reta"
+              placeholder="Tripa Reta"
               margin="normal"
               />
             <TextField
               fullWidth
               type="number"
-              label="Bois"
-              placeholder="Bois"
+              label="Tripa Torta 1 Corte"
+              placeholder="Tripa Torta 1 Corte"
               margin="normal"
               />
               <TextField
               fullWidth
               type="number"
-              label="Condenados"
-              placeholder="Condenados"
+              label="Tripa Torta 2 Corte"
+              placeholder="Tripa Torta 2 Corte"
+              margin="normal"
+              />
+              <TextField
+              fullWidth
+              type="number"
+              label="Culatra"
+              placeholder="Culatra"
+              margin="normal"
+              />
+              <TextField
+              fullWidth
+              type="number"
+              label="Fundo"
+              placeholder="Fundo"
               margin="normal"
               />
           </div>
@@ -80,4 +93,4 @@ const useStyles = makeStyles((theme: Theme) =>
   )
 }
 
-export default withRoot(Abates)
+export default withRoot(TripaExportacao)
