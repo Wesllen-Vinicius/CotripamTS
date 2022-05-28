@@ -1,11 +1,14 @@
 import { Route, Routes } from "react-router-dom"
 import NotFoundPage from "../pages/404/NotFoundPage"
-import Relatorios from "../pages/Admin/relatorios"
-import Dashboard from "../pages/Dashboard"
+import Colaboradores from "../pages/Administracao/Colaboradores"
+import Relatorios from "../pages/Administracao/Relatorios"
+import Dashboard from "../pages/Administracao/Relatorios"
+import Unidades from "../pages/Administracao/Unidades"
 import Abates from "../pages/Encarregado/Abate"
 import Encarregados from "../pages/Encarregado/Abate"
 import Produtos from "../pages/Encarregado/Produtos"
 import TripaCozida from "../pages/Encarregado/TripaCozida"
+import TripaExportacao from "../pages/Encarregado/TripaExportacao"
 import Home from "../pages/Home"
 import Login from "../pages/Login"
 import { ProtectedLayout } from "./private"
@@ -27,7 +30,27 @@ const Rotas: React.FC = () => {
         }
       />
       <Route
-        path="/relatorio"
+        path="/unidades"
+        element={
+          <PrivateLayout>
+            <ProtectedLayout>
+              <Unidades />
+            </ProtectedLayout>
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/colaboradores"
+        element={
+          <PrivateLayout>
+            <ProtectedLayout>
+              <Colaboradores />
+            </ProtectedLayout>
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/Relatorios"
         element={
           <PrivateLayout>
             <ProtectedLayout>
@@ -50,6 +73,14 @@ const Rotas: React.FC = () => {
         element={
           <ProtectedLayout>
             <TripaCozida />
+          </ProtectedLayout>
+        }
+      />
+      <Route
+        path="/tripaExportacao"
+        element={
+          <ProtectedLayout>
+            <TripaExportacao />
           </ProtectedLayout>
         }
       />

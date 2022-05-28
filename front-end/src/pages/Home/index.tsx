@@ -1,41 +1,27 @@
-import {
-  HomeContent,
-  HomeDiv,
-  HomeFooter,
-  HomeHeader,
-  MenuLink,
-  NavCenter,
-  NavCenterFooter,
-  NavFooter,
-  NavHeader,
-  NavLeft,
-  NavLeftFooter,
-  NavRight,
-  NavRightFooter,
-} from "./style"
+import * as React from "react"
+import AppAppBar from "../../modules/components/homeComponents/views/AppAppBar"
+import AppFooter from "../../modules/components/homeComponents/views/AppFooter"
+import ProductCategories from "../../modules/components/homeComponents/views/ProductCategories"
+import ProductCTA from "../../modules/components/homeComponents/views/ProductCTA"
+import ProductHero from "../../modules/components/homeComponents/views/ProductHero"
+import ProductHowItWorks from "../../modules/components/homeComponents/views/ProductHowItWorks"
+import ProductSmokingHero from "../../modules/components/homeComponents/views/ProductSmokingHero"
+import ProductValues from "../../modules/components/homeComponents/views/ProductValues"
+import withRoot from "../../modules/withRoot"
 
 function Home() {
   return (
-    <HomeDiv>
-      <HomeHeader>
-        <NavHeader>
-          <NavLeft>Header</NavLeft>
-          <NavCenter>Cotripam</NavCenter>
-          <NavRight>
-            <MenuLink href="login">Acesso Restrito</MenuLink>
-          </NavRight>
-        </NavHeader>
-      </HomeHeader>
-      <HomeContent></HomeContent>
-      <HomeFooter>
-        <NavFooter>
-          <NavLeftFooter>Sobre nós Sobre nós Sobre nós</NavLeftFooter>
-          <NavCenterFooter>Centro do footer</NavCenterFooter>
-          <NavRightFooter>Direita footer</NavRightFooter>
-        </NavFooter>
-      </HomeFooter>
-    </HomeDiv>
+    <React.Fragment>
+      <AppAppBar />
+      <ProductHero />
+      <ProductValues />
+      <ProductCategories />
+      <ProductHowItWorks />
+      <ProductCTA />
+      <ProductSmokingHero />
+      <AppFooter />
+    </React.Fragment>
   )
 }
 
-export default Home
+export default withRoot(Home)
