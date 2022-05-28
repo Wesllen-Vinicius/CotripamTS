@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme: Theme) =>
   const classes = useStyles()
   return (
     <Layout>
-      <CardGlobalComponent>
       <form  className={classes.container} noValidate autoComplete="off">
         <CardHeader className={classes.header} title="Abates Diarios" />
         <CardContent>
@@ -75,7 +74,6 @@ const useStyles = makeStyles((theme: Theme) =>
           </Button>
         </CardActions>
     </form>
-            </CardGlobalComponent>
     </Layout>
   )
 }

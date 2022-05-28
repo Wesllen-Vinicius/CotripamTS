@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import CardPerfilUsuario from "../../components/perfilUsuario"
+import CardPerfilUsuario from "../../components/CardPerfilUsuario"
 import NavbarAdm from "../../components/navBar/Adm"
 import RegistroComponent from "./Resgistros"
 import { Aside, Content, Div, Header, RigthAside } from "./style"

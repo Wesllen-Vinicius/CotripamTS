@@ -68,4 +68,4 @@ createStyles({
   )
 }
 
-export default withRoot(CardPerfilUsuario)
+export default CardPerfilUsuario

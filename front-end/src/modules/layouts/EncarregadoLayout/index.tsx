@@ -1,52 +1,51 @@
-import { ReactNode } from "react"
-import CardPerfilUsuario from "../../components/perfilUsuario"
-import HistoricoAbate from "../../components/Historico/abate"
-import AppBarEncarregado from "./AppBarEncarregado"
-import { createStyles, makeStyles } from "@mui/styles"
-import Paper from "@material-ui/core/Paper"
-import Grid from "@material-ui/core/Grid"
-import { Theme } from "@mui/material/styles"
+import React, { ReactNode } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import AppBarEncarregado from './AppBarEncarregado';
+import withRoot from '../../withRoot';
+import CardPerfilUsuario from '../../components/CardPerfilUsuario';
 type layoutProps = {
   children: ReactNode
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      width: "auto",
-      textAlign: "center",
-      color: theme.palette.text.secondary,
-    },
-  })
-)
+const useStyles = makeStyles(theme => ({
+  root: {
+    padding: theme.spacing(4, 4),
+    margin: theme.spacing(2, 2),
+    width: '100%',
+  },
+  card: {
+    height: '100vh',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    border: '1px solid black',
+    borderRadius: '5px',
+    textAlign: 'center',
+  },
+}));
 
-export default function EncarregadoLayout({ children }: layoutProps) {
+
+
+
+function EncarregadoLayout({ children }: layoutProps) {
   const classes = useStyles()
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-            <AppBarEncarregado />
+    <Container component="section" maxWidth="lg" className={classes.root}>
+      <AppBarEncarregado />
+    <Grid container spacing={2} >
+      <Grid item xs={12} sm={4}>
+      <CardPerfilUsuario/>
         </Grid>
-        <Grid item xs>
-          <Paper className={classes.paper}>
-            <CardPerfilUsuario />
-          </Paper>
+        <Grid item xs={12} sm={4}>
+        {children}
         </Grid>
-        <Grid item xs>
-          
-            {children}
-          
-        </Grid>
-        <Grid item xs>
-
-            <HistoricoAbate />
-          
+        <Grid item xs={12} sm={4}>
+        {children}
         </Grid>
       </Grid>
-    </div>
+      </Container>
   )
 }
+export default withRoot(EncarregadoLayout)
