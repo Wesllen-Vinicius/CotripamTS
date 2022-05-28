@@ -1,4 +1,3 @@
-import CardGlobalComponent from "../GlobalComponents/cardGlobalComponent/CardGlobal"
 import TableGlobalComponent from "../GlobalComponents/TableGlobalComponent/TableGlobal"
 
 export default function HistoricoAbate() {

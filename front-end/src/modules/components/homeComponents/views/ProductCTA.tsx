@@ -7,17 +7,6 @@ import TextField from "../TextField"
 import Button from "../Button"
 
 function ProductCTA() {
-  const [open, setOpen] = React.useState(false)
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setOpen(true)
-  }
-
-  const handleClose = () => {
-    setOpen(false)
-  }
-
   return (
     <Container component="section" sx={{ mt: 10, display: "flex" }}>
       <Grid container>
@@ -31,11 +20,7 @@ function ProductCTA() {
               px: 8,
             }}
           >
-            <Box
-              component="form"
-              onSubmit={handleSubmit}
-              sx={{ maxWidth: 400 }}
-            >
+            <Box component="form" sx={{ maxWidth: 400 }}>
               <Typography
                 variant="h2"
                 component="h2"

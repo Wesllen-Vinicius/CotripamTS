@@ -1,6 +1,6 @@
 import * as React from "react"
 import { ButtonProps } from "@mui/material"
-import Button from "../Button"
+import Button from "../components/homeComponents/Button"
 import defer from "./defer"
 
 interface FormButtonProps {

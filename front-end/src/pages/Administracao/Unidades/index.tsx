@@ -1,7 +1,5 @@
 import axios from "axios"
 import { Path, SubmitHandler, useForm, UseFormRegister } from "react-hook-form"
-import CardGlobalComponent from "../../../modules/components/GlobalComponents/cardGlobalComponent/CardGlobal"
-import FormGlobalComponent from "../../../modules/components/GlobalComponents/formGlobalComponent/formGlobalComponent"
 import AdmLayout from "../../../modules/layouts/AdmLayout"
 
 interface IFormValues {
@@ -36,17 +34,13 @@ export default function Unidades() {
 
   return (
     <AdmLayout>
-      <CardGlobalComponent>
-        <FormGlobalComponent>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <h1>Cadastro de Frigorificos</h1>
-            <Input label="Nome" register={register} required />
-            <Input label="MetaTripaCozida" register={register} required />
-            <Input label="MetaSerosa" register={register} required />
-            <button type="submit">Cadastrar</button>
-          </form>
-        </FormGlobalComponent>
-      </CardGlobalComponent>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <h1>Cadastro de Frigorificos</h1>
+        <Input label="Nome" register={register} required />
+        <Input label="MetaTripaCozida" register={register} required />
+        <Input label="MetaSerosa" register={register} required />
+        <button type="submit">Cadastrar</button>
+      </form>
     </AdmLayout>
   )
 }

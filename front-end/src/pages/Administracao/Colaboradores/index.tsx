@@ -2,8 +2,6 @@ import axios from "axios"
 import { useForm } from "react-hook-form"
 import { SubmitHandler, UseFormRegister } from "react-hook-form/dist/types/form"
 import { Path } from "react-hook-form/dist/types/path/eager"
-import CardGlobalComponent from "../../../modules/components/GlobalComponents/cardGlobalComponent/CardGlobal"
-import FormGlobalComponent from "../../../modules/components/GlobalComponents/formGlobalComponent/formGlobalComponent"
 import AdmLayout from "../../../modules/layouts/AdmLayout"
 
 interface IFormValues {
@@ -39,18 +37,14 @@ export default function Colaboradores() {
 
   return (
     <AdmLayout>
-      <CardGlobalComponent>
-        <FormGlobalComponent>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <h1>Cadastro de Colaboradores</h1>
-            <Input label="Nome" register={register} required />
-            <Input label="Email" register={register} required />
-            <Input label="PassWord" register={register} required />
-            <Input label="NivelAcesso" register={register} required />
-            <button type="submit">Cadastrar</button>
-          </form>
-        </FormGlobalComponent>
-      </CardGlobalComponent>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <h1>Cadastro de Colaboradores</h1>
+        <Input label="Nome" register={register} required />
+        <Input label="Email" register={register} required />
+        <Input label="PassWord" register={register} required />
+        <Input label="NivelAcesso" register={register} required />
+        <button type="submit">Cadastrar</button>
+      </form>
     </AdmLayout>
   )
 }

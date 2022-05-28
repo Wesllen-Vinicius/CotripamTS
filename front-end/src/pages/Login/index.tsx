@@ -6,9 +6,7 @@ import TextField from "@mui/material/TextField"
 import FormControlLabel from "@mui/material/FormControlLabel"
 import Checkbox from "@mui/material/Checkbox"
 import Link from "@mui/material/Link"
-import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
 import Typography from "@mui/material/Typography"
 import Container from "@mui/material/Container"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
@@ -22,10 +20,7 @@ function Copyright(props: any) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit">
-        Cotripam
-      </Link>{" "}
-      {new Date().getFullYear()}
+      <Link color="inherit">Cotripam</Link> {new Date().getFullYear()}
       {"."}
     </Typography>
   )
@@ -55,8 +50,7 @@ export default function SignIn() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-          </Avatar>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
           <Typography component="h1" variant="h5">
             Acesso Restrito
           </Typography>
