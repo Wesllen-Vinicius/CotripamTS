@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box"
 import Link from "@mui/material/Link"
-import AppBar from "../components/AppBar"
-import Toolbar from "../components/Toolbar"
+import AppBar from "../components/homeComponents/AppBar"
+import Toolbar from "../components/homeComponents/Toolbar"
 
 const rightLink = {
   fontSize: 16,

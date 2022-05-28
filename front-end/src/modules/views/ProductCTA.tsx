@@ -2,9 +2,9 @@ import * as React from "react"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Container from "@mui/material/Container"
-import Typography from "../components/Typography"
-import TextField from "../components/TextField"
-import Button from "../components/Button"
+import Typography from "../components/homeComponents/Typography"
+import TextField from "../components/homeComponents/TextField"
+import Button from "../components/homeComponents/Button"
 
 function ProductCTA() {
   const [open, setOpen] = React.useState(false)

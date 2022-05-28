@@ -1,4 +1,4 @@
-import Typography from "../components/Typography"
+import Typography from "../components/homeComponents/Typography"
 import ProductHeroLayout from "./ProductHeroLayout"
 
 const backgroundImage =

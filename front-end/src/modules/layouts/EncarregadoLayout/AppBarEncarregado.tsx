@@ -12,7 +12,7 @@ function AppBarEncarregado() {
   return (
     <div>
       <AppBar  position="fixed" >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
+        <Toolbar>
           <Box sx={{ flex: 1 }} />
           <Link
             variant="h6"
@@ -22,7 +22,7 @@ function AppBarEncarregado() {
           >
             {"COTRIPAM"}
           </Link>
-          <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
+          <Box>
           <Link
               color="inherit"
               variant="h6"

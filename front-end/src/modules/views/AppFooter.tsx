@@ -3,8 +3,8 @@ import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Link from "@mui/material/Link"
 import Container from "@mui/material/Container"
-import Typography from "../components/Typography"
-import TextField from "../components/TextField"
+import Typography from "../components/homeComponents/Typography"
+import TextField from "../components/homeComponents/TextField"
 
 function Copyright() {
   return (

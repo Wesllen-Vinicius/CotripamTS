@@ -3,7 +3,6 @@ import TableGlobalComponent from "../GlobalComponents/TableGlobalComponent/Table
 
 export default function HistoricoAbate() {
   return (
-    <CardGlobalComponent>
       <TableGlobalComponent>
         <div>
           <h1>Historico</h1>
@@ -55,6 +54,5 @@ export default function HistoricoAbate() {
           </tbody>
         </div>
       </TableGlobalComponent>
-    </CardGlobalComponent>
   )
 }
