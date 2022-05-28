@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import CardPerfilUsuario from "../../components/CardPerfilUsuario"
 import NavbarAdm from "../../components/navBar/Adm"
-import RegistroComponent from "./Resgistros"
+import RegistroComponent from "./Registros"
 import { Aside, Content, Div, Header, RigthAside } from "./style"
 
 type layoutProps = {

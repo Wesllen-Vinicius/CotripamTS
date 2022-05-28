@@ -50,7 +50,6 @@ export default function SignIn() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
           <Typography component="h1" variant="h5">
             Acesso Restrito
           </Typography>
@@ -91,6 +90,15 @@ export default function SignIn() {
               sx={{ mt: 3, mb: 2 }}
             >
               Sign In
+            </Button>
+            <Button
+              type="submit"
+              fullWidth
+              href="/"
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Tela Inicial
             </Button>
           </Box>
         </Box>
