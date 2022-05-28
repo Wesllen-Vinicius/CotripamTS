@@ -1,0 +1,155 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              Int               @id @default(autoincrement())
+  nome            String            @db.VarChar(120)
+  email           String            @unique @db.VarChar(255)
+  password        String            @db.VarChar(255)
+  createdAt       DateTime          @default(now())
+  nivelAcesso     Boolean           @default(false)
+  unidadeId       Int?
+  unidadeUser     Unidade?          @relation(fields: [unidadeId], references: [id])
+  Abate           Abate[]
+  Serosa          Serosa[]
+  TripaCozida     TripaCozida[]
+  TripaExportacao TripaExportacao[]
+  Produto         Produto[]
+
+  @@map("users")
+}
+
+model Unidade {
+  id               Int               @id @default(autoincrement())
+  nome             String            @db.VarChar(120)
+  createdAt        DateTime          @default(now())
+  meta_tripaCozida Float
+  meta_serosa      Float
+  User             User[]
+  Abate            Abate[]
+  Serosa           Serosa[]
+  TripaCozida      TripaCozida[]
+  TripaExportacao  TripaExportacao[]
+  Produto          Produto[]
+  Estoque          Estoque[]
+
+  @@map("unidades")
+}
+
+model Abate {
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  modifiAt     DateTime?
+  abate        Float      
+  bois         Float
+  vacas        Float
+  total        Float
+  condenados   Float
+  unidadeId    Int?
+  userId       Int?
+  unidadeAbate Unidade?  @relation(fields: [unidadeId], references: [id])
+  user         User?     @relation(fields: [userId], references: [id])
+  @@map("abates")
+}
+
+model Serosa {
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  modifiAt     DateTime?
+  corte_630    Float
+  corte_470    Float
+  corte_320    Float
+  corte_170    Float
+  km_total     Float
+  media        Float
+  userId       Int?
+  unidadeId    Int?
+  unidadeAbate Unidade?  @relation(fields: [unidadeId], references: [id])
+  user         User?     @relation(fields: [userId], references: [id])
+
+  @@map("serosa")
+}
+
+model TripaCozida {
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  modifiAt     DateTime?
+  mocoto       Float
+  culatra      Float
+  abomaso      Float
+  fundo        Float
+  tripa_grossa Float
+  tripa_fina   Float
+  total        Float
+  userId       Int?
+  unidadeId    Int?
+  unidadeAbate Unidade?  @relation(fields: [unidadeId], references: [id])
+  user         User?     @relation(fields: [userId], references: [id])
+
+  @@map("tripaCozida")
+}
+
+model TripaExportacao {
+  id            Int       @id @default(autoincrement())
+  createdAt     DateTime  @default(now())
+  modifiAt      DateTime?
+  tripa_reta    Float
+  tripa_torta1c Float
+  tripa_torta2c Float
+  culatra       Float
+  fundo         Float
+  userId        Int?
+  unidadeId     Int?
+  unidadeAbate  Unidade?  @relation(fields: [unidadeId], references: [id])
+  user          User?     @relation(fields: [userId], references: [id])
+
+  @@map("tripaExportacao")
+}
+
+model Produto {
+  id             Int       @id @default(autoincrement())
+  createdAt      DateTime  @default(now())
+  modifiAt       DateTime?
+  sal_fino       Float
+  sal_grosso     Float
+  metabissulfito Float
+  peroxido       Float
+  bombonas       Float
+  userId         Int?
+  unidadeId      Int?
+  unidadeAbate   Unidade?  @relation(fields: [unidadeId], references: [id])
+  user           User?     @relation(fields: [userId], references: [id])
+
+  @@map("prodQuimicos")
+}
+
+model Item {
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  saidaData DateTime?
+  quant     Decimal
+  nome      String    @db.VarChar(255)
+  descricao String    @db.VarChar(255)
+  Estoque   Estoque?  @relation(fields: [estoqueId], references: [id])
+  estoqueId Int?
+
+  @@map("item")
+}
+
+model Estoque {
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  saidaData    DateTime?
+  quantSaida   Decimal
+  quant        Decimal
+  unidadeAbate Unidade?  @relation(fields: [id], references: [id])
+  item         Item[]
+
+  @@map("estoque")
+}
