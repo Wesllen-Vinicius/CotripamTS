@@ -9,7 +9,6 @@ import {
 } from "@mui/material"
 import { makeStyles, createStyles } from "@mui/styles"
 import Layout from "../../../modules/layouts/EncarregadoLayout/index"
-import CardGlobalComponent from "../../../modules/components/GlobalComponents/cardGlobalComponent/CardGlobal"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,48 +31,43 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-
- function Abates() {
+function Abates() {
   const classes = useStyles()
   return (
     <Layout>
-      <form  className={classes.container} noValidate autoComplete="off">
+      <form className={classes.container} noValidate autoComplete="off">
         <CardHeader className={classes.header} title="Abates Diarios" />
         <CardContent>
           <div>
-          <TextField
+            <TextField
               fullWidth
               type="number"
               label="Abate"
               placeholder="Abate"
               margin="normal"
-              />
+            />
             <TextField
               fullWidth
               type="number"
               label="Bois"
               placeholder="Bois"
               margin="normal"
-              />
-              <TextField
+            />
+            <TextField
               fullWidth
               type="number"
               label="Condenados"
               placeholder="Condenados"
               margin="normal"
-              />
+            />
           </div>
         </CardContent>
         <CardActions>
-          <Button
-            variant="contained"
-            size="large"
-            color="secondary"
-            >
+          <Button variant="contained" size="large" color="secondary">
             Enviar
           </Button>
         </CardActions>
-    </form>
+      </form>
     </Layout>
   )
 }

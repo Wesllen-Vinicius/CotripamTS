@@ -1,8 +1,7 @@
 import Typography from "../Typography"
 import ProductHeroLayout from "./ProductHeroLayout"
 
-const backgroundImage =
-  "https://files.fm/thumb_show.php?i=3d5c8q2x7"
+const backgroundImage = "https://files.fm/thumb_show.php?i=3d5c8q2x7"
 
 export default function ProductHero() {
   return (
@@ -12,7 +11,7 @@ export default function ProductHero() {
         backgroundColor: "#7fc7d9",
         backgroundPosition: "center",
       }}
-    >   
+    >
       <Typography color="inherit" align="center" variant="h2" marked="center">
         Conheça nossos Alimentos com garantia SIF de qualidade.
       </Typography>

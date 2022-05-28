@@ -24,10 +24,9 @@ function ProductCTA() {
         <Grid item xs={12} md={12} sx={{ zIndex: 1 }}>
           <Box
             sx={{
-
               display: "flex",
               justifyContent: "center",
-              bgcolor: "rgb(34, 81, 130)", 
+              bgcolor: "rgb(34, 81, 130)",
               py: 8,
               px: 8,
             }}
@@ -37,18 +36,24 @@ function ProductCTA() {
               onSubmit={handleSubmit}
               sx={{ maxWidth: 400 }}
             >
-              <Typography variant="h2" component="h2" gutterBottom 
-              sx={{
-                color: "white"
-
-              }}
+              <Typography
+                variant="h2"
+                component="h2"
+                gutterBottom
+                sx={{
+                  color: "white",
+                }}
               >
                 Entre em Contato Conosco
               </Typography>
-              <Typography variant="h5" 
-              sx={{
-                color: "white"
-              }}>Cliente ou Representante.</Typography>
+              <Typography
+                variant="h5"
+                sx={{
+                  color: "white",
+                }}
+              >
+                Cliente ou Representante.
+              </Typography>
               <TextField
                 noBorder
                 placeholder="Email"

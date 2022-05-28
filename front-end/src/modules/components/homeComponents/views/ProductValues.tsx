@@ -39,9 +39,7 @@ function ProductValues() {
                 José Severino de Lima Filho
               </Typography>
               <Typography variant="h5">
-                {
-                  "Sócio-proprietario"
-                }
+                {"Sócio-proprietario"}
                 {
                   ", go for a mini-vacation just a few subway stops away from your home."
                 }

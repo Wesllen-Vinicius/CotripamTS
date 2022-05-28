@@ -9,7 +9,6 @@ import {
 } from "@mui/material"
 import { makeStyles, createStyles } from "@mui/styles"
 import Layout from "../../../modules/layouts/EncarregadoLayout/index"
-import CardGlobalComponent from "../../../modules/components/GlobalComponents/cardGlobalComponent/CardGlobal"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,61 +31,57 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
- function TripaExportacao() {
+function TripaExportacao() {
   const classes = useStyles()
   return (
     <Layout>
-      <form  className={classes.container} noValidate autoComplete="off">
+      <form className={classes.container} noValidate autoComplete="off">
         <CardHeader className={classes.header} title="Tripa Exportação" />
         <CardContent>
           <div>
-          <TextField
+            <TextField
               fullWidth
               type="number"
               label="Tripa Reta"
               placeholder="Tripa Reta"
               margin="normal"
-              />
+            />
             <TextField
               fullWidth
               type="number"
               label="Tripa Torta 1 Corte"
               placeholder="Tripa Torta 1 Corte"
               margin="normal"
-              />
-              <TextField
+            />
+            <TextField
               fullWidth
               type="number"
               label="Tripa Torta 2 Corte"
               placeholder="Tripa Torta 2 Corte"
               margin="normal"
-              />
-              <TextField
+            />
+            <TextField
               fullWidth
               type="number"
               label="Culatra"
               placeholder="Culatra"
               margin="normal"
-              />
-              <TextField
+            />
+            <TextField
               fullWidth
               type="number"
               label="Fundo"
               placeholder="Fundo"
               margin="normal"
-              />
+            />
           </div>
         </CardContent>
         <CardActions>
-          <Button
-            variant="contained"
-            size="large"
-            color="secondary"
-            >
+          <Button variant="contained" size="large" color="secondary">
             Enviar
           </Button>
         </CardActions>
-    </form>
+      </form>
     </Layout>
   )
 }

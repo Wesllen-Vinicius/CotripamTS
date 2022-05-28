@@ -9,7 +9,6 @@ import {
 } from "@mui/material"
 import { makeStyles, createStyles } from "@mui/styles"
 import Layout from "../../../modules/layouts/EncarregadoLayout/index"
-import CardGlobalComponent from "../../../modules/components/GlobalComponents/cardGlobalComponent/CardGlobal"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,68 +31,64 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
- function TripaCozida() {
+function TripaCozida() {
   const classes = useStyles()
   return (
     <Layout>
-      <form  className={classes.container} noValidate autoComplete="off">
+      <form className={classes.container} noValidate autoComplete="off">
         <CardHeader className={classes.header} title="Tripa Cozida" />
         <CardContent>
           <div>
-          <TextField
+            <TextField
               fullWidth
               type="number"
               label="Mocoto"
               placeholder="Mocoto"
               margin="normal"
-              />
+            />
             <TextField
               fullWidth
               type="number"
               label="Culatra"
               placeholder="Culatra"
               margin="normal"
-              />
-              <TextField
+            />
+            <TextField
               fullWidth
               type="number"
               label="Abomaso"
               placeholder="Abomaso"
               margin="normal"
-              />
-              <TextField
+            />
+            <TextField
               fullWidth
               type="number"
               label="Fundo"
               placeholder="Fundo"
               margin="normal"
-              />
-              <TextField
+            />
+            <TextField
               fullWidth
               type="number"
               label="Tripa Grossa"
               placeholder="Tripa Grossa"
               margin="normal"
-              />
-              <TextField
+            />
+            <TextField
               fullWidth
               type="number"
               label="Tripa Fina"
               placeholder="Tripa Fina"
               margin="normal"
-              />
+            />
           </div>
         </CardContent>
         <CardActions>
-          <Button
-            variant="contained"
-            size="large"
-            color="secondary"
-            >
+          <Button variant="contained" size="large" color="secondary">
             Enviar
           </Button>
         </CardActions>
-    </form>
+      </form>
     </Layout>
   )
 }

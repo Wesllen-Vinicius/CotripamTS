@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1.5),
     margin: theme.spacing(1.5),
     width: "auto",
-    height: '100vh',
+    height: "100vh",
   },
   card: {
     height: "100vh",
@@ -37,19 +37,17 @@ function EncarregadoLayout({ children }: layoutProps) {
       <AppBarEncarregado />
       <Grid container spacing={2}>
         <Grid item xs={12} sm={4}>
-          <Box  boxShadow={3}>
+          <Box boxShadow={3}>
             <CardPerfilUsuario />
           </Box>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Box   boxShadow={3}>
-            {children}
-          </Box>
+          <Box boxShadow={3}>{children}</Box>
         </Grid>
         <Grid item xs={12} sm={4}>
-        <Box boxShadow={3}>
+          <Box boxShadow={3}>
             <HistoricoAbate />
-            </Box>       
+          </Box>
         </Grid>
       </Grid>
     </Container>
