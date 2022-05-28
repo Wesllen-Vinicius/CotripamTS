@@ -4,7 +4,7 @@ import { SxProps } from "@mui/system"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Container from "@mui/material/Container"
-import Typography from "../components/homeComponents/Typography"
+import Typography from "../Typography"
 
 const item: SxProps<Theme> = {
   display: "flex",

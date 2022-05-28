@@ -1,7 +1,7 @@
 import * as React from "react"
 import { experimentalStyled as styled } from "@mui/material/styles"
 import Box, { BoxProps as MuiBoxProps } from "@mui/material/Box"
-import Typography from "../components/homeComponents/Typography"
+import Typography from "../Typography"
 
 interface FormFeedbackProps extends MuiBoxProps {
   error?: boolean
